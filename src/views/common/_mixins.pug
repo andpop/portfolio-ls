@@ -1,0 +1,26 @@
+mixin icon(iconName, iconClass)
+  svg(class=`${iconClass}`)
+    use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
+
+mixin image(imagePath, imageAlt, imageClass)
+  img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin section-triangles(fill1, fill2)
+  div.section-header
+    .section-header__right
+      svg(fill=`${fill1}` viewBox="0 0 1000 150" preserveAspectRatio="none")
+        polygon(points="0,0 0,150 1000,150")
+    .section-header__left
+      svg(fill=`${fill2}` viewBox="0 0 1000 150" preserveAspectRatio="none")
+        polygon(points="1000,0 1000,150 0,150")
+
+mixin title(text, icon) 
+  h1.title
+    +icon(icon, 'title__img')
+    .title__text #{text}
+
+mixin socials(modificator)
+  ul.socials(class=`${modificator}`)
+    each social in ['fb', 'gh', 'in']
+      li.socials__item
+        a(href="#" class=`socials__link_${social}`).socials__link

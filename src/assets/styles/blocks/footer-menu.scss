@@ -1,0 +1,9 @@
+.footer-menu__item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "SRC_DIR": "src/assets",
+  "DIST_DIR": "dist",
+  "ROOT_PATH": "dist",
+  "VIEWS_DIR": "src/views"
+}

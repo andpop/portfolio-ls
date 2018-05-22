@@ -1,0 +1,61 @@
+{
+  "name": "gulp-122017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "gulp build; cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.23.6",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.7",
+    "del": "^3.0.0",
+    "dotenv": "^5.0.1",
+    "file-loader": "^1.1.4",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cheerio": "^0.6.3",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sass-inline-svg": "^1.0.3",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^1.4.0",
+    "gulp-svgmin": "^1.2.4",
+    "html-webpack-plugin": "^3.2.0",
+    "merge-stream": "^1.0.1",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.6",
+    "sass-module-importer": "^1.4.0",
+    "vue-template-compiler": "2.5.13",
+    "vue-loader": "^14.2.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-stream": "^4.0.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^7.0.0",
+    "pug": "^2.0.3",
+    "vue": "2.5.13"
+  }
+}

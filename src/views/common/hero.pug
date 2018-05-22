@@ -1,0 +1,18 @@
+section.hero.section
+  +image('bg/hero.jpg','section background', 'hero__img')
+  .hero__container
+    +image('titles/portfolio-header.png', 'page title', 'title-img')
+    .user
+      .user__pic-container
+        .user__pic
+          +image('content/user.jpg', 'user pic', 'user__pic-img')
+      .user__info
+        .user__name Владимир Астахов
+        .user__desk Личный сайт веб-разработчика
+  .hero__down-arrow-container
+    button(type="button").down-arrow
+  .hero__socials
+    +socials
+  .hero__menu
+    a(href="").hamburger
+      .hamburger__planks

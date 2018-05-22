@@ -1,0 +1,51 @@
+extends ../main.layout.pug
+
+block content
+  include ../common/hero.pug
+
+  .section-title
+    .section-title__triangles
+      +section-triangles("#faf8f0", "#faf8f0")
+    .section-title__head
+      +title('Мои работы', 'portfolio_header')
+
+  .slider
+    .slider__left
+      .slider__info
+        .slider__info-title
+          .subtitle Сайт школы онлайн образования
+        .slider__info-skills
+          | Html, Css, JavaScript
+        .slider__info-button
+          a(href="").slider__button
+            .slider__button-icon
+              i.fa.fa-link
+            .slider__button-text Посмотреть сайт
+    .slider__right
+
+  section.reviews
+    .container.reviews_container
+      .reviews__title
+        +title('Что обо мне говорят', 'about_header')
+      ul.reviews__list
+        each item in [1, 2]
+          li.reviews__item
+            .reviews__text.text-block
+              p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .reviews__author
+              .reviews__avatar
+                .reviews__avatar-pic
+                  +image('content/user.jpg', 'review author', 'reviews__avatar-image')
+              .reviews__author-data
+                .reviews__name Ковальчук Дмитрий
+                .reviews__occ основатель Loftschool
+      .reviews__form-container
+        form.modal-form
+          .subtitle Связаться со мной
+          .modal-form__container
+            input(type="text" placeholder="Имя").modal-form__input
+            input(type="text" placeholder="Email").modal-form__input
+            textarea(placeholder="Ваше сообщение").modal-form__input.modal-form__input_textarea
+          .modal-form__buttons
+            button.modal-form__button Отправить
+            button.modal-form__button Очистить

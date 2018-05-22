@@ -1,0 +1,35 @@
+.hamburger {
+  width: 40px;
+  height: 35px;
+  display: block;
+  position: relative;
+}
+
+.hamburger__planks {
+  position: absolute;
+  height: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 100%;
+  border-radius: 10px;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    height: 5px;
+  }
+
+  &:before {
+    top: -10px;
+  }
+
+  &:after {
+    bottom: -10px;
+  }
+}

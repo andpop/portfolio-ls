@@ -1,0 +1,22 @@
+include ./common/_mixins
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    
+    title #{title}
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
+    link(rel='stylesheet' href='main.min.css')
+  body
+    .wrapper
+      .maincontent
+        block content
+
+      include ./common/footer.pug
+        
+    script(src='main.bundle.js')
+    

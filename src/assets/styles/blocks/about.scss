@@ -1,0 +1,48 @@
+.about {
+  position: relative;
+}
+
+.about__triangles {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+}
+
+.about__cols {
+  display: flex;
+  height: 100%;
+}
+
+.about__col-left, .about__col-right {
+  width: 50%;
+}
+
+.about__col-left {
+  background: $white;
+}
+
+.about__right-title {
+  text-align: center;
+}
+
+.about__left-title {
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
+.about__col-right {
+  background: $beige;
+  padding: 0 3%;
+}
+
+.about__left-description {
+  padding: 0 10%;
+}
+
+.hero__menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

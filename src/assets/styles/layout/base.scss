@@ -1,0 +1,71 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.42;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include roboto();
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.section {
+  min-height: 650px;
+  height: 100vh;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button[type="button"] {
+  cursor: pointer;
+}
+
+.text-block {
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,42 @@
+.user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user__name {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.user__desk {
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+}
+
+.user__pic {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 145px;
+  height: 145px;
+  margin-bottom: 20px;
+}
+
+.user__pic-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user__pic-img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.user__info {
+  text-align: center;
+}

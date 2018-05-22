@@ -1,0 +1,66 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Главная страница'
+
+block content
+  include ../common/hero.pug
+  
+  .about-page
+    section.about
+      .about__triangles
+         +section-triangles('#efeee9', '#eeebdf')
+      .about__cols
+        .about__col-left
+          .about__left-title
+            +title('Обо мне', 'about_header')
+          .about__left-description
+            .user-desc
+              .user-desc__img
+                +image('content/user-full.jpg', 'userpic', 'user-desc__avatar')
+              .user-desc__data
+                .user-desc__data-title
+                  h2.subtitle Кто я
+                .user-desc__data-desc.text-block
+                  p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+                
+        .about__col-right
+          .about__right-title
+            h2.subtitle Чем я могу быть вам полезен
+          .about__right-desc.text-block
+            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          .about__right-content
+            ul.skills-list
+              li.skills-list__item
+                .skills-list__title Frontend
+                ul.skills
+                  - 
+                    var skills = [
+                      [['html', 50], ['css', 30], ['js', 50]]
+                    ]
+                  each skillRow in skills
+                    li.skills__item
+                      each skill in skillRow
+                        .skill
+                          svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                            circle(cx="50" cy="50" r="40" ref="circle").skill__circle.skill__circle_above
+                          .skill__title {{skill.title}}
+    section.section.map
+      #google-map
+      .map__contacts
+        .contacts
+          .contacts__title
+            h2.subtitle Контакты
+          .contacts__content
+            ul.contacts__list
+              li.contacts__item
+                .contacts__icon.contacts__icon_skype
+                .contacts__text skype_kdn
+              li.contacts__item
+                .contacts__icon.contacts__icon_envelope
+                .contacts__text astahov@gmail.com
+              li.contacts__item
+                .contacts__icon.contacts__icon_phone
+                .contacts__text +7 931 200 93 24

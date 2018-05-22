@@ -69,6 +69,11 @@ gulp.task("scripts", () => {
               }
             ]
           },
+          resolve: {
+            alias: {
+              vue$: "vue/dist/vue.esm.js"
+            },
+          },
           devtool: "#eval-source-map"
         })
       )

@@ -31,22 +31,8 @@ block content
           .about__right-desc.text-block
             p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
           .about__right-content
-            ul.skills-list
-              li.skills-list__item
-                .skills-list__title Frontend
-                ul.skills
-                  - 
-                    var skills = [
-                      [['html', 50], ['css', 30], ['js', 50]]
-                    ]
-                  each skillRow in skills
-                    li.skills__item
-                      each skill in skillRow
-                        .skill
-                          svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                            circle(cx="50" cy="50" r="40" ref="circle").skill__circle.skill__circle_above
-                          .skill__title {{skill.title}}
+            #skill-list-component
+
     section.section.map
       #google-map
       .map__contacts

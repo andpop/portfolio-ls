@@ -1,3 +1,10 @@
+.skills-list__item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 37px;
+  margin-bottom: 37px;
+}
+
 .skills-list__title {
   font-size: 28px;
   @include roboto('medium');

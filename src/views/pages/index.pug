@@ -1,0 +1,68 @@
+extends ../auth.layout.pug
+
+block content
+  .parallax#parallax
+    - for (var i = 9; i > 0; i--)
+      .parallax__layer
+        img(src=`/assets/images/parallax/${i}.png`).parallax__image
+  .auth
+    .auth__container
+      a(href="").bordered-btn.auth__btn#auth-btn Авторизоваться
+      .auth__form
+        .auth__forms-container
+          .auth__form-item.auth__form-face
+            .modal-form
+              .user.auth__user
+                .user__pic-container
+                  .user__pic
+                    +image('content/user.jpg', 'user pic', 'user__pic-img')
+                .user__info
+                  .user__name Владимир Астахов
+                  .user__desk Личный сайт веб-разработчика
+                .auth__socials
+                  +socials('socials_fill_green')
+              .modal-form__buttons
+                button.modal-form__button Мои работы
+                button.modal-form__button Обо мне
+                button.modal-form__button Блог
+
+          .auth__form-item.auth__form-back
+            .modal-form
+              .modal-form__title
+                .subtitle Авторизуйтесь
+              .modal-from__container
+                .modal-form__row
+                  label.iconed-input
+                    input(type="text" placeholder="Логин").iconed-input__elem
+                    i.iconed-input__icon
+                      +icon('login', 'iconed-input__icon-pic')
+                .modal-form__row
+                  label.iconed-input
+                    input(type="password" placeholder="Пароль").iconed-input__elem
+                    i.iconed-input__icon
+                      +icon('password', 'iconed-input__icon-pic')
+                .modal-form__row
+                  .modal-form__controlls
+                    label.form-control
+                      input(type="checkbox").form-control__element
+                      .form-control__appearence
+                      .form-control__text Я человек
+                  .modal-form__controlls
+                    h3.modal-form__controlls-title Вы точно не робот?
+                    .modal-form__controlls-group
+                      label.form-control.form-control_radio
+                        input(type="radio" name="robo").form-control__element
+                        .form-control__appearence
+                        .form-control__text Да
+                      label.form-control.form-control_radio
+                        input(type="radio" name="robo").form-control__element
+                        .form-control__appearence
+                        .form-control__text Нет
+                      
+              .modal-form__buttons
+                button.modal-form__button На главную
+                button.modal-form__button Войти
+
+
+    .auth__footer
+      .auth__disclamer © Владимир Астахов | создано с любовью в LoftSchool | 2018

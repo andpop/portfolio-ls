@@ -7,6 +7,13 @@
   overflow: hidden;
 }
 
+.hero__user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .hero__img {
   position: absolute;
   top: 0;

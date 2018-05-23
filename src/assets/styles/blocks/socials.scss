@@ -1,5 +1,11 @@
 .socials {
   display: flex;
+
+  &_fill_green {
+    .socials__icon {
+      fill: $green;
+    }
+  }
   &_rounded {
     .socials__item {
       margin-left: 10px;
@@ -13,18 +19,11 @@
       border-radius: 50%;
       overflow: hidden;
       border: 1px solid rgba(#fff, .5);
-      
       &:hover {
         background-color: #fff;
-      }
-      &_fb:hover {
-        background-image: inline-svg('vk', #373e42);
-      }
-      &_gh:hover {
-        background-image: inline-svg('github', #373e42);
-      }
-      &_in:hover {
-        background-image: inline-svg('in', #373e42);
+        .socials__icon {
+          fill: #373e42;
+        }
       }
     }
   }
@@ -42,13 +41,10 @@
   &:hover {
     opacity: 1;
   }
-  &_fb {
-    background-image: inline-svg('vk', #fff);
-  }
-  &_gh {
-    background-image: inline-svg('github', #fff);
-  }
-  &_in {
-    background-image: inline-svg('in', #fff);
-  }
+}
+
+.socials__icon {
+  width: 80%;
+  height: 80%;
+  fill: #fff;
 }

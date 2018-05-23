@@ -1,0 +1,35 @@
+.iconed-input {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+}
+
+.iconed-input__elem {
+  border: none;
+  padding: 14px 14px 14px 65px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.iconed-input__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  background: #f0efe9;
+}
+
+.iconed-input__icon-pic {
+  fill: #c4cbcd;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

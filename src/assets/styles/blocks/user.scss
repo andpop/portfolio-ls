@@ -1,20 +1,15 @@
 .user {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  color: #fff;
 }
 
 .user__name {
   font-size: 35px;
-  color: #fff;
   font-weight: 500;
 }
 
 .user__desk {
   font-size: 16px;
   font-weight: 300;
-  color: #fff;
 }
 
 .user__pic {

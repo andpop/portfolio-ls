@@ -1,14 +1,22 @@
-
 .modal-form {
   border-radius: 10px 10px 0 0;
-  background: #ccc;
+  background: rgba(#fff, .85);
   position: relative;
-  margin: 0 auto;
   padding: 20px;
-  width: 50%;
-  max-width: 380px;
-  min-width: 310px;
-  margin-bottom: 200px;
+}
+
+.modal-form__title {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.modal-form__controlls-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.modal-form__row {
+  margin-bottom: 20px;
 }
 
 .modal-form__input {
@@ -42,12 +50,18 @@
   color: #fff;
   transition: .3s;
   font-weight: 600;
-
+  border-right: 2px solid #82cfc9;
+  white-space: nowrap;
+  
   &:hover {
     background: #268b8a;
   }
 
-  &:first-child {
-    border-right: 2px solid #82cfc9;
+  &:last-child {
+    border: none;
   }
+}
+
+.modal-form__controlls {
+  text-align: center;
 }

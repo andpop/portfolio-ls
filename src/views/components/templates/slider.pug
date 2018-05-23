@@ -15,7 +15,7 @@ script(type="text/x-template")#slider-info
         .subtitle {{work.title}}
       .slider__info-skills {{work.skills}}
       .slider__info-button
-        a(href="").iconed-button
+        a(:href="work.link" target="_blank").iconed-button
           .iconed-button__icon
             i.fa.fa-link
           .iconed-button__text Посмотреть сайт  

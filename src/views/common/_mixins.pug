@@ -20,7 +20,8 @@ mixin title(text, icon)
     .title__text #{text}
 
 mixin socials(modificator)
-  ul.socials(class=`${modificator}`)
-    each social in ['fb', 'gh', 'in']
+  ul.socials(class=`${modificator ? modificator : ''}`)
+    each social in ['vk', 'github', 'in']
       li.socials__item
-        a(href="#" class=`socials__link_${social}`).socials__link
+        a(href="#").socials__link
+          +icon(social, 'socials__icon')

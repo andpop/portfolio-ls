@@ -15,8 +15,6 @@ const skill = {
       const persents = (dashOffset / 100) * (100 - this.skillPercents);
       
       circle.style.strokeDashoffset = persents;
-
-      console.log(this.$refs);
     }
   },
   mounted() {

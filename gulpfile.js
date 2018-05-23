@@ -98,8 +98,8 @@ gulp.task("server", () => {
   browserSync.init({
     server: {
       baseDir: `${config.DIST_DIR}`,
-      open: false
-    }
+    },
+    open: false
   });
 });
 

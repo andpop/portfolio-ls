@@ -9,23 +9,7 @@
   font-display: block;
 }
 
-@mixin bernier() {
-  font-family: 'bernier', Times, serif;
-}
 
 @mixin roboto($style: 'regular') {
   font-family: 'Roboto', Helvetica, sans-serif;
-
-  @if $style=='regular' {
-    font-weight: 400;
-  }
-  @if $style=='light' {
-    font-weight: 300;
-  }
-  @if $style=='medium' {
-    font-weight: 500;
-  }
-  @if $style=='bold' {
-    font-weight: 700
-  }
 }

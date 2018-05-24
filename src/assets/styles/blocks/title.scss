@@ -2,7 +2,8 @@
   display: inline-block;
   position: relative;
   padding: 45px 70px;
-  @include bernier();
+  font-family: 'bernier', Times, serif;
+
   &:before,
   &:after {
     content: "";

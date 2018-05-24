@@ -13,27 +13,36 @@ const mergeStream = require("merge-stream");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
 
+const autoprefixer = require('autoprefixer');
+
 // стили
 gulp.task("styles", () => {
+  const plugins = [
+    require('postcss-easy-import')({
+      extensions : '.scss'
+    }),
+    autoprefixer({
+      browsers: ["last 2 versions"],
+      cascade: false
+    }),
+    require("postcss-advanced-variables"),
+    require("postcss-nested"),
+    require("postcss-rgb"),
+    
+    // require("postcss-inline-svg")({
+    //   removeFill: true,
+    //   path: "./src/assets/img"
+    // }),
+    // require("postcss-svgo")
+  ];
+
   return gulp
     .src(`${config.SRC_DIR}/styles/main.scss`)
     .pipe($gp.plumber())
-    .pipe($gp.sassGlob())
     .pipe($gp.sourcemaps.init())
-    .pipe(
-      $gp.sass({
-        outputStyle: "compressed",
-        importer: moduleImporter()
-      })
-    )
-    .pipe(
-      $gp.autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false
-      })
-    )
-    .pipe($gp.sourcemaps.write())
-    .pipe($gp.rename({ suffix: ".min" }))
+    .pipe($gp.postcss(plugins))
+    .pipe($gp.sourcemaps.write('.'))
+    .pipe($gp.rename('main.min.css'))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -54,8 +63,8 @@ gulp.task("clean", () => {
 gulp.task("scripts", () => {
   return gulp
     .src([
-      `${config.SRC_DIR}/scripts/about.js`, 
-      `${config.SRC_DIR}/scripts/auth.js`, 
+      `${config.SRC_DIR}/scripts/about.js`,
+      `${config.SRC_DIR}/scripts/auth.js`,
       `${config.SRC_DIR}/scripts/works.js`
     ])
     .pipe($gp.plumber())

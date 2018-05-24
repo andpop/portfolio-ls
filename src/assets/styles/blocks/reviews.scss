@@ -1,10 +1,19 @@
 .reviews {
+  position: relative;
   padding-bottom: 200px;
   background: url('/assets/images/bg/reviews.jpg') center 0 no-repeat;
 }
 
+.reviews__bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .reviews_container {
   width: 80%;
+  position: relative;
 }
 
 .reviews__form-container {

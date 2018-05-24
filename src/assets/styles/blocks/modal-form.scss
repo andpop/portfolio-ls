@@ -3,6 +3,24 @@
   background: rgba(#fff, .85);
   position: relative;
   padding: 20px;
+
+  &_blured {
+    .modal-form__bg {
+      background-image: url('/assets/images/bg/reviews.jpg');
+      background-repeat: no-repeat;
+      background-position: center 0;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+}
+
+.modal-form__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(10px);
 }
 
 .modal-form__title {
@@ -13,6 +31,10 @@
 .modal-form__controlls-title {
   font-weight: 600;
   margin-bottom: 8px;
+}
+
+.modal-form__container {
+  position: relative;
 }
 
 .modal-form__row {

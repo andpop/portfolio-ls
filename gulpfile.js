@@ -12,6 +12,9 @@ const mergeStream = require("merge-stream");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+
 // стили
 gulp.task("styles", () => {
   return gulp
@@ -69,6 +72,9 @@ gulp.task("scripts", () => {
               }
             ]
           },
+          plugins: [
+            new UglifyJsPlugin()
+          ],
           resolve: {
             alias: {
               vue$: "vue/dist/vue.esm.js"

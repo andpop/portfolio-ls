@@ -3,16 +3,3 @@
 @import './layout/fonts.scss';
 @import './layout/base.scss';
 @import './blocks/*.scss';
-
-
-@mixin test {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-body {
-  @include test {
-    background: red;
-  }
-}

@@ -74,7 +74,6 @@ gulp.task("scripts", () => {
 });
 
 //рендерим странички
-
 gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
@@ -138,6 +137,7 @@ gulp.task("images", () => {
       `${config.SRC_DIR}/images/**/*.*`,
       `!${config.SRC_DIR}/images/icons/*.*`
     ])
+    .pipe($gp.if(env === 'production', $gp.imagemin()))
     .pipe(gulp.dest(`${config.DIST_DIR}/assets/images/`));
 });
 

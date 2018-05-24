@@ -1,19 +1,17 @@
 const gulp = require("gulp");
 const config = require("./gulp.paths.json");
 
-// плагины галпа отдельно подключать не нужно, 
+// плагины галпа отдельно подключать не нужно,
 // используем в пайпе как $gp.имяПлагина (без приставки gulp-)
 const $gp = require("gulp-load-plugins")();
 
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
-const webpack = require("webpack-stream");
+const $webpack = require("webpack-stream");
+const webpack = require("webpack");
 const mergeStream = require("merge-stream");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
-
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
 
 // стили
 gulp.task("styles", () => {
@@ -54,38 +52,16 @@ gulp.task("clean", () => {
 
 // собираем скрипты webpack
 gulp.task("scripts", () => {
-  return (
-    gulp
-      .src(`${config.SRC_DIR}/scripts/main.js`)
-      .pipe($gp.plumber())
-      .pipe(
-        webpack({
-          output: {
-            filename: "main.bundle.js"
-          },
-          module: {
-            loaders: [
-              {
-                test: /\.js$/,
-                loader: "babel-loader",
-                exclude: /node_modules/
-              }
-            ]
-          },
-          plugins: [
-            new UglifyJsPlugin()
-          ],
-          resolve: {
-            alias: {
-              vue$: "vue/dist/vue.esm.js"
-            },
-          },
-          devtool: "#eval-source-map"
-        })
-      )
-      .pipe(gulp.dest(`${config.DIST_DIR}`))
-      .pipe(reload({ stream: true }))
-  );
+  return gulp
+    .src([
+      `${config.SRC_DIR}/scripts/about.js`, 
+      `${config.SRC_DIR}/scripts/auth.js`, 
+      `${config.SRC_DIR}/scripts/works.js`
+    ])
+    .pipe($gp.plumber())
+    .pipe($webpack(require("./webpack.mp.config"), webpack))
+    .pipe(gulp.dest(`${config.DIST_DIR}`))
+    .pipe(reload({ stream: true }));
 });
 
 //рендерим странички
@@ -103,7 +79,7 @@ gulp.task("pug", () => {
 gulp.task("server", () => {
   browserSync.init({
     server: {
-      baseDir: `${config.DIST_DIR}`,
+      baseDir: `${config.DIST_DIR}`
     },
     open: false
   });

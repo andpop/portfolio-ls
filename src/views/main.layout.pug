@@ -8,7 +8,7 @@ html(lang="ru")
     meta(content="ie=edge" http-equiv="x-ua-compatible")
     meta(content="width=device-width, initial-scale=1" name="viewport")
     
-    title #{title}
+    title Portfolio | #{title}
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
     link(rel='stylesheet' href='main.min.css')
   body
@@ -19,7 +19,6 @@ html(lang="ru")
       include ./common/footer.pug
 
     include ./components/entry.pug  
-    script(src='main.bundle.js')
-
     
-    
+    script(src='vendor.bundle.js')
+    block scripts

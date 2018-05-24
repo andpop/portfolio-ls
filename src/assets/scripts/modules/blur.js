@@ -12,7 +12,6 @@ const setBg = e => {
   const bg = form.children[0]; 
 
   bg.style.backgroundPositionY = `${-form.offsetTop}px`;
-  // console.log('asdas', document.getElementById('test').offsetParent);
 };
 
 document.addEventListener("DOMContentLoaded", setBg);

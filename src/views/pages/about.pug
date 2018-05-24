@@ -1,7 +1,10 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Главная страница'
+  - var title = 'Обо мне'
+
+block scripts
+  script(src='about.bundle.js')
 
 block content
   include ../common/hero.pug

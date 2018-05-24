@@ -1,10 +1,10 @@
 const webpack = require("webpack");
 const path = require("path");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    'admin': path.resolve(__dirname, "src/admin/main.js")
+    admin: path.resolve(__dirname, "src/admin/main.js")
   },
   output: {
     path: path.resolve(__dirname, "dist/admin"),
@@ -67,11 +67,14 @@ module.exports = {
     hints: false
   },
   devtool: "#eval-source-map",
-  plugins: [new HtmlWebpackPlugin({
-    title: 'Admin Vue App',
-    filename: 'index.html',
-    template: path.resolve(__dirname, 'src/admin/index.html')
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Admin Vue App",
+      filename: "index.html",
+      template: path.resolve(__dirname, "src/admin/index.html")
+    }),
+    
+  ]
 };
 
 if (process.env.NODE_ENV) {

@@ -83,7 +83,7 @@ if (process.env.NODE_ENV) {
 }
 
 if (process.env.NODE_ENV === "production") {
-  module.exports.devtool = "#source-map";
+  module.exports.devtool = "";
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       "process.env": {

@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev:mp": "cross-env NODE_ENV=development gulp",
-    "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --config webpack.spa.config.js --open --hot",
+    "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules"
   },
   "keywords": [],
   "author": "",

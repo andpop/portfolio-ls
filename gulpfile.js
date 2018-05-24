@@ -10,8 +10,6 @@ const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 const $webpack = require("webpack-stream");
 const webpack = require("webpack");
-const mergeStream = require("merge-stream");
-const moduleImporter = require("sass-module-importer");
 const del = require("del");
 
 // стили

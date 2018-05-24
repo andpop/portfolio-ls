@@ -1,5 +1,6 @@
 const gulp = require("gulp");
 const config = require("./gulp.paths.json");
+const env = process.env.NODE_ENV;
 
 // плагины галпа отдельно подключать не нужно,
 // используем в пайпе как $gp.имяПлагина (без приставки gulp-)
@@ -26,20 +27,22 @@ gulp.task("styles", () => {
     require("postcss-advanced-variables"),
     require("postcss-nested"),
     require("postcss-rgb"),
+    require("postcss-inline-comment"),
     require("postcss-inline-svg")({
       removeFill: true,
       path: "./src/assets/images/icons"
     }),
-    require("postcss-svgo")
+    require("postcss-svgo"),
+    require("cssnano")()
   ];
 
   return gulp
     .src(`${config.SRC_DIR}/styles/main.scss`)
-    .pipe($gp.plumber())
     .pipe($gp.sourcemaps.init())
+    .pipe($gp.plumber())
     .pipe($gp.postcss(plugins))
-    .pipe($gp.sourcemaps.write("."))
     .pipe($gp.rename("main.min.css"))
+    .pipe($gp.if(env === 'development', $gp.sourcemaps.write()))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -154,6 +157,7 @@ gulp.task(
     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
   )
 );
+
 
 // GULP:RUN
 gulp.task(

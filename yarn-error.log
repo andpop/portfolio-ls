@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn start styles
+  /usr/local/bin/node /usr/local/bin/yarn start clear
 
 PATH: 
   /Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/Users/wowua/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin
@@ -8741,7 +8741,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c gulp styles
+  Arguments: -c gulp clear
   Directory: /Users/wowua/Workspace/ls-portfolio-frontend
   Output:
   

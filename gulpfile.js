@@ -13,27 +13,24 @@ const mergeStream = require("merge-stream");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
 
-const autoprefixer = require('autoprefixer');
-
 // стили
 gulp.task("styles", () => {
   const plugins = [
-    require('postcss-easy-import')({
-      extensions : '.scss'
+    require("postcss-easy-import")({
+      extensions: ".scss"
     }),
-    autoprefixer({
+    require("autoprefixer")({
       browsers: ["last 2 versions"],
       cascade: false
     }),
     require("postcss-advanced-variables"),
     require("postcss-nested"),
     require("postcss-rgb"),
-    
-    // require("postcss-inline-svg")({
-    //   removeFill: true,
-    //   path: "./src/assets/img"
-    // }),
-    // require("postcss-svgo")
+    require("postcss-inline-svg")({
+      removeFill: true,
+      path: "./src/assets/images/icons"
+    }),
+    require("postcss-svgo")
   ];
 
   return gulp
@@ -41,8 +38,8 @@ gulp.task("styles", () => {
     .pipe($gp.plumber())
     .pipe($gp.sourcemaps.init())
     .pipe($gp.postcss(plugins))
-    .pipe($gp.sourcemaps.write('.'))
-    .pipe($gp.rename('main.min.css'))
+    .pipe($gp.sourcemaps.write("."))
+    .pipe($gp.rename("main.min.css"))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -96,33 +93,29 @@ gulp.task("server", () => {
 
 // спрайт иконок + инлайн svg
 gulp.task("svg", done => {
-  const prettySvgs = () => {
-    return gulp
-      .src(`${config.SRC_DIR}/images/icons/*.svg`)
-      .pipe(
-        $gp.svgmin({
-          js2svg: {
-            pretty: true
-          }
-        })
-      )
-      .pipe(
-        $gp.cheerio({
-          run($) {
-            $("[fill], [stroke], [style], [width], [height]")
-              .removeAttr("fill")
-              .removeAttr("stroke")
-              .removeAttr("style")
-              .removeAttr("width")
-              .removeAttr("height");
-          },
-          parserOptions: { xmlMode: true }
-        })
-      )
-      .pipe($gp.replace("&gt;", ">"));
-  };
-
-  let svgSprite = prettySvgs()
+  return gulp
+    .src(`${config.SRC_DIR}/images/icons/*.svg`)
+    .pipe(
+      $gp.svgmin({
+        js2svg: {
+          pretty: true
+        }
+      })
+    )
+    .pipe(
+      $gp.cheerio({
+        run($) {
+          $("[fill], [stroke], [style], [width], [height]")
+            .removeAttr("fill")
+            .removeAttr("stroke")
+            .removeAttr("style")
+            .removeAttr("width")
+            .removeAttr("height");
+        },
+        parserOptions: { xmlMode: true }
+      })
+    )
+    .pipe($gp.replace("&gt;", ">"))
     .pipe(
       $gp.svgSprite({
         mode: {
@@ -133,14 +126,6 @@ gulp.task("svg", done => {
       })
     )
     .pipe(gulp.dest(`${config.DIST_DIR}/assets/images/icons`));
-
-  let svgInline = prettySvgs().pipe(
-    $gp.sassInlineSvg({
-      destDir: `${config.SRC_DIR}/styles/icons/`
-    })
-  );
-
-  return mergeStream(svgSprite, svgInline);
 });
 
 // просто переносим картинки

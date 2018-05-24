@@ -29,14 +29,14 @@
   margin-right: 10px;
 
   &_skype {
-    background-image: inline-svg('skype', $green);
+    background-image: svg-load('skype.svg', fill=$green);
   }
 
   &_envelope {
-    background-image: inline-svg('envelope', $green);
+    background-image: svg-load('envelope.svg', fill=$green);
   }
 
   &_phone {
-    background-image: inline-svg('phone', $green);
+    background-image: svg-load('phone.svg', fill=$green);
   }
 }

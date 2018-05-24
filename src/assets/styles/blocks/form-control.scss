@@ -52,7 +52,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: inline-svg("check", #fff) center center / contain no-repeat;
+    background: svg-load("check.svg", fill=#fff) center center / contain no-repeat;
     width: 11px;
     height: 9px;
   }

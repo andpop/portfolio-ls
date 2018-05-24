@@ -12,8 +12,8 @@ const skill = {
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
-      const persents = (dashOffset / 100) * (100 - this.skillPercents);
-      
+      const persents = dashOffset / 100 * (100 - this.skillPercents);
+
       circle.style.strokeDashoffset = persents;
     }
   },
@@ -34,7 +34,6 @@ const skillsRow = {
 
 new Vue({
   el: "#skill-list-component",
-  template: "#skills-list",
   components: {
     skillsRow
   },
@@ -44,5 +43,6 @@ new Vue({
   mounted() {
     const data = require("../../../data/skills.json");
     this.skills = data;
-  }
+  },
+  template: "#skills-list"
 });

@@ -47,7 +47,6 @@ const buttons = {
 
 new Vue({
   el: "#slider-component",
-  template: "#slider",
   components: {
     info,
     display,
@@ -55,21 +54,23 @@ new Vue({
   },
   data: {
     works: [],
-    currentIndex: 0
+    currentIndex: 0,
+    currentWork: {}
   },
-  computed: {
-    currentWork() {
+  watch: {
+    currentIndex(value) {
       const worksAmount = this.works.length - 1;
 
-      if (this.currentIndex > worksAmount) {
-        this.currentIndex = 0;
-      }
+      if (value > worksAmount) this.currentIndex = 0;
 
-      if (this.currentIndex < 0) {
-        this.currentIndex = worksAmount;
-      }
-      return this.works[this.currentIndex];
+      if (value < 0) this.currentIndex = worksAmount;
+
+      this.currentWork = this.works[value];
     }
+  },
+  created() {
+    this.works = require("../../../data/works.json");
+    this.currentWork = this.works[0];
   },
   methods: {
     handleSlide(direction) {
@@ -83,7 +84,5 @@ new Vue({
       }
     }
   },
-  created() {
-    this.works = require("../../../data/works.json");
-  }
+  template: "#slider"
 });

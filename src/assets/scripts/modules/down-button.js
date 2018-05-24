@@ -31,8 +31,7 @@ const windowScrollTo = (reqmove, duration) => {
 };
 
 document.querySelector("#down-arrow").addEventListener("click", e => {
-  const heroHeight = document.querySelector('.hero').clientHeight;
+  const heroHeight = document.querySelector(".hero").clientHeight;
 
   windowScrollTo(heroHeight, 300);
-
 });

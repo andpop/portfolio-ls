@@ -9,7 +9,7 @@ const getOffset = element => {
 
 const setBg = e => {
   const form = document.getElementById("blurred-form");
-  const bg = form.children[0]; 
+  const bg = form.children[0];
 
   bg.style.backgroundPositionY = `${-form.offsetTop}px`;
 };

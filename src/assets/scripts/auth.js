@@ -1,2 +1,2 @@
-import './modules/auth-btn';
-import './modules/parallax';
+import "./modules/auth-btn";
+import "./modules/parallax";

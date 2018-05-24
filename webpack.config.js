@@ -72,8 +72,7 @@ module.exports = {
       title: "Admin Vue App",
       filename: "index.html",
       template: path.resolve(__dirname, "src/admin/index.html")
-    }),
-    
+    })
   ]
 };
 

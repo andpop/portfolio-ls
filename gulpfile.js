@@ -151,6 +151,7 @@ gulp.task("watch", () => {
 gulp.task(
   "build",
   gulp.series(
+    "clean",
     "svg",
     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
   )

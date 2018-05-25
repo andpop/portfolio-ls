@@ -1,0 +1,56 @@
+.preloader {
+  background: $green;
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+
+  &.active {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.preloader__animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preloader__circles {
+  width: 112px;
+  height: 112px;
+}
+
+
+.preloader__circle {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  transition: 1s;
+
+  &_back {
+    stroke: #55cccc;
+  }
+
+  &_middle {
+    stroke: #b7eeee;
+  }
+  &_front {
+    stroke: #c6e9e9;
+  }
+}
+
+.preloader__text {
+  fill: #fff;
+}

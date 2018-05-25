@@ -40,7 +40,7 @@ gulp.task("styles", () => {
     .pipe($gp.plumber())
     .pipe($gp.postcss(plugins))
     .pipe($gp.rename("main.min.css"))
-    .pipe($gp.if(env === 'development', $gp.sourcemaps.write()))
+    .pipe($gp.if(env === "development", $gp.sourcemaps.write()))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -66,7 +66,7 @@ gulp.task("scripts", () => {
       `${config.SRC_DIR}/scripts/works.js`
     ])
     .pipe($gp.plumber())
-    .pipe($webpack(require("./webpack.mp.config"), webpack))
+    .pipe($webpack(require("./webpack.mpa.config"), webpack))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -135,7 +135,7 @@ gulp.task("images", () => {
       `${config.SRC_DIR}/images/**/*.*`,
       `!${config.SRC_DIR}/images/icons/*.*`
     ])
-    .pipe($gp.if(env === 'production', $gp.imagemin()))
+    .pipe($gp.if(env === "production", $gp.imagemin()))
     .pipe(gulp.dest(`${config.DIST_DIR}/assets/images/`));
 });
 
@@ -156,7 +156,6 @@ gulp.task(
     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
   )
 );
-
 
 // GULP:RUN
 gulp.task(

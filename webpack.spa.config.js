@@ -18,19 +18,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
+        use: ["vue-style-loader", "css-loader", "postcss-loader"]
       },
       {
         test: /\.vue$/,
         loader: "vue-loader",
         options: {
           loaders: {
-            scss: ["vue-style-loader", "css-loader", "sass-loader"],
-            sass: [
-              "vue-style-loader",
-              "css-loader",
-              "sass-loader?indentedSyntax"
-            ]
+            scss: ["vue-style-loader", "css-loader", "postcss-loader"]
           }
         }
       },

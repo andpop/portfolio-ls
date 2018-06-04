@@ -21,6 +21,12 @@ module.exports = {
         use: ["vue-style-loader", "css-loader", "postcss-loader"]
       },
       {
+        enforce: "pre",
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
         test: /\.vue$/,
         loader: "vue-loader",
         options: {

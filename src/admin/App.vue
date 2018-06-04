@@ -5,11 +5,9 @@
 <script>
 export default {
   components: {
-    appTitle: require('./components/title').default
+    appTitle: require("./components/title").default
   }
-}
+};
 </script>
-
 <style>
-
 </style>

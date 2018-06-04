@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn reg
+  /usr/local/bin/node /usr/local/bin/yarn build
 
 PATH: 
   /Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/Users/wowua/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin
@@ -23,7 +23,7 @@ npm manifest:
       "dev:mpa": "cross-env NODE_ENV=development gulp",
       "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --config webpack.spa.config.js --open --hot",
       "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules",
-      "reg" : "node reg-util.js"
+      "reg": "node reg-util.js"
     },
     "keywords": [],
     "author": "",
@@ -10230,7 +10230,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c node reg-util.js
+  Arguments: -c  cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules
   Directory: /Users/wowua/Workspace/ls-portfolio-frontend
   Output:
   

@@ -9,15 +9,8 @@ html(lang="en")
     title Portfolio | welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    .preloader.active#preloader 
-      .preloader__animation
-        svg.preloader__circles
-          circle(cx="56" cy="56" r="50" width='100' height='100').preloader__circle.preloader__circle_back
-          circle(cx="56" cy="56" r="40").preloader__circle.preloader__circle_middle
-          circle(cx="56" cy="56" r="30").preloader__circle.preloader__circle_front
-          text(text-anchor="middle"  x="58" y="60").preloader__text 0%
     
     block content
 
-    script(src="./vendor.bundle.js")
+    script(src="./bootloader.bundle.js")
     script(src="./auth.bundle.js")

@@ -4,11 +4,11 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   entry: {
-    vendor: ["vue"],
     about: "./src/assets/scripts/about.js",
     auth: "./src/assets/scripts/auth.js",
     works: "./src/assets/scripts/works.js",
-    blog: "./src/assets/scripts/blog.js"
+    blog: "./src/assets/scripts/blog.js",
+    vendor: ["vue"]
   },
   output: {
     filename: "[name].bundle.js",
@@ -32,8 +32,7 @@ module.exports = {
   plugins: [
     new UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      minChunks: Infinity
+      name: ["vendor", "bootloader"]
     })
   ],
   resolve: {
@@ -44,3 +43,12 @@ module.exports = {
   },
   devtool: env === "development" ? "#eval-source-map" : ""
 };
+
+if (env === "production") {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      warnings: false
+    })
+  ]);
+}

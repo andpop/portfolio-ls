@@ -6,7 +6,8 @@
   "scripts": {
     "dev:mpa": "cross-env NODE_ENV=development gulp",
     "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --config webpack.spa.config.js --open --hot",
-    "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules"
+    "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules",
+    "reg" : "node reg-util.js"
   },
   "keywords": [],
   "author": "",
@@ -68,7 +69,10 @@
   ],
   "dependencies": {
     "normalize.css": "^7.0.0",
+    "promptly": "^3.0.3",
     "pug": "^2.0.3",
+    "request": "^2.87.0",
+    "signale": "^1.1.0",
     "vue": "2.5.13"
   }
 }

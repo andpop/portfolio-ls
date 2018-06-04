@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const config = require("./gulp.paths.json");
+const config = require("./env.paths.json");
 const env = process.env.NODE_ENV;
 
 // плагины галпа отдельно подключать не нужно,
@@ -40,11 +40,7 @@ gulp.task("clean", () => {
 // собираем скрипты webpack
 gulp.task("scripts", () => {
   return gulp
-    .src([
-      `${config.SRC_DIR}/scripts/about.js`,
-      `${config.SRC_DIR}/scripts/auth.js`,
-      `${config.SRC_DIR}/scripts/works.js`
-    ])
+    .src(`${config.SRC_DIR}/scripts/*.js`)
     .pipe($gp.plumber())
     .pipe($webpack(require("./webpack.mpa.config"), webpack))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
@@ -71,7 +67,7 @@ gulp.task("server", () => {
   });
 });
 
-// спрайт иконок + инлайн svg
+// спрайт иконок
 gulp.task("svg", done => {
   return gulp
     .src(`${config.SRC_DIR}/images/icons/*.svg`)
@@ -128,16 +124,7 @@ gulp.task("watch", () => {
   gulp.watch(`${config.VIEWS_DIR}/**/*.pug`, gulp.series("pug"));
 });
 
-gulp.task(
-  "build",
-  gulp.series(
-    "clean",
-    "svg",
-    gulp.parallel("styles", "pug", "images", "fonts", "scripts")
-  )
-);
-
-// GULP:RUN
+// GULP:DEV
 gulp.task(
   "default",
   gulp.series(
@@ -145,5 +132,15 @@ gulp.task(
     "svg",
     gulp.parallel("styles", "pug", "images", "fonts", "scripts"),
     gulp.parallel("watch", "server")
+  )
+);
+
+// GULP:build
+gulp.task(
+  "build",
+  gulp.series(
+    "clean",
+    "svg",
+    gulp.parallel("styles", "pug", "images", "fonts", "scripts")
   )
 );

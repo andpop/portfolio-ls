@@ -70,7 +70,9 @@
   ],
   "dependencies": {
     "normalize.css": "^7.0.0",
+    "postcss-loader": "^2.1.5",
     "postcss-scss": "^1.0.5",
+    "prettier": "^1.13.4",
     "pug": "^2.0.3",
     "vue": "2.5.13"
   }

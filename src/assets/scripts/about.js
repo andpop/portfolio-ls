@@ -1,1 +1,1 @@
-import "./modules/expample";
+import "./modules/example";

@@ -14,31 +14,11 @@ const del = require("del");
 
 // стили
 gulp.task("styles", () => {
-  const plugins = [
-    require("postcss-easy-import")({
-      extensions: ".scss"
-    }),
-    require("autoprefixer")({
-      browsers: ["last 2 versions"],
-      cascade: false
-    }),
-    require("postcss-advanced-variables"),
-    require("postcss-nested"),
-    require("postcss-rgb"),
-    require("postcss-inline-comment"),
-    require("postcss-inline-svg")({
-      removeFill: true,
-      path: "./src/assets/images/icons"
-    }),
-    require("postcss-svgo"),
-    require("cssnano")()
-  ];
-
   return gulp
     .src(`${config.SRC_DIR}/styles/main.scss`)
     .pipe($gp.sourcemaps.init())
     .pipe($gp.plumber())
-    .pipe($gp.postcss(plugins))
+    .pipe($gp.postcss(require("./postcss.config")))
     .pipe($gp.rename("main.min.css"))
     .pipe($gp.if(env === "development", $gp.sourcemaps.write()))
     .pipe(gulp.dest(`${config.DIST_DIR}`))

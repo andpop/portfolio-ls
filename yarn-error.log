@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn start
+  /usr/local/bin/node /usr/local/bin/yarn dev
 
 PATH: 
-  /Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/Users/wowua/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin
+  /Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/wowua/.rvm/gems/ruby-2.4.0/bin:/Users/wowua/.rvm/gems/ruby-2.4.0@global/bin:/Users/wowua/.rvm/rubies/ruby-2.4.0/bin:/Users/wowua/.cargo/bin:/usr/local/Cellar/php/7.2.4_1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/Users/wowua/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/wowua/.composer/vendor/bin:/usr/local/bin
 
 Yarn version: 
   1.5.1
@@ -20,7 +20,7 @@ npm manifest:
     "description": "",
     "main": "gulpfile.js",
     "scripts": {
-      "dev:mp": "cross-env NODE_ENV=development gulp",
+      "dev:mpa": "cross-env NODE_ENV=development gulp",
       "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --config webpack.spa.config.js --open --hot",
       "build": " cross-env NODE_ENV=production gulp build; cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules"
     },
@@ -10426,7 +10426,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 Trace: 
-  Error: Command "start" not found.
+  Error: Command "dev" not found.
       at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:87307:17
       at Generator.next (<anonymous>)

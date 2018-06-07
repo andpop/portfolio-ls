@@ -1,0 +1,30 @@
+.welcome-board {
+  background-color: rgba(#1c1f29, 0.5);
+  color           : #ffffff;
+  font-family     : Roboto;
+  width           : 380px;
+  text-align      : center;
+  padding-top     : 40px;
+  position        : absolute;
+  top             : 50%;
+  left            : 50%;
+  transform       : translateX(-50%) translateY(-50%);
+}
+
+.welcome-board__photo {
+  width        : 140px;
+  height       : 140px;
+  border-radius: 50%;
+}
+
+.welcome-board__name {
+  font-size  : 28px;
+  font-weight: 500;
+}
+
+.welcome-board__title {
+  font-size    : 16px;
+  font-weight  : 400;
+  margin-bottom: 35px;
+}
+

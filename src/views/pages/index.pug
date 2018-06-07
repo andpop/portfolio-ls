@@ -1,6 +1,40 @@
-extends ../auth.layout.pug
+include ../common/_mixins
 
-block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | welcome page
+    link(rel="stylesheet", href="main.min.css")
+  body
+    .wrapper.wrapper--welcome
+      .welcome-board
+        +image('photo.png', 'Фотография', 'welcome-board__photo')
+        .welcome-board__name Владимир Астахов
+        .welcome-board__title Личный сайт веб-разработчика
+        .welcome-board__social.social
+          ul.social__list 
+            li.social__item 
+              a.social__link(href="#")
+                +icon('vk', 'social__icon')
+            li.social__item 
+              a.social__link(href="#")
+                +icon('github', 'social__icon')
+            li.social__item 
+              a.social__link(href="#")
+                +icon('in', 'social__icon')
+        nav.nav.nav--welcome
+           ul.nav__list.nav__list--welcome
+            li.nav__item.nav__item--welcome
+              a.nav__link(href="#") Мои работы
+            li.nav__item.nav__item--welcome
+              a.nav__link(href="#") Обо мне
+            li.nav__item.nav__item--welcome
+              a.nav__link(href="#") Блог
+
+
+
+      .footer.footer--welcome
+        span.footer__text &copy; Владимир Астахов | создано с любовью в LoftSchool | 2018

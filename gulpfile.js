@@ -1,16 +1,16 @@
 const gulp = require("gulp");
 const config = require("./env.paths.json");
-const env = process.env.NODE_ENV;
+const env    = process.env.NODE_ENV;
 
 // плагины галпа отдельно подключать не нужно,
 // используем в пайпе как $gp.имяПлагина (без приставки gulp-)
 const $gp = require("gulp-load-plugins")();
 
 const browserSync = require("browser-sync").create();
-const reload = browserSync.reload;
-const $webpack = require("webpack-stream");
-const webpack = require("webpack");
-const del = require("del");
+const reload      = browserSync.reload;
+const $webpack    = require("webpack-stream");
+const webpack     = require("webpack");
+const del         = require("del");
 
 // стили
 gulp.task("styles", () => {
@@ -52,7 +52,7 @@ gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
-    .pipe($gp.pug())
+    .pipe($gp.pug({pretty:true}))              // 20180605 Добавил параметр pretty:true для форматирования выходных html-файлов
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
@@ -63,7 +63,7 @@ gulp.task("server", () => {
     server: {
       baseDir: `${config.DIST_DIR}`
     },
-    open: false
+    open: true
   });
 });
 

@@ -1,0 +1,14 @@
+.footer {
+  text-align      : center;
+  background-color: $bgcolor;
+  position        : absolute;
+  bottom          : 5%;
+  min-width       : 100%;
+}
+
+.footer__text {
+  color      : #ffffff;
+  font-family: Roboto;
+  font-size  : 16px;
+  font-weight: 300;
+}

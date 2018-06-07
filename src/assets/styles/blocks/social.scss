@@ -1,0 +1,12 @@
+.social__item {
+  display: inline-block;
+}
+
+.social__icon {
+  width : 30px;
+  height: 20px;
+  fill  : rgba(#004cd1, 0.7);
+  &:hover {
+    fill: #004cd1;
+  }
+}

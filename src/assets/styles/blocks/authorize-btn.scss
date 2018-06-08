@@ -1,0 +1,13 @@
+.authorize-btn__link {
+  text-decoration: none;
+  color          : #ffffff;
+  font-family    : Roboto;
+  font-size      : 16px;
+  font-weight    : 500;
+  border         : 1px solid #fff;
+  padding        : 10px 20px;
+  &:hover {
+    border          : none;
+    background-color: $dark-blue;
+  }
+}

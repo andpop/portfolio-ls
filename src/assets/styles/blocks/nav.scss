@@ -3,10 +3,11 @@
 }
 
 .nav__item--welcome {
-  height          : 45px;
-  width           : calc(100%/3);
-  border-right    : 2px solid rgba(#dee3e7, 0.5);
-  background-color: rgba($light-blue, 0.85);
+  height      : 45px;
+  width       : calc(100%/3);
+  border-right: 2px solid rgba(#dee3e7, 0.5);
+  // background-color: rgba($light-blue, 0.85);
+  background-color: $light-blue;
   font-family     : Roboto;
   font-size       : 16px;
   font-weight     : 500;
@@ -15,7 +16,8 @@
     border-right: none;
   }
   &:hover {
-    background-color: rgba($dark-blue, 0.85);
+    // background-color: rgba($dark-blue, 0.85);
+    background-color: $dark-blue;
   } 
 }
 

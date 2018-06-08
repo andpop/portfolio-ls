@@ -1,3 +1,24 @@
+.nav__list--welcome {
+  display: flex;
+}
+
+.nav__item--welcome {
+  height          : 45px;
+  width           : calc(100%/3);
+  border-right    : 2px solid rgba(#dee3e7, 0.5);
+  background-color: rgba($light-blue, 0.85);
+  font-family     : Roboto;
+  font-size       : 16px;
+  font-weight     : 500;
+  line-height     : 45px;
+  &:last-child {
+    border-right: none;
+  }
+  &:hover {
+    background-color: rgba($dark-blue, 0.85);
+  } 
+}
+
 .nav__link {
   text-decoration: none;
   color          : #fff;

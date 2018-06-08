@@ -1,3 +1,7 @@
+.social__list--welcome {
+  margin-bottom: 40px;
+}
+
 .social__item {
   display: inline-block;
 }
@@ -5,8 +9,8 @@
 .social__icon {
   width : 30px;
   height: 20px;
-  fill  : rgba(#004cd1, 0.7);
+  fill  : rgba($light-blue, 0.7);
   &:hover {
-    fill: #004cd1;
+    fill: $light-blue;
   }
 }

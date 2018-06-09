@@ -1,7 +1,47 @@
-extends ../auth.layout.pug
+include ../common/_mixins
 
-block content
-  //- .hello-world
-  //-   +icon('check', 'hello-world__block')
-  //-   .inlined-svg
-
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | Welcome page
+    link(rel="stylesheet", href="main.min.css")
+  body
+    .wrapper.welcome-page
+      .authorize-btn.welcome-page__authorize
+        a.authorize-btn__link(href="#") Авторизоваться
+      .welcome-board.welcome-page__board
+        .site-card.welcome-board__site-card
+          +image('photo.png', 'Фотография', 'site-card__photo')
+          .site-card__name Владимир Астахов
+          .site-card__title Личный сайт веб-разработчика
+        - 
+          var socials = [
+            ['vk', 'http://vk.com'],
+            ['github', 'http://gh.com'],
+            ['in', 'http://linkedin.com']
+          ]
+        .social.welcome-board__social
+          ul.social__list.social__list--welcome 
+            each item in socials
+              li.social__item.social__item--welcome
+                a.social__link(href=`${item[1]}`)
+                  +icon(item[0], 'social__icon')
+        -
+          var page_links = [
+            ['Мои работы', 'works.html'],
+            ['Обо мне', 'about.html'],
+            ['Блог', 'blog.html']
+          ]
+        //- nav.nav.nav--welcome.welcome-board__nav  // Не знаю, нужен ли класс welcome-board__nav ?
+        nav.nav.nav--welcome
+           ul.nav__list.nav__list--welcome
+            each item in page_links
+              li.nav__item.nav__item--welcome
+                a.nav__link(href=`${item[1]}`) #{item[0]}
+            
+      //- Нарушаем БЭМ - позиционируем блок .footer-bottom, но он на всех страницах расположен одинаково (в самом низу)
+      .footer-bottom.footer-bottom--welcome 
+        span.footer-bottom__text &copy; Владимир Астахов | создано с любовью в LoftSchool | 2018

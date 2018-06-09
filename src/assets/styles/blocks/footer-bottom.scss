@@ -1,13 +1,16 @@
-.footer {
+.footer-bottom {
   text-align      : center;
-  background-color: $bgcolor;
   position        : absolute;
-  bottom          : 5%;
+  bottom          : 2%;
   min-width       : 100%;
-  background-color: rgba(#fff,0);
+  background-color: rgba($bgcolor,0.5);
 }
 
-.footer__text {
+.footer-bottom--welcome {
+  background-color: rgba($bgcolor,0);
+}
+
+.footer-bottom__text {
   color      : #ffffff;
   font-family: Roboto;
   font-size  : 16px;

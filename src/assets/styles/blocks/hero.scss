@@ -1,0 +1,23 @@
+.hero {
+  background-color   : $bgcolor;
+  background-image   : url(assets/images/mountains-min.png);
+  background-size    : 100% auto;
+  background-position: bottom;
+  background-repeat  : no-repeat;
+  min-height         : 650px;
+  height             : 100vh;
+  position           : relative;
+  
+}
+
+.hero__links {
+  position: absolute;
+  left    : 3%;
+  top     : 3%;
+}
+
+.hero__menu {
+  position: absolute;
+  right   : 5%;
+  top     : 3%;
+}

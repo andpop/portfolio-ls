@@ -2,8 +2,127 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
+  - 
+    var socials = [
+      ['vk', 'http://vk.com'],
+      ['github', 'http://github.com'],
+      ['in', 'http://linkedin.com']
+    ]
 
 //- block scripts
 //-   script(src='about.bundle.js')
 
 block content
+  section.hero
+    .hero__links
+      ul.social_list.social__list--about
+        each item in socials
+          li.social__item.social__item--about
+            a.social__link(href=`${item[1]}`)
+              +icon(item[0], 'social__icon social__icon--white')
+    .hamburger.hero__menu
+      a.hamburger__link(href="")
+        .hamburger__bars
+      //- a(href="").hamburger
+
+    .hero__title
+      .section-title
+        img(src="", alt="").section-title__pic
+      
+      .user.hero__user
+        .user__pic
+          img.user__pic-img
+        .user__description
+          .user__name Владимир Астахов
+          .user__info Личный сайт разработчика
+
+    a(href="").down-btn.hero__down-btns
+
+  section.about
+    .about__left
+      .about__triangle
+        svg.triangle.triangle_fill_white
+
+      .about__left-title
+        .block-title Обо мне
+      .about__left-content
+        .user-description
+          .user-description__image
+            img.user-description__avatar
+          .user-description__data
+            .user-description__title
+              .block-subtitle Кто я 
+            .user-description__text.text-content
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. In tempore non modi ex quia deserunt, beatae sint explicabo consequuntur maxime cupiditate, aliquam repudiandae tenetur natus labore voluptatum fugiat totam veritatis.
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. In tempore non modi ex quia deserunt, beatae sint explicabo consequuntur maxime cupiditate, aliquam repudiandae tenetur natus labore voluptatum fugiat totam veritatis.
+    .about__right
+      .about__triangle
+        svg.triangle.triangle_fill_beige
+
+      .about__right-title
+        .block-subtitle Чем я могу быть вам полезен
+      .about__right-description.text-content
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit mollitia nemo reprehenderit ipsam corrupti deleniti, blanditiis sit magni fuga eveniet hic sint illo? Quae harum voluptatem optio ipsum blanditiis. 
+      .about__right-content
+        - 
+          var skills = [
+            ['Frontend', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
+            ['Backend', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
+            ['Workflow', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
+          ]
+
+        ul.skills-list
+          each skillsrow in skills
+            li.skills-list__item.skills-row
+              .skills-row__title #{skillsrow[0]}
+              ul.skills-row__list
+                each skill in skillsrow[1]
+                  li.skills-row__item
+                    figure.skill(data-percents="70")
+                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
+                      .skill__title #{skill[0]}
+                  
+  section.map
+    .google-map
+    .map__data
+      .contacts
+        h2.contacts__title
+          .block-subtitle Контакты
+        address.contacts__data
+          ul.contacts__list
+            - 
+              var contacts = [
+                ['skype', 'skype_kdn'],
+                ['skype', 'skype_kdn'],
+                ['skype', 'skype_kdn'],
+                ['skype', 'skype_kdn']
+              ]
+            each item in contacts
+              li.contacts__item.contacts-row
+                .contacts-row.contacts__icon
+                  +icon(`../${item[0]}`, 'contacts__icon-img')
+                .contacts-row.contacts__title #{item[1]}
+
+  footer.footer
+    .footer__row
+      .footer__col
+        nav.menu
+          ul.menu__list
+            each item in ['Мои работы', "Обо мне", "Блог", "Авторизация"]
+              li.menu__item
+                a(href="").menu__link #{item}
+
+      .footer__col.footer__col_justify_end
+        +socials(socials, 'socials_round')
+
+    .footer__row
+      .footer__col
+        .footer__text
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, explicabo quaerat vero ipsum corrupti facilis sit consequuntur, doloribus similique iste error, cupiditate ullam dignissimos minima. Ratione quod voluptates deserunt.
+      .footer__col.footer__col_justify_end
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, explicabo quaerat vero ipsum corrupti facilis sit consequuntur, doloribus similique iste error, cupiditate ullam dignissimos minima. Ratione quod voluptates deserunt.
+
+
+

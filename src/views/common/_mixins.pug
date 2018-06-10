@@ -11,3 +11,6 @@ mixin socials(socials, modClass)
       li.socials__item
         a(href=`${item[0]}`).socials__link
           +icon(item[1], 'socials__link-icon')
+
+mixin copyright-info
+  span.footer-bottom__text &copy; Андрей Попов | создано с любовью в LoftSchool | 2018

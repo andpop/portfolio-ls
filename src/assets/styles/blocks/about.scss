@@ -1,0 +1,26 @@
+.about {
+  display    : flex;
+  padding-top: 10px;
+}
+
+.about__left {
+  width           : 50%;
+  display         : flex;
+  background-color: $bgabout-left;
+  padding-right   : 20px;
+}
+
+.about__right {
+  width           : 50%;
+  background-color: $bgabout-right;
+  padding-left    : 30px;
+}
+
+.about__left-title {
+  text-align: center;
+  width     : 50%;
+}
+
+.about__left-content {
+  width: 50%;
+}

@@ -21,22 +21,19 @@ block content
             a.social__link(href=`${item[1]}`)
               +icon(item[0], 'social__icon social__icon--white')
     .hamburger.hero__menu
-      a.hamburger__link(href="")
+      a.hamburger__link(href="#")
         .hamburger__bars
       //- a(href="").hamburger
 
     .hero__title
-      .section-title
-        img(src="", alt="").section-title__pic
-      
-      .user.hero__user
-        .user__pic
-          img.user__pic-img
-        .user__description
-          .user__name Владимир Астахов
-          .user__info Личный сайт разработчика
+      .site-card
+        +image('photo.png', 'Фотография', 'site-card__photo')
+        .site-card__name Владимир Астахов
+        .site-card__title Личный сайт веб-разработчика
 
-    a(href="").down-btn.hero__down-btns
+    a(href="#", alt="Следующий экран").down-btn.hero__down-btn
+      +icon('arrow_down', 'down-btn__icon')
+
 
   section.about
     .about__left

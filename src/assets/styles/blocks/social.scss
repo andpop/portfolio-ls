@@ -1,7 +1,3 @@
-.social__list--welcome {
-  margin-bottom: 40px;
-}
-
 .social__item {
   display     : inline-block;
   font-size   : 0;
@@ -14,16 +10,20 @@
 .social__icon {
   width : 30px;
   height: 20px;
-  fill  : rgba($light-blue, 0.7);
+  // fill  : rgba($light-blue, 0.7);
   &:hover {
     fill: $light-blue;
   }
+}
+
+.social__icon--blue {
+  fill: rgba($light-blue, 0.7);
 }
 
 .social__icon--white {
   fill: #fff;
 }
 
-.social__icon--grey {
+.social__icon--gray {
   fill: rgba(#fff, 0.5);
 }

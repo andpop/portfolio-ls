@@ -1,6 +1,6 @@
 .about {
-  display    : flex;
-  padding-top: 10px;
+  display: flex;
+  // padding-top: 10px;
 }
 
 .about__left {
@@ -8,12 +8,31 @@
   display         : flex;
   background-color: $bgabout-left;
   padding-right   : 20px;
+  padding-top     : 10px;
 }
 
 .about__right {
   width           : 50%;
   background-color: $bgabout-right;
   padding-left    : 30px;
+  padding-top     : 10px;
+}
+
+.about__triangle {
+  display : block;
+  position: absolute;
+  top     : -150px;
+  width   : 50%;
+  height  : 150px;
+}
+
+.about__triangle--left {
+  left: 0;
+}
+
+.about__triangle--right {
+  right    : 0;
+  transform: scaleX(-1);
 }
 
 .about__right-description {

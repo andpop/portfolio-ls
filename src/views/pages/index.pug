@@ -2,12 +2,6 @@ extends ../welcome.layout.pug
 
 block variables
   - var title = 'Привет!';
-  - 
-    var socials = [
-      ['vk', 'http://vk.com'],
-      ['github', 'http://github.com'],
-      ['in', 'http://linkedin.com']
-    ]
   -
     var page_links = [
       ['Мои работы', 'works.html'],
@@ -26,11 +20,14 @@ block content
         .site-card__title Личный сайт веб-разработчика
 
       .social.welcome-board__social
-        ul.social__list.social__list--welcome 
-          each item in socials
-            li.social__item.social__item--welcome
-              a.social__link(href=`${item[1]}`)
-                +icon(item[0], 'social__icon')
+        - 
+          var socials = [
+            ['vk', 'http://vk.com'],
+            ['github', 'http://github.com'],
+            ['in', 'http://linkedin.com']
+          ]
+        +socialIcons('social__icon--blue')
+
       //- nav.nav.nav--welcome.welcome-board__nav  // Не знаю, нужен ли класс welcome-board__nav ?
       nav.nav.nav--welcome
         ul.nav__list.nav__list--welcome
@@ -40,6 +37,5 @@ block content
               
     //- Нарушаем БЭМ - позиционируем блок .footer-bottom, но он на всех страницах расположен одинаково (в самом низу)
     .footer-bottom.footer-bottom--welcome 
-      +copyright-info
-      //- span.footer-bottom__text &copy; Владимир Астахов | создано с любовью в LoftSchool | 2018
+      +copyrightInfo
 

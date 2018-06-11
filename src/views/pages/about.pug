@@ -2,31 +2,28 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
-  - 
-    var socials = [
-      ['vk', 'http://vk.com'],
-      ['github', 'http://github.com'],
-      ['in', 'http://linkedin.com']
-    ]
 
 //- block scripts
 //-   script(src='about.bundle.js')
 
 block content
   section.section.hero
+  
     .social.hero__links
-      ul.social_list.social__list--about
-        each item in socials
-          li.social__item.social__item--about
-            a.social__link(href=`${item[1]}`)
-              +icon(item[0], 'social__icon social__icon--white')
+      - 
+        var socials = [
+          ['vk', 'http://vk.com'],
+          ['github', 'http://github.com'],
+          ['in', 'http://linkedin.com']
+        ]
+    
+      +socialIcons('social__icon--white')
+
     .hamburger.hero__menu
-      a.hamburger__link(href="#")
+      a(href="#").hamburger__link
         .hamburger__bars
-      //- a(href="").hamburger
 
     .bigstars.hero__bigstars
-      //- +icon('stars1', 'bigstars__icon')
       +image('stars1.svg', 'Звезды', 'bigstars__icon')
     .hero__title
       .site-card
@@ -40,8 +37,8 @@ block content
 
   section.section.about
     .about__left
-      //- .about__triangle
-      //-   svg.triangle.triangle_fill_white
+      .triangle.about__triangle.about__triangle--left
+        +triangle('triangle--fill-left')
 
       .about__left-title
         h1.block-title Обо мне
@@ -49,17 +46,16 @@ block content
         .author-description
           .author-description__image
             +image('photo-full.jpg', 'Фото автора сайта', 'author-description__avatar')
-            //- img.author-description__avatar()
           .author-description__data
             .author-description__title
               h2.block-subtitle Кто я 
             .author-description__text.text-content
             p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-    .about__right
-      //- .about__triangle
-      //-   svg.triangle.triangle_fill_beige
 
+    .about__right
+      .triangle.about__triangle.about__triangle--right
+        +triangle('triangle--fill-right')
       .about__right-title
         .block-subtitle.block-subtitle--half-width Чем я могу быть вам полезен
       .about__right-description.text-content
@@ -79,7 +75,7 @@ block content
               ul.skills-row__list
                 each skill in skillsrow[1]
                   li.skills-row__item
-                    figure.skill(data-percents="70")
+                    figure(data-percents="70").skill
                       .svg-envelope
                         svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
                           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
@@ -124,13 +120,9 @@ block content
               each item in page_links
                 li.nav__item.nav__item--about
                   a.nav__link.nav__link--about(href=`${item[1]}`) #{item[0]}
+
           .social.footer__social
-            ul.social_list.social__list--about
-              each item in socials
-                li.social__item.social__item--about
-                  a.social__link(href=`${item[1]}`)
-                    +icon(item[0], 'social__icon social__icon--grey')
-                  
+            +socialIcons('social__icon--gray')
         
         .footer__contacts 
           p skype_kdn
@@ -139,27 +131,7 @@ block content
           p г. Новосибирск, ул. Инская, д.4
 
       .footer-bottom.footer-bottom--about 
-        +copyright-info
-
-
-  //- footer.footer
-  //-   .footer__row
-  //-     .footer__col
-  //-       nav.menu
-  //-         ul.menu__list
-  //-           each item in ['Мои работы', "Обо мне", "Блог", "Авторизация"]
-  //-             li.menu__item
-  //-               a(href="").menu__link #{item}
-
-  //-     .footer__col.footer__col_justify_end
-  //-       +socials(socials, 'socials_round')
-
-  //-   .footer__row
-  //-     .footer__col
-  //-       .footer__text
-  //-         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, explicabo quaerat vero ipsum corrupti facilis sit consequuntur, doloribus similique iste error, cupiditate ullam dignissimos minima. Ratione quod voluptates deserunt.
-  //-     .footer__col.footer__col_justify_end
-  //-       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, explicabo quaerat vero ipsum corrupti facilis sit consequuntur, doloribus similique iste error, cupiditate ullam dignissimos minima. Ratione quod voluptates deserunt.
+        +copyrightInfo
 
 
 

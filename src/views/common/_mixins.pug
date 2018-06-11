@@ -1,16 +1,42 @@
+//- Вставка иконки из svg-спрайта
 mixin icon(iconName, iconClass)
   svg(class=`${iconClass}`)
     use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
 
+//- Вставка изображения через тег img
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
-mixin socials(socials, modClass)
-  ul.socials(class=`${modClass}`)
-    each item in socials
-      li.socials__item
-        a(href=`${item[0]}`).socials__link
-          +icon(item[1], 'socials__link-icon')
+//- mixin socialArray
+//-   - 
+//-     var socials = [
+//-       ['vk', 'http://vk.com'],
+//-       ['github', 'http://github.com'],
+//-       ['in', 'http://linkedin.com']
+//-     ]
 
-mixin copyright-info
+//- Вставка социальных иконок с разными цветами
+mixin socialIcons(colorClass)
+  ul.social_list
+    each item in socials
+      li.social__item
+        a.social__link(href=`${item[1]}`)
+          +icon(item[0], `social__icon ${colorClass}`)
+
+//- Социалки от Сабанцева
+//- mixin socials(socials, modClass)
+//-   ul.socials(class=`${modClass}`)
+//-     each item in socials
+//-       li.socials__item
+//-         a(href=`${item[0]}`).socials__link
+//-           +icon(item[1], 'socials__link-icon')
+
+
+//- Информация для нижней части футера
+mixin copyrightInfo
   span.footer-bottom__text &copy; Андрей Попов | создано с любовью в LoftSchool | 2018
+
+//- Треугольник для левой части страниц
+mixin triangle(triangleClass)
+  svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+    polygon(points="0,0 0,100 100,100")

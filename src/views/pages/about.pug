@@ -25,6 +25,9 @@ block content
         .hamburger__bars
       //- a(href="").hamburger
 
+    .bigstars.hero__bigstars
+      //- +icon('stars1', 'bigstars__icon')
+      +image('stars1.svg', 'Звезды', 'bigstars__icon')
     .hero__title
       .site-card
         +image('photo.png', 'Фотография', 'site-card__photo')
@@ -134,8 +137,8 @@ block content
           p +7 931 200 93 24
           p г. Новосибирск, ул. Инская, д.4
 
-    //- .footer-bottom.footer-bottom--about 
-    //-   +copyright-info
+      .footer-bottom.footer-bottom--about 
+        +copyright-info
 
 
   //- footer.footer

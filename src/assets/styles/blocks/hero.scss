@@ -25,6 +25,13 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.hero__bigstars {
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .hero__down-btn {
   position: absolute;
   bottom  : 10%;

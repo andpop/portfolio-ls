@@ -67,23 +67,24 @@ block content
       .about__right-content
         - 
           var skills = [
-            ['Frontend', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
-            ['Backend', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
-            ['Workflow', [['Html5', 30], ['css3', 50], ['javascript', 70]]],
+            ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
+            ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70]]],
+            ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]],
           ]
 
         ul.skills-list
           each skillsrow in skills
             li.skills-list__item.skills-row
               .skills-row__title #{skillsrow[0]}
-              //- ul.skills-row__list
-              //-   each skill in skillsrow[1]
-              //-     li.skills-row__item
-              //-       figure.skill(data-percents="70")
-              //-         svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-              //-           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-              //-           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
-              //-         .skill__title #{skill[0]}
+              ul.skills-row__list
+                each skill in skillsrow[1]
+                  li.skills-row__item
+                    figure.skill(data-percents="70")
+                      .svg-envelope
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
+                      .skill__title #{skill[0]}
                   
   section.section.contacts-map
     //- .google-map

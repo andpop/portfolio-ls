@@ -34,12 +34,15 @@ block content
     a(href="#", alt="Следующий экран").down-btn.hero__down-btn
       +icon('arrow_down', 'down-btn__icon')
 
-
+    
   section.section.about
-    .about__left
+    .triangles
       .triangle.about__triangle.about__triangle--left
         +triangle('triangle--fill-left')
-
+      .triangle.about__triangle.about__triangle--right
+        +triangle('triangle--fill-right')
+        
+    .about__left
       .about__left-title
         h1.block-title Обо мне
       .about__left-content
@@ -54,8 +57,6 @@ block content
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
     .about__right
-      .triangle.about__triangle.about__triangle--right
-        +triangle('triangle--fill-right')
       .about__right-title
         .block-subtitle.block-subtitle--half-width Чем я могу быть вам полезен
       .about__right-description.text-content
@@ -64,7 +65,7 @@ block content
         - 
           var skills = [
             ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
-            ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70]]],
+            ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70], ['MongoDB', 70]]],
             ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]],
           ]
 
@@ -77,7 +78,7 @@ block content
                   li.skills-row__item
                     figure(data-percents="70").skill
                       .svg-envelope
-                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                        svg(width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
                           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
                           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_above
                       .skill__title #{skill[0]}
@@ -103,35 +104,35 @@ block content
                   +icon(`${item[0]}`, 'contacts__icon-img')
                 .contacts__text #{item[1]}
 
-    footer.footer
-      .footer__content 
-        .footer__info
-          p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-        .footer__nav
-          -
-            var page_links = [
-              ['Мои работы', 'works.html'],
-              ['Обо мне', 'about.html'],
-              ['Блог', 'blog.html'],
-              ['Авторизация', 'authorize.html']
-            ]
-          nav.nav.nav--about
-            ul.nav__list.nav__list--about
-              each item in page_links
-                li.nav__item.nav__item--about
-                  a.nav__link.nav__link--about(href=`${item[1]}`) #{item[0]}
+  footer.footer
+    .footer__content 
+      .footer__info
+        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+      .footer__nav
+        -
+          var page_links = [
+            ['Мои работы', 'works.html'],
+            ['Обо мне', 'about.html'],
+            ['Блог', 'blog.html'],
+            ['Авторизация', 'authorize.html']
+          ]
+        nav.nav.nav--about
+          ul.nav__list.nav__list--about
+            each item in page_links
+              li.nav__item.nav__item--about
+                a.nav__link.nav__link--about(href=`${item[1]}`) #{item[0]}
 
-          .social.footer__social
-            +socialIcons('social__icon--gray')
-        
-        .footer__contacts 
-          p skype_kdn
-          p astahov@gmail.com
-          p +7 931 200 93 24
-          p г. Новосибирск, ул. Инская, д.4
+        .social.footer__social
+          +socialIcons('social__icon--gray')
+      
+      .footer__contacts 
+        p skype_kdn
+        p astahov@gmail.com
+        p +7 931 200 93 24
+        p г. Новосибирск, ул. Инская, д.4
 
-      .footer-bottom.footer-bottom--about 
-        +copyrightInfo
+    .footer-bottom.footer-bottom--about 
+      +copyrightInfo
 
 
 

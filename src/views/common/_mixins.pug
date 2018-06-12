@@ -44,11 +44,9 @@ mixin sectionHero(title, subtitle)
         +image('photo.png', 'Фотография 9x12', 'site-card__photo')
         .site-card__name #{title}
         .site-card__title #{subtitle}
-        //- .site-card__name Андрей Попов
-        //- .site-card__title Личный сайт
 
-    a(href="#", alt="Следующий экран").down-btn.hero__down-btn
-      +icon('arrow_down', 'down-btn__icon')
+    a(href="#", alt="Следующий экран").arrow.hero__arrow-down
+      +icon('arrow_down', 'arrow__icon')
 
 
 //- Социалки от Сабанцева

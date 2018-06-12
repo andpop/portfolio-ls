@@ -18,28 +18,43 @@ block content
       .triangle.triangle--right
         +triangle('triangle--fill-works')
         
-    .works__title
-      h1.works-title Мои работы
+    h1.works__title Мои работы
     .works__left
-      .works__left-content
-        .work-site__details
-          .work-site__title Сайт школы онлайн-образования
-          .work-site__tools HTML, CSS, JavaScript
-          a(href="http://andpop.ru" target="_blank").work-site__link Посмотреть сайт
+      .project__details
+        .project__title Сайт школы онлайн-образования
+        .project__tools HTML, CSS, JavaScript
+        a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
 
     .works__right
-      .works__right-content
-        .slider.works__slider
-          .slider__current-item
+      .slider.works__slider
+        .slider__project.slider__project--current
+          +image('project2.jpg', 'Скриншоты проекта', 'project__image--full')
+        .slider__project.slider__project--prev
+          +image('project1.jpg', 'Предыдущий проект', 'project__image--small')
+          a(href="#", alt="Предыдущий проект").slider__button.slider__button--prev
+            +icon('arrow_down', 'arrow__icon')
+        .slider__project.slider__project--next
+          +image('project3.jpg', 'Следующий проект', 'project__image--small')
+          a(href="#", alt="Следующий проект").slider__button.slider__button--next
+            +icon('arrow_down', 'arrow_icon arrow__icon--up')
+
   
   section.section.comments
     .comments__title Что обо мне говорят
-    .comment.comments__comment
-      +image('photo1.png', 'Фотография', 'comment__photo')
-      .comment__text
-        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-      .comment__author Ковальчук Дмитрий
-      .comment__position основатель Loftschool
+
+    .comments__coments-list
+      .comment.comments__comment
+        +image('photo1.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .comment__author Ковальчук Дмитрий
+        .comment__position основатель Loftschool
+      .comment.comments__comment
+        +image('photo1.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
+        .comment__author Сабанцев Владимир
+        .comment__position преподаватель
     
     form(action="mail-me.php").feedback
       .feedback__title Связаться со мной
@@ -49,8 +64,8 @@ block content
       button(type="submit").feedback__submit
       button(type="reset").feedback__reset
             
-    a(href="#", alt="Предыдущий экран").up-btn.works__up-btn
-      +icon('arrow_down', 'up-btn__icon')
+    a(href="#", alt="Предыдущий экран").arrow.works__arrow-up
+      +icon('arrow_down', 'arrow__icon arrow__icon--up')
 
 
 

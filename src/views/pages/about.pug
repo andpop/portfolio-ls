@@ -2,38 +2,14 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
+  - var heroTitle = 'Андрей Попов'
+  - var heroSubtitle = 'Личный сайт веб-разработчика'
 
 //- block scripts
 //-   script(src='about.bundle.js')
 
 block content
-  section.section.hero
-  
-    .social.hero__links
-      - 
-        var socials = [
-          ['vk', 'http://vk.com'],
-          ['github', 'http://github.com'],
-          ['in', 'http://linkedin.com']
-        ]
-    
-      +socialIcons('social__icon--white')
-
-    .hamburger.hero__menu
-      a(href="#").hamburger__link
-        .hamburger__bars
-
-    .bigstars.hero__bigstars
-      +image('stars1.svg', 'Звезды', 'bigstars__icon')
-    .hero__title
-      .site-card
-        +image('photo.png', 'Фотография', 'site-card__photo')
-        .site-card__name Владимир Астахов
-        .site-card__title Личный сайт веб-разработчика
-
-    a(href="#", alt="Следующий экран").down-btn.hero__down-btn
-      +icon('arrow_down', 'down-btn__icon')
-
+  +sectionHero(heroTitle, heroSubtitle)
     
   section.section.about
     .triangles
@@ -103,36 +79,6 @@ block content
                 .contacts__icon
                   +icon(`${item[0]}`, 'contacts__icon-img')
                 .contacts__text #{item[1]}
-
-  footer.footer
-    .footer__content 
-      .footer__info
-        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-      .footer__nav
-        -
-          var page_links = [
-            ['Мои работы', 'works.html'],
-            ['Обо мне', 'about.html'],
-            ['Блог', 'blog.html'],
-            ['Авторизация', 'authorize.html']
-          ]
-        nav.nav.nav--about
-          ul.nav__list.nav__list--about
-            each item in page_links
-              li.nav__item.nav__item--about
-                a.nav__link.nav__link--about(href=`${item[1]}`) #{item[0]}
-
-        .social.footer__social
-          +socialIcons('social__icon--gray')
-      
-      .footer__contacts 
-        p skype_kdn
-        p astahov@gmail.com
-        p +7 931 200 93 24
-        p г. Новосибирск, ул. Инская, д.4
-
-    .footer-bottom.footer-bottom--about 
-      +copyrightInfo
 
 
 

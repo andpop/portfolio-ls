@@ -1,9 +1,11 @@
 .hero {
-  background-color   : $bgcolor;
-  background-image   : url(assets/images/mountains-min.png);
-  background-size    : 100% auto;
-  background-position: bottom;
-  background-repeat  : no-repeat;
+  background: url(assets/images/mountains-min.png) bottom no-repeat,
+  url(assets/images/stars1.svg) center no-repeat;
+  background-color: $bgcolor;
+  background-size : 100% auto, 480px auto;
+  // background-image   : url(assets/images/mountains-min.png);
+  // background-position: bottom;
+  // background-repeat  : no-repeat;
 }
 
 .hero__links {

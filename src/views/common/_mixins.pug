@@ -9,6 +9,12 @@ mixin image(imagePath, imageAlt, imageClass)
 
 //- Вставка социальных иконок с разными цветами
 mixin socialIcons(colorClass)
+  - 
+    var socials = [
+      ['vk', 'http://vk.com'],
+      ['github', 'http://github.com'],
+      ['in', 'http://linkedin.com']
+    ]
   ul.social_list
     each item in socials
       li.social__item
@@ -24,7 +30,25 @@ mixin triangle(triangleClass)
   svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
     polygon(points="0,0 0,100 100,100")
 
+mixin sectionHero(title, subtitle)
+  section.section.hero
+    .social.hero__links
+      +socialIcons('social__icon--white')
 
+    .hamburger.hero__menu
+      a(href="#").hamburger__link
+        .hamburger__bars
+
+    .hero__title
+      .site-card
+        +image('photo.png', 'Фотография 9x12', 'site-card__photo')
+        .site-card__name #{title}
+        .site-card__title #{subtitle}
+        //- .site-card__name Андрей Попов
+        //- .site-card__title Личный сайт
+
+    a(href="#", alt="Следующий экран").down-btn.hero__down-btn
+      +icon('arrow_down', 'down-btn__icon')
 
 
 //- Социалки от Сабанцева

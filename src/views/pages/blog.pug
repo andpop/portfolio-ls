@@ -20,17 +20,19 @@ block content
         
     .blog__left
       .blog__left-content
-      - 
-        var articles = [
-          ['Статья 1', '12 июня 2018'], 
-          ['Большая статья 2', '13 июня 2018'],
-          ['Очень большая статья 3', '14 июня 2018'],
-          ['Статья 4', '15 июня 2018']
-        ]
-      ul.titles__list
-        each article in articles
+        - 
+          var articles = [
+            ['Статья 1', '12 июня 2018'], 
+            ['Большая статья 2', '13 июня 2018'],
+            ['Очень очень очень очень большая статья 3', '14 июня 2018'],
+            ['Статья 4', '15 июня 2018']
+          ]
+        ul.titles__list
           li.titles__item
-            .articles__title.articles__title--small #{article[0]}
+            .articles__title.articles__title--small.articles__title--active Текущая статья
+          each article in articles
+            li.titles__item
+              .articles__title.articles__title--small #{article[0]}
 
     .blog__right
       .blog__right-content

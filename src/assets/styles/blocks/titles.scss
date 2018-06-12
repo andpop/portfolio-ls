@@ -1,3 +1,9 @@
 .titles__item {
-  text-align: right;
+  text-align   : right;
+  margin-bottom: 10px;
+  // padding-top   : 15px;
+  // padding-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -4,10 +4,26 @@
 }
 
 .blog__left {
-  width  : 500px;
+  width  : 20%;
   display: flex;
+  // background-color: gray;
+  flex-direction : row;
+  justify-content: flex-end;
+  margin-right   : 100px;
+  padding-top    : 70px;
+}
+
+.blog__left-content {
+  width: 280px;
 }
 
 .blog__right {
-  width: 740px;
+  padding-top: 70px;
+  // width: 80%;
+}
+
+.blog__right-content {
+  width        : 920px;
+  padding-left : 20px;
+  padding-right: 20px;
 }

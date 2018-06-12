@@ -1,0 +1,13 @@
+.blog {
+  display         : flex;
+  background-color: $bgblog;
+}
+
+.blog__left {
+  width  : 500px;
+  display: flex;
+}
+
+.blog__right {
+  width: 740px;
+}

@@ -1,0 +1,27 @@
+.articles__title--small {
+  color      : $blog-color;
+  font-family: Roboto;
+  font-size  : 16px;
+  font-weight: 400;
+}
+
+.articles__title--large {
+  color      : $text-color;
+  font-family: Sansus;
+  font-size  : 35px;
+  font-weight: 400;
+}
+
+.articles__date {
+  color      : $date-color;
+  font-family: Roboto;
+  font-size  : 16px;
+  font-weight: 400;
+}
+
+.articles__content {
+  color      : $blog-color;
+  font-family: Roboto;
+  font-size  : 16px;
+  font-weight: 400;
+}

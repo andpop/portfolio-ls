@@ -6,6 +6,9 @@ module.exports = {
   "text-color"   : "#474b57",
   "bgabout-left" : "#f2f0e8",
   "bgabout-right": "#eae8e2",
+  "bgblog"       : "#faf8f0",
+  "blog-color"   : "#455a64",
+  "date-color"   : "#5376B2",
   "circle-gray"  : "#dfdcd5",
   "circle-blue"  : "#004cd1"
 };

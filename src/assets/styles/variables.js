@@ -9,6 +9,7 @@ module.exports = {
   "bgblog"       : "#faf8f0",
   "blog-color"   : "#455a64",
   "date-color"   : "#5376B2",
+  "bgworks-right": "#e3e2de",
   "circle-gray"  : "#dfdcd5",
   "circle-blue"  : "#004cd1"
 };

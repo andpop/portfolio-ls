@@ -1,0 +1,56 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var heroTitle = 'Андрей Попов'
+  - var heroSubtitle = 'Личный сайт веб-разработчика'
+
+//- block scripts
+//-   script(src='works.bundle.js')
+
+block content
+  +sectionHero(heroTitle, heroSubtitle)
+    
+  section.section.works
+    .triangles
+      .triangle.triangle--left
+        +triangle('triangle--fill-works')
+      .triangle.triangle--right
+        +triangle('triangle--fill-works')
+        
+    .works__title
+      h1.works-title Мои работы
+    .works__left
+      .works__left-content
+        .work-site__details
+          .work-site__title Сайт школы онлайн-образования
+          .work-site__tools HTML, CSS, JavaScript
+          a(href="http://andpop.ru" target="_blank").work-site__link Посмотреть сайт
+
+    .works__right
+      .works__right-content
+        .slider.works__slider
+          .slider__current-item
+  
+  section.section.comments
+    .comments__title Что обо мне говорят
+    .comment.comments__comment
+      +image('photo1.png', 'Фотография', 'comment__photo')
+      .comment__text
+        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+      .comment__author Ковальчук Дмитрий
+      .comment__position основатель Loftschool
+    
+    form(action="mail-me.php").feedback
+      .feedback__title Связаться со мной
+      input(type="text" name="feedback-name").feedback__name
+      input(type="text" name="feedback-email").feedback__email
+      textarea(name="feedback-message", cols="30", rows="6").feedback__message
+      button(type="submit").feedback__submit
+      button(type="reset").feedback__reset
+            
+    a(href="#", alt="Предыдущий экран").up-btn.works__up-btn
+      +icon('arrow_down', 'up-btn__icon')
+
+
+

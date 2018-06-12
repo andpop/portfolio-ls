@@ -1,3 +1,21 @@
+.triangle {
+  display : block;
+  position: absolute;
+  top     : -150px;
+  width   : 50%;
+  height  : 150px;
+}
+
+.triangle--left {
+  left: 0;
+}
+
+.triangle--right {
+  right    : 0;
+  transform: scaleX(-1);
+}
+
+
 .triangle--fill-left {
   fill: $bgabout-left;
 }

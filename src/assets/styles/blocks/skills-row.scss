@@ -1,20 +1,22 @@
-.skills-row__title {
-  // color: #474b57;
-  font-family  : Roboto;
-  font-size    : 28px;
-  font-weight  : 500;
-  margin-bottom: 20px;
-  // line-height: 32px;
-}
+.skills-row {
 
-.skills-row__list {
-  display      : flex;
-  margin-bottom: 40px;
-}
-
-.skills-row__item {
-  margin-right: 40px;
-  &:last-child {
-    margin-right: 0;
+  &__title {
+    // color: #474b57;
+    font-family  : Roboto;
+    font-size    : 28px;
+    font-weight  : 500;
+    margin-bottom: 20px;
+  }
+  
+  &__list {
+    display      : flex;
+    margin-bottom: 40px;
+  }
+  
+  &__item {
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

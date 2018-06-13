@@ -4,19 +4,16 @@
   background-size    : 100% auto;
   background-position: bottom;
   background-repeat  : no-repeat;
-}
 
-.welcome-page__authorize {
-  position: absolute;
-  top     : 5%;
-  right   : 10%;
-}
-
-.welcome-page__board {
-  width      : 380px;
-  padding-top: 40px;
-  position   : absolute;
-  top        : 50%;
-  left       : 50%;
-  transform  : translateX(-50%) translateY(-50%);
+  &__authorize {
+    position: absolute;
+    top     : 5%;
+    right   : 10%;
+  }
+  
+  &__board {
+    width      : 380px;
+    padding-top: 40px;
+    @include block-center-absolute
+  }
 }

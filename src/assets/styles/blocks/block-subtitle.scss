@@ -6,6 +6,11 @@
   // line-height   : 41px;
   text-transform: uppercase;
 
+  &--half-width {
+    max-width: 300px;
+    margin   : 0 auto;
+  }
+
   &:after {
     content         : "";
     background-color: rgba(#474b57, 0.5);
@@ -16,7 +21,3 @@
   }
 }
 
-.block-subtitle--half-width {
-  max-width: 300px;
-  margin   : 0 auto;
-}

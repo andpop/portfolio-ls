@@ -2,23 +2,22 @@
   display       : flex;
   flex-direction: row;
   flex-wrap     : wrap;
-  // background-color: $bgblog;
+
+  &__title {
+    width         : 100%;
+    text-align    : center;
+    text-transform: uppercase;
+  }
+
+  &__left {
+    width           : 50%;
+    display         : flex;
+    background-color: $bgabout-left;
+  }
+  
+  &__right {
+    width           : 50%;
+    background-color: $bgworks-right;
+  }
 }
 
-.works__title {
-  width         : 100%;
-  text-align    : center;
-  text-transform: uppercase;
-}
-
-
-.works__left {
-  width           : 50%;
-  display         : flex;
-  background-color: $bgabout-left;
-}
-
-.works__right {
-  width           : 50%;
-  background-color: $bgworks-right;
-}

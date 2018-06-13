@@ -10,20 +10,20 @@
 .social__icon {
   width : 30px;
   height: 20px;
-  // fill  : rgba($light-blue, 0.7);
+
+  &--blue {
+    fill: rgba($light-blue, 0.7);
+  }
+  
+  &--white {
+    fill: #fff;
+  }
+  
+  &--gray {
+    fill: rgba(#fff, 0.5);
+  }
+
   &:hover {
     fill: $light-blue;
   }
-}
-
-.social__icon--blue {
-  fill: rgba($light-blue, 0.7);
-}
-
-.social__icon--white {
-  fill: #fff;
-}
-
-.social__icon--gray {
-  fill: rgba(#fff, 0.5);
 }

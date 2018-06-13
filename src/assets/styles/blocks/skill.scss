@@ -4,36 +4,32 @@
   width   : 120px;
   height  : 120px;
   margin  : 0;
-}
 
-.skill__fugure {
-  position : absolute;
-  top      : 0;
-  left     : 0;
-  width    : 100%;
-  height   : 100%;
-  transform: rotate(90deg);
-}
-
-.skill__circle {
-  fill        : transparent;
-  stroke      : $circle-gray;
-  stroke-width: 20px;
-}
-
-.skill__circle_above {
-  stroke           : $circle-blue;
-  stroke-dasharray : 251;
-  stroke-dashoffset: 50;
-}
-
-.skill__title {
-  position  : absolute;
-  font-size : 14px;
-  width     : 70px;
-  text-align: center;
-  top       : 50%;
-  left      : 50%;
-  transform : translateX(-50%) translateY(-50%);
-
+  &__fugure {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
+    transform: rotate(90deg);
+  }
+  
+  &__circle {
+    fill        : transparent;
+    stroke      : $circle-gray;
+    stroke-width: 20px;
+    
+    &--above {
+      stroke           : $circle-blue;
+      stroke-dasharray : 251;
+      stroke-dashoffset: 50;
+    }
+  }
+  
+  &__title {
+    font-size : 14px;
+    width     : 70px;
+    text-align: center;
+    @include block-center-absolute
+  }
 }

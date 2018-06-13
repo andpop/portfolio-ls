@@ -1,27 +1,31 @@
-.articles__title--small {
-  color         : $blog-color;
-  font-family   : Roboto;
-  font-size     : 16px;
-  font-weight   : 400;
-  padding-top   : 10px;
-  padding-bottom: 10px;
-  padding-right : 20px;
+.articles__title {
 
+  &--small {
+    color         : $blog-color;
+    font-family   : Roboto;
+    font-size     : 16px;
+    font-weight   : 400;
+    padding-top   : 10px;
+    padding-bottom: 10px;
+    padding-right : 20px;
+  
+  }
+  
+  &--active {
+    color       : $dark-blue;
+    font-weight : 700;
+    border-right: 3px solid $light-blue;
+  }
+  
+  &--large {
+    color        : $text-color;
+    font-family  : Sansus;
+    font-size    : 35px;
+    font-weight  : 400;
+    margin-bottom: 15px;
+  }
 }
 
-.articles__title--active {
-  color       : $dark-blue;
-  font-weight : 700;
-  border-right: 3px solid $light-blue;
-}
-
-.articles__title--large {
-  color        : $text-color;
-  font-family  : Sansus;
-  font-size    : 35px;
-  font-weight  : 400;
-  margin-bottom: 15px;
-}
 
 .articles__date {
   color        : $date-color;

@@ -6,20 +6,21 @@
   padding-bottom  : 10px;
   min-width       : 100%;
   background-color: rgba($bgcolor,0.5);
+
+  &--welcome {
+    background-color: rgba($bgcolor,0);
+  }
+  
+  &--about {
+    position        : relative;
+    background-color: rgba($dark-blue,0.85);
+  }
+  
+  &__text {
+    color      : #ffffff;
+    font-family: Roboto;
+    font-size  : 16px;
+    font-weight: 300;
+  }
 }
 
-.footer-bottom--welcome {
-  background-color: rgba($bgcolor,0);
-}
-
-.footer-bottom--about {
-  position        : relative;
-  background-color: rgba($dark-blue,0.85);
-}
-
-.footer-bottom__text {
-  color      : #ffffff;
-  font-family: Roboto;
-  font-size  : 16px;
-  font-weight: 300;
-}

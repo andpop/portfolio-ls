@@ -4,26 +4,29 @@
   top     : -150px;
   width   : 50%;
   height  : 150px;
+
+  &--left {
+    left: 0;
+  }
+  
+  &--right {
+    right    : 0;
+    transform: scaleX(-1);
+  }
+
+  &--fill {
+    &-left {
+      fill: $bgabout-left;
+    }
+    
+    &-right {
+      fill: $bgabout-right;
+    }
+    
+    &-blog {
+      fill: $bgblog;
+    }
+  }
 }
 
-.triangle--left {
-  left: 0;
-}
 
-.triangle--right {
-  right    : 0;
-  transform: scaleX(-1);
-}
-
-
-.triangle--fill-left {
-  fill: $bgabout-left;
-}
-
-.triangle--fill-right {
-  fill: $bgabout-right;
-}
-
-.triangle--fill-blog {
-  fill: $bgblog;
-}

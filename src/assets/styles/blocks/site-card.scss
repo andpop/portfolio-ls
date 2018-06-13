@@ -2,22 +2,23 @@
   text-align : center;
   font-family: Roboto;
   color      : #fff;
+
+  &__photo {
+    width        : 140px;
+    height       : 140px;
+    border-radius: 50%;
+  }
+  
+  &__name {
+    font-size  : 28px;
+    font-weight: 500;
+  }
+  
+  &__title {
+    font-size    : 16px;
+    font-weight  : 400;
+    margin-bottom: 35px;
+  }
 }
 
-.site-card__photo {
-  width        : 140px;
-  height       : 140px;
-  border-radius: 50%;
-}
-
-.site-card__name {
-  font-size  : 28px;
-  font-weight: 500;
-}
-
-.site-card__title {
-  font-size    : 16px;
-  font-weight  : 400;
-  margin-bottom: 35px;
-}
 

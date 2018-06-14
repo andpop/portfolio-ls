@@ -1,0 +1,71 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var heroTitle = 'Андрей Попов'
+  - var heroSubtitle = 'Личный сайт веб-разработчика'
+
+//- block scripts
+//-   script(src='works.bundle.js')
+
+block content
+  +sectionHero(heroTitle, heroSubtitle)
+    
+  section.section.works
+    .triangles
+      .triangle.triangle--left
+        +triangle('triangle--fill-works')
+      .triangle.triangle--right
+        +triangle('triangle--fill-works')
+        
+    h1.works__title Мои работы
+    .works__left
+      .project__details
+        .project__title Сайт школы онлайн-образования
+        .project__tools HTML, CSS, JavaScript
+        a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+
+    .works__right
+      .slider.works__slider
+        .slider__project.slider__project--current
+          +image('project2.jpg', 'Скриншоты проекта', 'project__image--full')
+        .slider__project.slider__project--prev
+          +image('project1.jpg', 'Предыдущий проект', 'project__image--small')
+          a(href="#", alt="Предыдущий проект").slider__button.slider__button--prev
+            +icon('arrow_down', 'arrow__icon')
+        .slider__project.slider__project--next
+          +image('project3.jpg', 'Следующий проект', 'project__image--small')
+          a(href="#", alt="Следующий проект").slider__button.slider__button--next
+            +icon('arrow_down', 'arrow_icon arrow__icon--up')
+
+  
+  section.section.comments
+    .comments__title Что обо мне говорят
+
+    .comments__coments-list
+      .comment.comments__comment
+        +image('photo1.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .comment__author Ковальчук Дмитрий
+        .comment__position основатель Loftschool
+      .comment.comments__comment
+        +image('photo1.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
+        .comment__author Сабанцев Владимир
+        .comment__position преподаватель
+    
+    form(action="mail-me.php").feedback
+      .feedback__title Связаться со мной
+      input(type="text" name="feedback-name").feedback__name
+      input(type="text" name="feedback-email").feedback__email
+      textarea(name="feedback-message", cols="30", rows="6").feedback__message
+      button(type="submit").feedback__submit
+      button(type="reset").feedback__reset
+            
+    a(href="#", alt="Предыдущий экран").arrow.works__arrow-up
+      +icon('arrow_down', 'arrow__icon arrow__icon--up')
+
+
+

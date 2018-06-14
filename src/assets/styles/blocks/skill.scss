@@ -1,0 +1,35 @@
+.skill {
+  display : block;
+  position: relative;
+  width   : 120px;
+  height  : 120px;
+  margin  : 0;
+
+  &__fugure {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
+    transform: rotate(90deg);
+  }
+  
+  &__circle {
+    fill        : transparent;
+    stroke      : $circle-gray;
+    stroke-width: 20px;
+    
+    &--above {
+      stroke           : $circle-blue;
+      stroke-dasharray : 251;
+      stroke-dashoffset: 50;
+    }
+  }
+  
+  &__title {
+    font-size : 14px;
+    width     : 70px;
+    text-align: center;
+    @include block-center-absolute
+  }
+}

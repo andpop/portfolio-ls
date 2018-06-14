@@ -1,0 +1,19 @@
+.welcome-page {
+  background-color   : $bgcolor;
+  background-image   : url(assets/images/mountains-min.png);
+  background-size    : 100% auto;
+  background-position: bottom;
+  background-repeat  : no-repeat;
+
+  &__authorize {
+    position: absolute;
+    top     : 5%;
+    right   : 10%;
+  }
+  
+  &__board {
+    width      : 380px;
+    padding-top: 40px;
+    @include block-center-absolute
+  }
+}

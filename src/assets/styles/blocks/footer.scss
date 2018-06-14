@@ -1,0 +1,35 @@
+.footer {
+  position        : absolute;
+  bottom          : 0;
+  display         : block;
+  background-color: rgba($bgwelcome, 0.85);
+  color           : #ffffff;
+  font-family     : Roboto;
+  font-size       : 16px;
+  font-weight     : 300;
+  line-height     : 24px;
+  width           : 100%;
+
+  &__content {
+    display       : flex;
+    flex-direction: row;
+    width         : 100%;
+    margin        : 20px;
+  }
+  
+  &__info {
+    width       : calc(100%/3);
+    border-right: 2px solid rgba(#fff, 0.2);
+  }
+  
+  &__nav {
+    width       : calc(100%/3);
+    border-right: 2px solid rgba(#fff, 0.2);
+    padding-left: 30px;
+  }
+  
+  &__contacts {
+    width       : calc(100%/3);
+    padding-left: 20px;
+  }
+}

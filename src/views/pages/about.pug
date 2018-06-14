@@ -2,9 +2,85 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
+  - var heroTitle = 'Андрей Попов'
+  - var heroSubtitle = 'Личный сайт веб-разработчика'
 
-block scripts
-  script(src='about.bundle.js')
+//- block scripts
+//-   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+  +sectionHero(heroTitle, heroSubtitle)
+    
+  section.section.about
+    .triangles
+      //- .triangle.about__triangle.about__triangle--left
+      .triangle.triangle--left
+        +triangle('triangle--fill-left')
+      //- .triangle.about__triangle.about__triangle--right
+      .triangle.triangle--right
+        +triangle('triangle--fill-right')
+        
+    .about__left
+      .about__left-title
+        h1.block-title Обо мне
+      .about__left-content
+        .author-description
+          .author-description__image
+            +image('photo-full.jpg', 'Фото автора сайта', 'author-description__avatar')
+          .author-description__data
+            .author-description__title
+              h2.block-subtitle Кто я 
+            .author-description__text.text-content
+            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+    .about__right
+      .about__right-title
+        .block-subtitle.block-subtitle--half-width Чем я могу быть вам полезен
+      .about__right-description.text-content
+        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
+      .about__right-content
+        - 
+          var skills = [
+            ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
+            ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70], ['MongoDB', 70]]],
+            ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
+          ]
+
+        ul.skills-list
+          each skillsrow in skills
+            li.skills-list__item.skills-row
+              .skills-row__title #{skillsrow[0]}
+              ul.skills-row__list
+                each skill in skillsrow[1]
+                  li.skills-row__item
+                    figure(data-percents="70").skill
+                      .svg-envelope
+                        svg(width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                          circle(cx="50" cy="50" r="40").skill__circle
+                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle--above
+                      .skill__title #{skill[0]}
+                  
+  section.section.contacts-map
+    //- .google-map
+    .contacts-map__data
+      .contacts
+        h2.contacts__title
+          .block-subtitle Контакты
+        address.contacts__data
+          ul.contacts__list
+            - 
+              var contacts = [
+                ['skype_n', 'skype_kdn'],
+                ['phone_n', '+7 931 200 93 24'],
+                ['envelope_n', 'astahov@gmail.com'],
+                ['map_n', 'Новосибирск, ул. Инская, д.14']
+              ]
+            each item in contacts
+              li.contacts__item
+                .contacts__icon
+                  +icon(`${item[0]}`, 'contacts__icon-img')
+                .contacts__text #{item[1]}
+
+
+

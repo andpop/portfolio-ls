@@ -1,0 +1,23 @@
+.block-subtitle {
+  font-family: Sansus;
+  font-size  : 35px;
+  font-weight: 400;
+  text-align : center;
+  // line-height   : 41px;
+  text-transform: uppercase;
+
+  &--half-width {
+    max-width: 300px;
+    margin   : 0 auto;
+  }
+
+  &:after {
+    content         : "";
+    background-color: rgba(#474b57, 0.5);
+    display         : block;
+    width           : 90px;
+    height          : 3px;
+    margin          : 10px auto 20px auto;
+  }
+}
+

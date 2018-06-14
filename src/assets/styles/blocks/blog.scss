@@ -1,0 +1,29 @@
+.blog {
+  display         : flex;
+  background-color: $bgblog;
+
+  &__left {
+    width          : 20%;
+    display        : flex;
+    flex-direction : row;
+    justify-content: flex-end;
+    margin-right   : 100px;
+    padding-top    : 70px;
+
+    &-content {
+      width: 280px;
+    }
+  }
+
+  &__right {
+    padding-top: 70px;
+
+    &-content {
+      width        : 920px;
+      padding-left : 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+

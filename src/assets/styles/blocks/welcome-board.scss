@@ -1,0 +1,10 @@
+.welcome-board {
+  background-color: rgba(#1c1f29, 0.5);
+  color           : #ffffff;
+  font-family     : Roboto;
+  text-align      : center;
+
+  &__social {
+    margin-bottom: 40px;
+  }
+}

@@ -1,2 +1,36 @@
+
 footer.footer
-  h2 Copyright &copy;
+  .footer__content 
+    .footer__info
+      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+    .footer__nav
+      -
+        var page_links = [
+          ['Мои работы', 'works.html'],
+          ['Обо мне', 'about.html'],
+          ['Блог', 'blog.html'],
+          ['Авторизация', 'authorize.html']
+        ]
+      nav.nav.nav--about
+        ul.nav__list.nav__list--about
+          each item in page_links
+            li.nav__item.nav__item--about
+              a.nav__link.nav__link--about(href=`${item[1]}`) #{item[0]}
+
+      .social.footer__social
+        - 
+          var socials = [
+            ['vk', 'http://vk.com'],
+            ['github', 'http://github.com'],
+            ['in', 'http://linkedin.com']
+          ]
+        +socialIcons('social__icon--gray')
+    
+    .footer__contacts 
+      p skype_kdn
+      p astahov@gmail.com
+      p +7 931 200 93 24
+      p г. Новосибирск, ул. Инская, д.4
+
+  .footer-bottom.footer-bottom--about 
+    +copyrightInfo

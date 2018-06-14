@@ -1,0 +1,32 @@
+.triangle {
+  display : block;
+  position: absolute;
+  top     : -150px;
+  width   : 50%;
+  height  : 150px;
+
+  &--left {
+    left: 0;
+  }
+  
+  &--right {
+    right    : 0;
+    transform: scaleX(-1);
+  }
+
+  &--fill {
+    &-left {
+      fill: $bgabout-left;
+    }
+    
+    &-right {
+      fill: $bgabout-right;
+    }
+    
+    &-blog {
+      fill: $bgblog;
+    }
+  }
+}
+
+

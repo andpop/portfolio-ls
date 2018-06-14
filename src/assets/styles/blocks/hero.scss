@@ -1,0 +1,34 @@
+.hero {
+  background: url(assets/images/mountains-min.png) bottom no-repeat,
+  url(assets/images/stars1.svg) center no-repeat;
+  background-color: $bgcolor;
+  background-size : 100% auto, 480px auto;
+  // background-image   : url(assets/images/mountains-min.png);
+  // background-position: bottom;
+  // background-repeat  : no-repeat;
+
+  &__links {
+    position: absolute;
+    left    : 3%;
+    top     : 3%;
+  }
+  
+  &__menu {
+    position: absolute;
+    right   : 5%;
+    top     : 3%;
+  }
+  
+  &__title {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  &__arrow-down {
+    position: absolute;
+    bottom  : 10%;
+    left    : 49%;
+  }
+}

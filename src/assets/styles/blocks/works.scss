@@ -1,0 +1,23 @@
+.works {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+
+  &__title {
+    width         : 100%;
+    text-align    : center;
+    text-transform: uppercase;
+  }
+
+  &__left {
+    width           : 50%;
+    display         : flex;
+    background-color: $bgabout-left;
+  }
+  
+  &__right {
+    width           : 50%;
+    background-color: $bgworks-right;
+  }
+}
+

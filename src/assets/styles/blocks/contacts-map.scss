@@ -1,0 +1,16 @@
+.contacts-map {
+  // background-color   : $bgcolor;
+  background-image   : url(assets/images/map.jpg);
+  background-size    : cover;
+  background-position: center center;
+  background-repeat  : no-repeat;
+
+  &__data {
+    width    : 580px;
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+

@@ -1,6 +1,40 @@
-extends ../auth.layout.pug
+extends ../welcome.layout.pug
+
+block variables
+  - var title = 'Привет!';
+  -
+    var page_links = [
+      ['Мои работы', 'works.html'],
+      ['Обо мне', 'about.html'],
+      ['Блог', 'blog.html']
+    ]
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  .wrapper.welcome-page
+    .authorize-btn.welcome-page__authorize
+      a.authorize-btn__link(href="#") Авторизоваться
+    .welcome-board.welcome-page__board
+      .site-card
+        +image('photo.png', 'Фотография', 'site-card__photo')
+        .site-card__name Андрей Попов
+        .site-card__title Личный сайт веб-разработчика
+
+      .social.welcome-board__social
+        - 
+          var socials = [
+            ['vk', 'http://vk.com'],
+            ['github', 'http://github.com'],
+            ['in', 'http://linkedin.com']
+          ]
+        +socialIcons('social__icon--blue')
+
+      nav.nav.nav--welcome
+        ul.nav__list.nav__list--welcome
+          each item in page_links
+            li.nav__item.nav__item--welcome
+              a.nav__link(href=`${item[1]}`) #{item[0]}
+              
+    //- Нарушаем БЭМ - позиционируем блок .footer-bottom, но он на всех страницах расположен одинаково (в самом низу)
+    .footer-bottom.footer-bottom--welcome 
+      +copyrightInfo
+

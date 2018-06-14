@@ -1,0 +1,16 @@
+.project {
+
+  &__details {
+    text-align: center;
+  }
+  
+  &__title {
+    color      : $text-color;
+    font-family: Sansus;
+    font-size  : 35px;
+    font-weight: 400;
+    // line-height: 41px;
+    text-transform: uppercase;
+    text-align    : center;
+  }
+}

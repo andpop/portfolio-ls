@@ -18,12 +18,13 @@ block content
       .triangle.triangle--right
         +triangle('triangle--fill-works')
         
-    h1.works__title Мои работы
+    h2.works__title Мои работы
     .works__left
       .project__details
         h3.project__title Сайт школы онлайн-образования
         .project__tools HTML, CSS, JavaScript
-        a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+        .project__btn
+          a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
 
     .works__right
       .slider.works__slider
@@ -40,23 +41,23 @@ block content
 
   
   section.section.comments
-    .comments__title Что обо мне говорят
+    h2.comments__title Что обо мне говорят
 
-    .comments__coments-list
+    .comments__comments-list
       .comment.comments__comment
-        +image('photo1.png', 'Фотография', 'comment__photo')
+        +image('userfiles/comment1.png', 'Фотография', 'comment__photo')
         .comment__text
           p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
         .comment__author Ковальчук Дмитрий
         .comment__position основатель Loftschool
       .comment.comments__comment
-        +image('photo1.png', 'Фотография', 'comment__photo')
+        +image('userfiles/comment2.png', 'Фотография', 'comment__photo')
         .comment__text
           p Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
         .comment__author Сабанцев Владимир
         .comment__position преподаватель
     
-    form(action="mail-me.php").feedback
+    form(action="mail-me.php").feedback.comments__feedback
       .feedback__title Связаться со мной
       input(type="text" name="feedback-name").feedback__name
       input(type="text" name="feedback-email").feedback__email

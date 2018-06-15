@@ -1,7 +1,15 @@
+.arrow {
+  display: block;
+  &--up {
+    transform: rotate(180deg);
+  }
+}
+
 .arrow__icon {
   width : 26px;
   height: 16px;
   fill  : #fff;
+  
   &:hover {
     fill: #fff;
   }

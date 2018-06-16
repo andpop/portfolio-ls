@@ -1,0 +1,43 @@
+.slider-container {
+  width: 100%;
+}
+
+.slider {
+  display      : grid;
+  grid-template: "info display" 70%
+  "info buttons" 30% / 1fr 1fr;
+  height    : 100vh;
+  min-height: 650px;
+
+  &__info-container {
+    grid-area       : info;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: $bgabout-left;
+  }
+
+  &__display {
+    grid-area       : display;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: $bgworks-right;
+  }
+
+  &__buttons {
+    grid-area: buttons;
+    display  : flex;
+  }
+
+  &__big-pic {
+    display   : block;
+    max-width : 90%;
+    max-height: 90%;
+  }
+  
+}
+
+// .slider-info {
+//   display: block;
+// }

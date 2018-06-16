@@ -19,25 +19,42 @@ block content
         +triangle('triangle--fill-works')
         
     h2.works__title Мои работы
-    .works__left
-      .project__details
-        h3.project__title Сайт школы онлайн-образования
-        .project__tools HTML, CSS, JavaScript
-        .project__btn
-          a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+    .slider-container
+      .slider
+        .slider__info-container
+          .slider__info.project__details
+            h3.project__title Сайт школы онлайн-образования
+            .project__tools HTML, CSS, JavaScript
+            .project__btn
+              a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+          
+        .slider__display
+          +image('content/slider/work-1.png', 'Скриншоты проекта', 'slider__big-pic')
 
-    .works__right
-      .slider.works__slider
-        .slider__project.slider__project--current
-          +image('project2.jpg', 'Скриншоты проекта', 'project__image--full')
-        .slider__project.slider__project--prev
-          +image('project1.jpg', 'Предыдущий проект', 'project__image--small')
-          a(href="#", alt="Предыдущий проект").slider__button.slider__button--prev.arrow
-            +icon('arrow_down', 'arrow__icon')
-        .slider__project.slider__project--next
-          +image('project3.jpg', 'Следующий проект', 'project__image--small')
-          a(href="#", alt="Следующий проект").slider__button.slider__button--next.arrow.arrow--up
-            +icon('arrow_down', 'arrow__icon')
+        .slider__buttons
+          .slider__button
+            .slider__button-img-wrap
+          .slider__button
+        
+    //- .works__left
+    //-   .project__details
+    //-     h3.project__title Сайт школы онлайн-образования
+    //-     .project__tools HTML, CSS, JavaScript
+    //-     .project__btn
+    //-       a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+
+    //- .works__right
+    //-   .slider.works__slider
+    //-     .slider__project.slider__project--current
+    //-       +image('project2.jpg', 'Скриншоты проекта', 'project__image--full')
+    //-     .slider__project.slider__project--prev
+    //-       +image('project1.jpg', 'Предыдущий проект', 'project__image--small')
+    //-       a(href="#", alt="Предыдущий проект").slider__button.slider__button--prev.arrow
+    //-         +icon('arrow_down', 'arrow__icon')
+    //-     .slider__project.slider__project--next
+    //-       +image('project3.jpg', 'Следующий проект', 'project__image--small')
+    //-       a(href="#", alt="Следующий проект").slider__button.slider__button--next.arrow.arrow--up
+    //-         +icon('arrow_down', 'arrow__icon')
 
   
   section.section.comments
@@ -45,13 +62,13 @@ block content
 
     .comments__comments-list
       .comment.comments__comment
-        +image('userfiles/comment1.png', 'Фотография', 'comment__photo')
+        +image('content/comments/comment1.png', 'Фотография', 'comment__photo')
         .comment__text
           p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
         .comment__author Ковальчук Дмитрий
         .comment__position основатель Loftschool
       .comment.comments__comment
-        +image('userfiles/comment2.png', 'Фотография', 'comment__photo')
+        +image('content/comments/comment2.png', 'Фотография', 'comment__photo')
         .comment__text
           p Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
         .comment__author Сабанцев Владимир

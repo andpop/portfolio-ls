@@ -34,28 +34,12 @@ block content
         .slider__buttons
           .slider__button
             .slider__button-img-wrap
-          .slider__button
+              +image('content/slider/work-4.png', 'Скриншоты проекта', 'slider__button-pic')
+
+          .slider__button.slider__button--next
+            .slider__button-img-wrap
+              +image('content/slider/work-2.png', 'Скриншоты проекта', 'slider__button-pic')
         
-    //- .works__left
-    //-   .project__details
-    //-     h3.project__title Сайт школы онлайн-образования
-    //-     .project__tools HTML, CSS, JavaScript
-    //-     .project__btn
-    //-       a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
-
-    //- .works__right
-    //-   .slider.works__slider
-    //-     .slider__project.slider__project--current
-    //-       +image('project2.jpg', 'Скриншоты проекта', 'project__image--full')
-    //-     .slider__project.slider__project--prev
-    //-       +image('project1.jpg', 'Предыдущий проект', 'project__image--small')
-    //-       a(href="#", alt="Предыдущий проект").slider__button.slider__button--prev.arrow
-    //-         +icon('arrow_down', 'arrow__icon')
-    //-     .slider__project.slider__project--next
-    //-       +image('project3.jpg', 'Следующий проект', 'project__image--small')
-    //-       a(href="#", alt="Следующий проект").slider__button.slider__button--next.arrow.arrow--up
-    //-         +icon('arrow_down', 'arrow__icon')
-
   
   section.section.comments
     h2.comments__title Что обо мне говорят
@@ -76,15 +60,16 @@ block content
     
     form(action="mail-me.php").feedback.comments__feedback
       .feedback__title Связаться со мной
-      input(type="text" name="feedback-name" placeholder="Ваше имя").feedback__input
-      input(type="text" name="feedback-email" placeholder="Ваш email").feedback__input
-      textarea(name="feedback-message"  placeholder="Ваше сообщение", cols="30", rows="6").feedback__input.feedback__message
+      .feedback__input-wrap
+        input(type="text" name="feedback-name" placeholder="Ваше имя").feedback__input
+        input(type="text" name="feedback-email" placeholder="Ваш email").feedback__input
+        textarea(name="feedback-message"  placeholder="Ваше сообщение", cols="30", rows="6").feedback__input.feedback__message
       .feedback__buttons
         button(type="submit").feedback__btn.feedback__btn--submit Отправить
         button(type="reset").feedback__btn.feedback__btn--reset Очистить
             
-    a(href="#", alt="Предыдущий экран").arrow.arrow--up.works__arrow-up
-      +icon('arrow_down', 'arrow__icon')
+    a(href="#", alt="Предыдущий экран").arrow.works__arrow-up
+      +icon('arrow_up', 'arrow__icon')
 
 
 

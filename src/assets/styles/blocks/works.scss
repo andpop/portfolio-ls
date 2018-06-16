@@ -3,6 +3,7 @@
   display       : flex;
   flex-direction: row;
   flex-wrap     : wrap;
+  margin-top    : -20vh;
 
   &__title {
     width           : 100%;
@@ -28,6 +29,10 @@
   &__right {
     width           : 50%;
     background-color: $bgworks-right;
+  }
+
+  &__arrow-up {
+    margin-bottom: 210px;
   }
 }
 

@@ -5,6 +5,7 @@
   flex-direction : column;
   align-items    : center;
   padding-top    : 40px;
+  min-height     : 1350px;
   
   &__title {
     display       : block;
@@ -37,6 +38,7 @@
   }
 
   &__feedback {
-    width: 380px;
+    width        : 380px;
+    margin-bottom: 70px;
   }
 }

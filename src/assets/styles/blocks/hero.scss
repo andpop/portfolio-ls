@@ -1,11 +1,16 @@
 .hero {
-  background: url(assets/images/bg/mountains-min.png) bottom no-repeat,
-  url(assets/images/bg/stars1.svg) center no-repeat;
+  // background: url(assets/images/bg/mountains-min.png) bottom no-repeat,
+  // background: url(assets/images/bg/hero-bg.jpg) bottom no-repeat,
+  // url(assets/images/bg/stars1.svg) center no-repeat;
+  // background-color: $bgcolor;
+  // background-size : 100% auto, 480px auto;
+
+  background      : url(assets/images/bg/hero-bg.jpg) bottom no-repeat;
   background-color: $bgcolor;
-  background-size : 100% auto, 480px auto;
-  // background-image   : url(assets/images/mountains-min.png);
-  // background-position: bottom;
-  // background-repeat  : no-repeat;
+  // background-size : 480px auto, 100% auto;
+  background-size: cover;
+  height         : 120vh;
+  padding-top    : 20vh;
 
   &__links {
     position: absolute;
@@ -20,15 +25,22 @@
   }
   
   &__title {
-    position : absolute;
-    top      : 50%;
-    left     : 50%;
-    transform: translateX(-50%) translateY(-50%);
+    // position  : absolute;
+    // top       : 50%;
+    // left      : 50%;
+    // transform : translateX(-50%) translateY(-50%);
+    // margin-top: -20vh;
+    background     : url(assets/images/bg/stars1.svg) center no-repeat;
+    background-size: contain;
+    width          : 450px;
+    height         : 400px;
+    margin         : 0 auto;
+    padding-top    : 98px;
   }
   
   &__arrow-down {
     position: absolute;
-    bottom  : 10%;
+    bottom  : 30vh;
     left    : 49%;
   }
 }

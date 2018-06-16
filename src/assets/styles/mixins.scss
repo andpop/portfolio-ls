@@ -4,3 +4,17 @@
   left     : 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+@mixin circle($width, $color) {
+  width           : $width;
+  height          : $width;
+  border-radius   : $width/2;
+  background-color: $color;
+}
+
+@mixin round($width, $color) {
+  border       : 1px solid $color;
+  width        : $width;
+  height       : $width;
+  border-radius: $width/2;
+}

@@ -1,11 +1,12 @@
 .comments {
-  background     : url(assets/images/bg/pharos-bg.jpg) center no-repeat;
-  background-size: cover;
-  display        : flex;
-  flex-direction : column;
-  align-items    : center;
-  padding-top    : 40px;
-  min-height     : 1350px;
+  background      : url(assets/images/bg/pharos-bg.jpg) center no-repeat;
+  background-size : cover;
+  background-color: $bgcolor;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  padding-top     : 40px;
+  min-height      : 1350px;
   
   &__title {
     display       : block;

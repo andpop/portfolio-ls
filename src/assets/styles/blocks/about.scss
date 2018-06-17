@@ -24,11 +24,31 @@
   &__left-title {
     text-align: center;
     width     : 50%;
+    position  : relative;
   }
   
   &__left-content {
     width: 50%;
   }  
+
+  &__title-with-stars {
+    position: relative;
+    z-index : 0;
+
+    &:before {
+      content         : "";
+      width           : 260px;
+      height          : 170px;
+      position        : absolute;
+      left            : 50%;
+      top             : -50px;
+      transform       : translateX(-50%) rotate(180deg);
+      background      : url(assets/images/bg/stars2.svg) center no-repeat;
+      background-size : contain;
+      background-color: transparent;
+      z-index         : -1;
+    }
+  }
 }
 
 

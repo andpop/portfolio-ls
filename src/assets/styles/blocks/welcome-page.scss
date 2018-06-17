@@ -12,6 +12,7 @@
   }
   
   &__board {
+    // display    : none;
     width      : 380px;
     padding-top: 40px;
     @include block-center-absolute

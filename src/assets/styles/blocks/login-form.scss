@@ -3,18 +3,34 @@
   flex-direction : column;
   justify-content: flex-start;
   align-items    : center;
+  
+  &__input-wrap {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    margin-bottom : 40px;
+  }
 
   &__input {
-    width         : 295px;
-    margin-bottom : 20px;
-    padding-top   : 10px;
-    padding-bottom: 10px;
-    padding-left  : 10px;
+    width        : 340px;
+    height       : 45px;
+    margin-bottom: 20px;
+    border       : none;
+    // padding-top   : 10px;
+    // padding-bottom: 10px;
+    padding-left: 60px;
 
-    &-wrap {
-      display       : flex;
-      flex-direction: column;
-      align-items   : center;
+    &--login {
+      // background     : svg-load('login.svg', fill=#c4cbcd) left center no-repeat;
+      background      : url(assets/images/login.png) left center no-repeat;
+      background-size : 44px auto;
+      background-color: #fff;
+    }
+
+    &--password {
+      background      : url(assets/images/password.png) left center no-repeat;
+      background-size : 44px auto;
+      background-color: #fff;
     }
   }
 
@@ -91,9 +107,20 @@
   }
 
   &__btn {
-    width          : 50%;
-    text-decoration: none;
-    color          : #fff;
-    
+    width           : 50%;
+    height          : 45px;
+    text-decoration : none;
+    color           : #fff;
+    background-color: $light-blue;
+    line-height     : 45px;
+    border-right    : 2px solid rgba(#dee3e7, 0.5);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: $dark-blue;
+    }
   }
 }

@@ -11,9 +11,9 @@
     transition     : 0.5s;
   }
   
-  .container:hover .card {
-    transform: rotateY(180deg);
-  }
+  // .container:hover .card {
+  //   transform: rotateY(180deg);
+  // }
   
   .face {
     position           : absolute;
@@ -37,6 +37,6 @@
     background: green;
   }
   
-  .container:hover .front {
-    z-index: 0;
-  }
+  // .container:hover .front {
+  //   z-index: 0;
+  // }

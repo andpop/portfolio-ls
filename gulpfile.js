@@ -63,7 +63,7 @@ gulp.task("server", () => {
     server: {
       baseDir: `${config.DIST_DIR}`
     },
-    open: true
+    open: false
   });
 });
 

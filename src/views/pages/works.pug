@@ -4,6 +4,8 @@ block variables
   - var title = 'Мои работы'
   - var headerTitle = 'Андрей Попов'
   - var headerSubtitle = 'Личный сайт веб-разработчика'
+  - var triangleColor = "#0d1120"
+  
 
 //- block scripts
 //-   script(src='works.bundle.js')
@@ -12,11 +14,12 @@ block content
   +header(headerTitle, headerSubtitle)
     
   section.section.works
-    .triangles
-      .triangle.triangle--left
-        +triangle('triangle--fill-works')
-      .triangle.triangle--right
-        +triangle('triangle--fill-works')
+    +triangles(`${triangleColor}`, `${triangleColor}`, 0.85)
+    //- .triangles
+    //-   .triangle.triangle--left
+    //-     +triangle('triangle--fill-works')
+    //-   .triangle.triangle--right
+    //-     +triangle('triangle--fill-works')
         
     h2.works__title Мои работы
     .slider-container

@@ -30,6 +30,17 @@ mixin triangle(triangleClass)
   svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
     polygon(points="0,0 0,100 100,100")
 
+//- Два треугольника с фоновыми цветами
+mixin triangles(colorLeft, colorRight, opacity)
+  .triangles
+    .triangle.triangle--left
+      svg(width="100%" height="100%" fill=`${colorLeft}` fill-opacity=`${opacity}` viewBox="0 0 100 100" preserveAspectRatio="none")
+        polygon(points="0,0 0,100 100,100")
+    .triangle.triangle--right
+      svg(width="100%" height="100%" fill=`${colorRight}`  fill-opacity=`${opacity}` viewBox="0 0 100 100" preserveAspectRatio="none")
+        polygon(points="0,0 0,100 100,100")
+
+
 mixin header(title, subtitle)
   header.header
     .social.header__links

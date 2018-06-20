@@ -14,23 +14,23 @@
     transform: scaleX(-1);
   }
 
-  &--fill {
-    &-left {
-      fill: $bgabout-left;
-    }
+  // &--fill {
+  //   &-left {
+  //     fill: $bgabout-left;
+  //   }
     
-    &-right {
-      fill: $bgabout-right;
-    }
+  //   &-right {
+  //     fill: $bgabout-right;
+  //   }
     
-    &-blog {
-      fill: $bgblog;
-    }
+  //   &-blog {
+  //     fill: $bgblog;
+  //   }
 
-    &-works {
-      fill: rgba(#0d1120, 0.85);
-    }
-  }
+  //   &-works {
+  //     fill: rgba(#0d1120, 0.85);
+  //   }
+  // }
 }
 
 

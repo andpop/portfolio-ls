@@ -4,6 +4,9 @@ block variables
   - var title = 'Обо мне'
   - var headerTitle = 'Андрей Попов'
   - var headerSubtitle = 'Личный сайт веб-разработчика'
+  - var triangleLeftColor = "#f2f0e8"
+  - var triangleRightColor = "#eae8e2"
+
 
 //- block scripts
 //-   script(src='about.bundle.js')
@@ -12,11 +15,13 @@ block content
   +header(headerTitle, headerSubtitle)
     
   section.section.about
-    .triangles
-      .triangle.triangle--left
-        +triangle('triangle--fill-left')
-      .triangle.triangle--right
-        +triangle('triangle--fill-right')
+    +triangles(`${triangleLeftColor}`, `${triangleRightColor}`, 1)
+
+    //- .triangles
+    //-   .triangle.triangle--left
+    //-     +triangle('triangle--fill-left')
+    //-   .triangle.triangle--right
+    //-     +triangle('triangle--fill-right')
         
     .about__left
       .about__left-title

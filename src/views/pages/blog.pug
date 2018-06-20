@@ -4,20 +4,20 @@ block variables
   - var title = 'Блог'
   - var headerTitle = 'БЛОГ'
   - var headerSubtitle = 'Статьи, которые я написал'
+  - var triangleColor = "#faf8f0"
 
 //- block scripts
 //-   script(src='blog.bundle.js')
 
 block content
   +header(headerTitle, headerSubtitle)
-    
   section.section.blog
-    .triangles
-      .triangle.triangle--left
-        +triangle('triangle--fill-blog')
-      .triangle.triangle--right
-        +triangle('triangle--fill-blog')
-        
+    +triangles(`${triangleColor}`, `${triangleColor}`, 1)
+    //- .triangles
+    //-   .triangle.triangle--left
+    //-     +triangle('triangle--fill-blog')
+    //-   .triangle.triangle--right
+    //-     +triangle('triangle--fill-blog')
     .blog__left
       .blog__left-content
         - 

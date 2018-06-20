@@ -4,10 +4,15 @@ block variables
   - var title = 'Привет!';
 
 block content
-  .wrapper.welcome-page
-    //- .authorize-btn.welcome-page__authorize
+  .welcome
+    video.video(autoplay loop)
+      source.source(src="./assets/media/night.mp4", type="video/mp4")
+    .mountains
+      +image('mountains-min.png', 'Горы', 'mountains__img')
+  
+    //- .authorize-btn.welcome__authorize
     //-   a.authorize-btn__link(href="#") Авторизоваться
-    .welcome-board.welcome-page__board
+    .welcome-board.welcome__board
       h1.login__title Авторизуйтесь
       form(action="authorize.php").login-form.login__form
         .login-form__input-wrap

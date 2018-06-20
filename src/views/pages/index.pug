@@ -10,7 +10,7 @@ block variables
     ]
 
 block content
-  .welcome-page
+  .welcome
     //- Тестовый блок для проверки крутящегося блока (backface)
     //- <div class="container">
     //-   <div class="card">
@@ -24,9 +24,14 @@ block content
     //-   </div>
     //- </div>
 
-    .authorize-btn.welcome-page__authorize
+    video.video(autoplay loop)
+      source.source(src="./assets/media/night.mp4", type="video/mp4")
+    .mountains
+      +image('mountains-min.png', 'Горы', 'mountains__img')
+
+    .authorize-btn.welcome__authorize
       a.authorize-btn__link(href="login.html") Авторизоваться
-    .welcome-board.welcome-page__board
+    .welcome-board.welcome__board
       .site-card
         +image('content/author.jpg', 'Фото автора сайта', 'site-card__photo')
         .site-card__name Андрей Попов

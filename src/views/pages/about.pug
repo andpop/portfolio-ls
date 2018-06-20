@@ -2,21 +2,19 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
-  - var heroTitle = 'Андрей Попов'
-  - var heroSubtitle = 'Личный сайт веб-разработчика'
+  - var headerTitle = 'Андрей Попов'
+  - var headerSubtitle = 'Личный сайт веб-разработчика'
 
 //- block scripts
 //-   script(src='about.bundle.js')
 
 block content
-  +header(heroTitle, heroSubtitle)
+  +header(headerTitle, headerSubtitle)
     
   section.section.about
     .triangles
-      //- .triangle.about__triangle.about__triangle--left
       .triangle.triangle--left
         +triangle('triangle--fill-left')
-      //- .triangle.about__triangle.about__triangle--right
       .triangle.triangle--right
         +triangle('triangle--fill-right')
         
@@ -31,8 +29,8 @@ block content
             .author-description__title
               h2.block-subtitle Кто я 
             .author-description__text.text-content
-            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
     .about__right
       .about__right-title

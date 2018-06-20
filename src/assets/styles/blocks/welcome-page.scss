@@ -1,4 +1,8 @@
 .welcome-page {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+
   background-color   : $bgcolor;
   background-image   : url(assets/images/bg/mountains-min.png);
   background-size    : 100% auto;

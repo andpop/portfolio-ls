@@ -2,14 +2,14 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Мои работы'
-  - var heroTitle = 'Андрей Попов'
-  - var heroSubtitle = 'Личный сайт веб-разработчика'
+  - var headerTitle = 'Андрей Попов'
+  - var headerSubtitle = 'Личный сайт веб-разработчика'
 
 //- block scripts
 //-   script(src='works.bundle.js')
 
 block content
-  +header(heroTitle, heroSubtitle)
+  +header(headerTitle, headerSubtitle)
     
   section.section.works
     .triangles

@@ -30,29 +30,31 @@ mixin triangle(triangleClass)
   svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
     polygon(points="0,0 0,100 100,100")
 
-mixin sectionHero(title, subtitle)
-  section.section.hero
-    .social.hero__links
+//- Два треугольника с фоновыми цветами
+mixin triangles(colorLeft, colorRight, opacity)
+  .triangles
+    .triangle.triangle--left
+      svg(width="100%" height="100%" fill=`${colorLeft}` fill-opacity=`${opacity}` viewBox="0 0 100 100" preserveAspectRatio="none")
+        polygon(points="0,0 0,100 100,100")
+    .triangle.triangle--right
+      svg(width="100%" height="100%" fill=`${colorRight}`  fill-opacity=`${opacity}` viewBox="0 0 100 100" preserveAspectRatio="none")
+        polygon(points="0,0 0,100 100,100")
+
+
+mixin header(title, subtitle)
+  header.header
+    .social.header__links
       +socialIcons('social__icon--white')
 
-    .hamburger.hero__menu
+    .hamburger.header__menu
       a(href="#").hamburger__link
         .hamburger__bars
-
-    .hero__title
+    .header__title
       .site-card
-        +image('photo.png', 'Фотография 9x12', 'site-card__photo')
+        +image('content/author.jpg', 'Фотография 9x12', 'site-card__photo')
         .site-card__name #{title}
         .site-card__title #{subtitle}
 
-    a(href="#", alt="Следующий экран").arrow.hero__arrow-down
+    a(href="#", alt="Следующий экран").arrow.header__arrow-down
       +icon('arrow_down', 'arrow__icon')
 
-
-//- Социалки от Сабанцева
-//- mixin socials(socials, modClass)
-//-   ul.socials(class=`${modClass}`)
-//-     each item in socials
-//-       li.socials__item
-//-         a(href=`${item[0]}`).socials__link
-//-           +icon(item[1], 'socials__link-icon')

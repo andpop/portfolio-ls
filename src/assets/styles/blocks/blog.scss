@@ -1,6 +1,7 @@
 .blog {
   display         : flex;
   background-color: $bgblog;
+  margin-top      : -20vh;
 
   &__left {
     width          : 20%;

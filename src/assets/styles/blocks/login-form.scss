@@ -1,0 +1,128 @@
+.login-form {
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-start;
+  align-items    : center;
+  
+  &__input-wrap {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    margin-bottom : 40px;
+  }
+
+  &__input {
+    width        : 340px;
+    height       : 45px;
+    margin-bottom: 20px;
+    border       : none;
+    outline: none;
+    color: $text-color;
+    // padding-top   : 10px;
+    // padding-bottom: 10px;
+    padding-left: 60px;
+
+    &--login {
+      // background     : svg-load('login.svg', fill=#c4cbcd) left center no-repeat;
+      background      : url(assets/images/login.png) left center no-repeat;
+      background-size : 44px auto;
+      background-color: #fff;
+    }
+
+    &--password {
+      background      : url(assets/images/password.png) left center no-repeat;
+      background-size : 44px auto;
+      background-color: #fff;
+    }
+  }
+
+  &__is-human {
+    margin-bottom: 20px;
+  }
+
+  &__checkbox-human {
+    display: none;
+  }
+
+  &__label-human:before {
+    content         : "";
+    background-color: $light-blue;
+    width           : 20px;
+    height          : 20px;
+    display         : inline-block;
+    margin-right    : 10px;
+    vertical-align  : middle;
+    cursor          : pointer;
+  }
+  
+  &__checkbox-human:checked + &__label-human:before {
+    background-color: $light-blue;
+    background      : svg-load('check.svg', fill=#ffffff) center center no-repeat / contain;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__human-confirm {
+    display       : flex;
+    flex-direction: row;
+  }
+
+  &__trigger {
+    margin-right: 70px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  // &__trigger-icon {
+  //   @include circle(20px, #fff)
+  // }
+  &__label-confirm:before {
+    content         : "";
+    background-color: #fff;
+    border-radius   : 50%;
+    display         : inline-block;
+    width           : 20px;
+    height          : 20px;
+    margin-right    : 10px;
+    // margin: -2px 0.625rem 0 0;
+    vertical-align: middle;
+    cursor        : pointer;
+  }
+
+  &__radio:checked + &__label-confirm:before {
+    background-color: $light-blue;
+    border          : 6px solid white;
+    box-sizing      : border-box;
+  }
+  
+  &__buttons {
+    display       : flex;
+    flex-direction: row;
+    width         : 100%;
+  }
+
+  &__btn {
+    width           : 50%;
+    height          : 45px;
+    text-decoration : none;
+    color           : #fff;
+    background-color: $light-blue;
+    line-height     : 45px;
+    border-right    : 2px solid rgba(#dee3e7, 0.5);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+  }
+}

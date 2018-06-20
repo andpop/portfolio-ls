@@ -1,0 +1,42 @@
+extends ../welcome.layout.pug
+
+block variables
+  - var title = 'Привет!';
+
+block content
+  .welcome
+    video.video(autoplay loop)
+      source.source(src="./assets/media/night.mp4", type="video/mp4")
+    .mountains
+      +image('mountains-min.png', 'Горы', 'mountains__img')
+  
+    //- .authorize-btn.welcome__authorize
+    //-   a.authorize-btn__link(href="#") Авторизоваться
+    .welcome-board.welcome__board
+      h1.login__title Авторизуйтесь
+      form(action="authorize.php").login-form.login__form
+        .login-form__input-wrap
+          input(type="text" name="login" placeholder="Логин" id="login").login-form__input.login-form__input--login
+          input(type="text" name="password" placeholder="Пароль" id="password").login-form__input.login-form__input--password
+          .login-form__is-human
+            input(type="checkbox" name="is-human" id="is-human").login-form__checkbox-human
+            label(for="is-human").login-form__label-human Я человек
+          
+          .login-form__text Вы точно не робот?
+
+          .login-form__human-confirm
+            .login-form__trigger
+              input(type="radio" id="human-yes" name="human-confirm" value="human-yes" checked).login-form__radio
+              label(for="human-yes").login-form__label-confirm Да
+            .login-form__trigger
+              input(type="radio" id="human-no" name="human-confirm" value="human-no").login-form__radio
+              label(for="human-no").login-form__label-confirm Не уверен
+        .login-form__buttons
+          a(href="").login-form__btn На главную
+          a(href="").login-form__btn Войти
+          
+              
+    //- Нарушаем БЭМ - позиционируем блок .footer-bottom, но он на всех страницах расположен одинаково (в самом низу)
+    .footer-bottom.footer-bottom--welcome 
+      +copyrightInfo
+

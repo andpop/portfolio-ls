@@ -2,27 +2,27 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Блог'
-  - var heroTitle = 'БЛОГ'
-  - var heroSubtitle = 'Статьи, которые я написал'
+  - var headerTitle = 'БЛОГ'
+  - var headerSubtitle = 'Статьи, которые я написал'
+  - var triangleColor = "#faf8f0"
 
 //- block scripts
 //-   script(src='blog.bundle.js')
 
 block content
-  +sectionHero(heroTitle, heroSubtitle)
-    
+  +header(headerTitle, headerSubtitle)
   section.section.blog
-    .triangles
-      .triangle.triangle--left
-        +triangle('triangle--fill-blog')
-      .triangle.triangle--right
-        +triangle('triangle--fill-blog')
-        
+    +triangles(`${triangleColor}`, `${triangleColor}`, 1)
+    //- .triangles
+    //-   .triangle.triangle--left
+    //-     +triangle('triangle--fill-blog')
+    //-   .triangle.triangle--right
+    //-     +triangle('triangle--fill-blog')
     .blog__left
       .blog__left-content
         - 
           var articles = [
-            ['Статья 1', '12 июня 2018'], 
+            ['Статья 1', '12 июня 2018'],
             ['Большая статья 2', '13 июня 2018'],
             ['Очень очень очень очень большая статья 3', '14 июня 2018'],
             ['Статья 4', '15 июня 2018']

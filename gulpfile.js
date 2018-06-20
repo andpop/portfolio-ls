@@ -32,6 +32,13 @@ gulp.task("fonts", () => {
     .pipe(gulp.dest(`${config.DIST_DIR}/assets/fonts/`));
 });
 
+// переносим медиа-файлы
+gulp.task("media", () => {
+  return gulp
+    .src(`${config.SRC_DIR}/media/**`)
+    .pipe(gulp.dest(`${config.DIST_DIR}/assets/media/`));
+});
+
 // очистка
 gulp.task("clean", () => {
   return del(config.ROOT_PATH);
@@ -63,7 +70,7 @@ gulp.task("server", () => {
     server: {
       baseDir: `${config.DIST_DIR}`
     },
-    open: true
+    open: false
   });
 });
 
@@ -121,6 +128,7 @@ gulp.task("watch", () => {
   gulp.watch(`${config.SRC_DIR}/images/**/*.*`, gulp.series("images"));
   gulp.watch(`${config.SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${config.SRC_DIR}/fonts/*`, gulp.series("fonts"));
+  gulp.watch(`${config.SRC_DIR}/media/*`, gulp.series("media"));
   gulp.watch(`${config.VIEWS_DIR}/**/*.pug`, gulp.series("pug"));
 });
 
@@ -130,7 +138,7 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
-    gulp.parallel("styles", "pug", "images", "fonts", "scripts"),
+    gulp.parallel("styles", "pug", "images", "fonts", "media", "scripts"),
     gulp.parallel("watch", "server")
   )
 );
@@ -141,6 +149,6 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
-    gulp.parallel("styles", "pug", "images", "fonts", "scripts")
+    gulp.parallel("styles", "pug", "images", "fonts", "media", "scripts")
   )
 );

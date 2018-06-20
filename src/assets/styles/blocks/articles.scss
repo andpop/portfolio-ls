@@ -26,33 +26,41 @@
   }
 }
 
+.articles {
+  
+  // Отодвигаем футер, чтобы статья под него не попадала
+  &__list {
+    padding-bottom: 180px;
+  }
 
-.articles__date {
-  color        : $date-color;
-  font-family  : Roboto;
-  font-size    : 16px;
-  font-weight  : 400;
-  margin-bottom: 20px;
-}
+  &__date {
+    color        : $date-color;
+    font-family  : Roboto;
+    font-size    : 16px;
+    font-weight  : 400;
+    margin-bottom: 20px;
+  }
+  
+  &__content {
+    color      : $blog-color;
+    font-family: Roboto;
+    font-size  : 16px;
+    font-weight: 400;
+    & p {
+      margin-bottom: 10px;
+    }
+  }
 
-.articles__content {
-  color      : $blog-color;
-  font-family: Roboto;
-  font-size  : 16px;
-  font-weight: 400;
-  & p {
-    margin-bottom: 10px;
+  &__item {
+    padding-bottom: 60px;
+    padding-top   : 60px;
+    border-bottom : 5px solid rgba(#373e42, 0.07);
+    &:first-child {
+      padding-top: 0;
+    }
+    // &:last-child {
+    //   padding-bottom: 0;
+    // }
   }
 }
 
-.articles__item {
-  padding-bottom: 60px;
-  padding-top   : 60px;
-  border-bottom : 5px solid rgba(#373e42, 0.07);
-  &:first-child {
-    padding-top: 0;
-  }
-  // &:last-child {
-  //   padding-bottom: 0;
-  // }
-}

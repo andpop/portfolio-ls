@@ -2,37 +2,40 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
-  - var heroTitle = 'Андрей Попов'
-  - var heroSubtitle = 'Личный сайт веб-разработчика'
+  - var headerTitle = 'Андрей Попов'
+  - var headerSubtitle = 'Личный сайт веб-разработчика'
+  - var triangleLeftColor = "#f2f0e8"
+  - var triangleRightColor = "#eae8e2"
+
 
 //- block scripts
 //-   script(src='about.bundle.js')
 
 block content
-  +sectionHero(heroTitle, heroSubtitle)
+  +header(headerTitle, headerSubtitle)
     
   section.section.about
-    .triangles
-      //- .triangle.about__triangle.about__triangle--left
-      .triangle.triangle--left
-        +triangle('triangle--fill-left')
-      //- .triangle.about__triangle.about__triangle--right
-      .triangle.triangle--right
-        +triangle('triangle--fill-right')
+    +triangles(`${triangleLeftColor}`, `${triangleRightColor}`, 1)
+
+    //- .triangles
+    //-   .triangle.triangle--left
+    //-     +triangle('triangle--fill-left')
+    //-   .triangle.triangle--right
+    //-     +triangle('triangle--fill-right')
         
     .about__left
       .about__left-title
-        h1.block-title Обо мне
+        h1.block-title.about__title-with-stars Обо мне
       .about__left-content
         .author-description
           .author-description__image
-            +image('photo-full.jpg', 'Фото автора сайта', 'author-description__avatar')
+            +image('content/author-full.jpg', 'Фото автора сайта', 'author-description__avatar')
           .author-description__data
             .author-description__title
               h2.block-subtitle Кто я 
             .author-description__text.text-content
-            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
     .about__right
       .about__right-title
@@ -81,6 +84,6 @@ block content
                 .contacts__icon
                   +icon(`${item[0]}`, 'contacts__icon-img')
                 .contacts__text #{item[1]}
-
-
+      
+    //- include ../common/footer.pug
 

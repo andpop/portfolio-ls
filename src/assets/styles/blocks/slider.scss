@@ -1,0 +1,93 @@
+.slider-container {
+  width: 100%;
+}
+
+.slider {
+  display      : grid;
+  grid-template: "info display" 70%
+  "info buttons" 30% / 1fr 1fr;
+  height    : 100vh;
+  min-height: 650px;
+
+  &__info-container {
+    grid-area       : info;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: $bgabout-left;
+  }
+
+  &__display {
+    grid-area       : display;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: $bgworks-right;
+  }
+
+  &__buttons {
+    grid-area: buttons;
+    display  : flex;
+  }
+
+  &__big-pic {
+    display   : block;
+    max-width : 90%;
+    max-height: 90%;
+  }
+
+  &__button {
+    cursor     : pointer;
+    position   : relative;
+    user-select: none;
+    width      : 50%;
+
+    // Затемнение кнопок слайдера
+    &:before {
+      content         : "";
+      position        : absolute;
+      left            : 0;
+      right           : 0;
+      top             : 0;
+      bottom          : 0;
+      background-color: rgba(#000000, 0.3);
+      z-index         : 10;
+    }
+
+    // Накладываем на кнопку слайдера стрелку
+    &:after {
+      content   : "";
+      width     : 44px;
+      height    : 29px;
+      background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat / contain;
+      z-index   : 20;
+      @include block-center-absolute;
+    }
+
+    &--next {
+      &:after {
+        background: svg-load('arrow_up.svg', fill=#ffffff) center center no-repeat / contain;
+      }
+    }
+  
+
+    &-img-wrap {
+      display        : flex;
+      align-items    : center;
+      justify-content: center;
+      // Для того, чтобы картинка полностью поместилась в блок
+      position: absolute;
+      left    : 0;
+      top     : 0;
+      width   : 100%;
+      height  : 100%;
+    }
+    
+    &-pic {
+      display   : block;
+      max-width : 90%;
+      max-height: 90%;
+    }
+  }
+}
+

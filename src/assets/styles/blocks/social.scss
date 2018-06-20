@@ -10,6 +10,7 @@
 .social__icon {
   width : 30px;
   height: 20px;
+  transition: fill 0.5s;
 
   &--blue {
     fill: rgba($light-blue, 0.7);

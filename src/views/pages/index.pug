@@ -12,48 +12,81 @@ block variables
 block content
   .welcome
 
-    video.video(autoplay loop)
-      source.source(src="./assets/media/night.mp4", type="video/mp4")
+    //- video.video(autoplay loop)
+    //-   source.source(src="./assets/media/night.mp4", type="video/mp4")
 
     //- Тестовый блок для проверки крутящегося блока (backface)
-    //- <div class="container">
-    //-   <div class="card">
-    //-     <div class="face front" id="front">
-    //-       Front 1<br>dffffff
-    //-       <p>dsfrertrtrt</p>
-    //-       <p>dsfrertrtrt</p>
-    //-       <p>dsfrertrtrt</p>
-    //-     </div>
-    //-     <div class="face back">Back 1</div>
-    //-   </div>
-    //- </div>
+      <div class="container">
+        <div class="card">
+          <div class="face front" id="front">
+            Front 1<br>dffffff
+            <p>dsfrertrtrt</p>
+            <p>dsfrertrtrt</p>
+            <p>dsfrertrtrt</p>
+          </div>
+          <div class="face back">Back 1</div>
+        </div>
+      </div>
 
     .mountains
       +image('mountains-min.png', 'Горы', 'mountains__img')
 
     .authorize-btn.welcome__authorize
       a.authorize-btn__link(href="login.html") Авторизоваться
-    .welcome-board.welcome__board
-      .site-card
-        +image('content/author.jpg', 'Фото автора сайта', 'site-card__photo')
-        .site-card__name Андрей Попов
-        .site-card__title Личный сайт веб-разработчика
+    
+    .backface-container
+      //- Плашка с двумя сторонами    
+      .backface
+        //- .welcome-board.welcome__board.face
+        //- Лицевая сторона - информация о сайте
+        .welcome-board.front
+          .welcome-board__content
+            .site-card
+              +image('content/author.jpg', 'Фото автора сайта', 'site-card__photo')
+              .site-card__name Андрей Попов
+              .site-card__title Личный сайт веб-разработчика
 
-      .social.welcome-board__social
-        - 
-          var socials = [
-            ['vk', 'http://vk.com'],
-            ['github', 'http://github.com'],
-            ['in', 'http://linkedin.com']
-          ]
-        +socialIcons('social__icon--blue')
+            .social.welcome-board__social
+              - 
+                var socials = [
+                  ['vk', 'http://vk.com'],
+                  ['github', 'http://github.com'],
+                  ['in', 'http://linkedin.com']
+                ]
+              +socialIcons('social__icon--blue')
 
-      nav.nav.nav--welcome
-        ul.nav__list.nav__list
-          each item in page_links
-            li.nav__item.nav__item--welcome
-              a.nav__link(href=`${item[1]}`) #{item[0]}
+            nav.nav.nav--welcome
+              ul.nav__list.nav__list
+                each item in page_links
+                  li.nav__item.nav__item--welcome
+                    a.nav__link(href=`${item[1]}`) #{item[0]}
+
+        //- Тыльная сторона - форма авторизации
+        .welcome-board.back
+          h1.login__title Авторизуйтесь
+          form(action="authorize.php").login-form.login__form
+            .login-form__input-wrap
+              input(type="text" name="login" placeholder="Логин" id="login").login-form__input.login-form__input--login
+              input(type="text" name="password" placeholder="Пароль" id="password").login-form__input.login-form__input--password
+              .login-form__is-human
+                input(type="checkbox" name="is-human" id="is-human").login-form__checkbox-human
+                label(for="is-human").login-form__label-human Я человек
               
+              .login-form__text Вы точно не робот?
+
+              .login-form__human-confirm
+                .login-form__trigger
+                  input(type="radio" id="human-yes" name="human-confirm" value="human-yes" checked).login-form__radio
+                  label(for="human-yes").login-form__label-confirm Да
+                .login-form__trigger
+                  input(type="radio" id="human-no" name="human-confirm" value="human-no").login-form__radio
+                  label(for="human-no").login-form__label-confirm Не уверен
+            .login-form__buttons
+              a(href="" id="mainpage-link").login-form__btn На главную
+              a(href="").login-form__btn Войти
+
+
+
     //- Нарушаем БЭМ - позиционируем блок .footer-bottom, но он на всех страницах расположен одинаково (в самом низу)
     .footer-bottom.footer-bottom--welcome 
       +copyrightInfo

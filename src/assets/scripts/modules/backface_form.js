@@ -1,12 +1,17 @@
 console.log("In backface_form.js");
 const authorizeLink = document.querySelector(".authorize-btn__link");
+const mainPageLink = document.getElementById("mainpage-link");
 
 authorizeLink.addEventListener("click", e => {
-  const card = document.querySelector(".card");
+  const backface = document.querySelector(".backface");
   const front = document.querySelector(".front");
 
   e.preventDefault();
-  card.style.transform = "rotateY(180deg)";
+  backface.style.transform = "rotateY(180deg)";
   front.style.zIndex = "0";
-  console.log(front);
+});
+
+mainPageLink.addEventListener("click", e => {
+  e.preventDefault();
+  console.log("Нажали");
 });

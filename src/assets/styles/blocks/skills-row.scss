@@ -10,11 +10,18 @@
   
   &__list {
     display      : flex;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
   }
   
   &__item {
     margin-right: 40px;
+    margin-bottom: 20px;
+
+    @include desktops1300 {
+      margin-right: 28px;
+    }
+
     &:last-child {
       margin-right: 0;
     }

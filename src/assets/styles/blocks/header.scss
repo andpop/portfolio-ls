@@ -39,6 +39,12 @@
     height         : 400px;
     margin         : 0 auto;
     padding-top    : 98px;
+
+    @include tablets {
+      width: 280px;
+      height: 168px;
+      padding-top: 25px;
+    }
   }
   
   &__arrow-down {

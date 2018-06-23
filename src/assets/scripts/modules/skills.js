@@ -13,8 +13,9 @@ const skill = {
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
       );
       const dashOffset = dashArray - (dashArray / 100) * this.skillPercent;
-      // console.log(percent);
+      const strokeOpacity = this.skillPercent / 100;
       circle.style.strokeDashoffset = dashOffset;
+      circle.style.strokeOpacity = strokeOpacity;
     }
   },
   mounted() {
@@ -43,7 +44,6 @@ new Vue({
   created() {
     const data = require("../../data/skills.json");
     this.skills = data;
-    // console.log(data);
   },
   template: "#skills-list"
 });

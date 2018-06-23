@@ -7,7 +7,6 @@ block variables
   - var triangleLeftColor = "#f2f0e8"
   - var triangleRightColor = "#eae8e2"
 
-
 block scripts
   script(src='about.bundle.js')
 
@@ -17,12 +16,6 @@ block content
   section.section.about
     +triangles(`${triangleLeftColor}`, `${triangleRightColor}`, 1)
 
-    //- .triangles
-    //-   .triangle.triangle--left
-    //-     +triangle('triangle--fill-left')
-    //-   .triangle.triangle--right
-    //-     +triangle('triangle--fill-right')
-        
     .about__left
       .about__left-title
         h1.block-title.about__title-with-stars Обо мне
@@ -43,15 +36,13 @@ block content
       .about__right-description.text-content
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
       .about__right-content
+        #skills-container
         //- - 
         //-   var skills = [
         //-     ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
         //-     ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70], ['MongoDB', 70]]],
         //-     ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
         //-   ]
-
-        #skills-container
-
         //- ul.skills-list
         //-   each skillsrow in skills
         //-     li.skills-list__item.skills-row
@@ -86,6 +77,4 @@ block content
                 .contacts__icon
                   +icon(`${item[0]}`, 'contacts__icon-img')
                 .contacts__text #{item[1]}
-      
-    //- include ../common/footer.pug
 

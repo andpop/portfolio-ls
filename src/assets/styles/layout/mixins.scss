@@ -1,3 +1,9 @@
+// resolutions
+$desktops: 1800Px;
+$desktops-small: 1200Px;
+$tablets: 768Px;
+$phones: 320Px;
+
 @mixin block-center-absolute {
   position : absolute;
   top      : 50%;
@@ -18,3 +24,22 @@
   height       : $width;
   border-radius: $width/2;
 }
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+// @mixin tablets--big{
+//   @media screen and (max-width: 920px){
+//       @content;
+//   }
+// }
+

@@ -12,6 +12,7 @@ authorizeLink.addEventListener("click", e => {
   e.stopPropagation();
   backface.style.transform = "rotateY(180deg)";
   front.style.zIndex = "0";
+  front.style.display = "none";
   authorizeLink.style.display = "none";
 });
 
@@ -21,6 +22,7 @@ mainPageLink.addEventListener("click", e => {
   e.stopPropagation();
   backface.style.transform = "";
   front.style.zIndex = "";
+  front.style.display = "";
   authorizeLink.style.display = "";
 });
 
@@ -34,6 +36,7 @@ welcome.addEventListener("click", e => {
   if (front.style.zIndex === "0") {
     backface.style.transform = "";
     front.style.zIndex = "";
+    front.style.display = "";
     authorizeLink.style.display = "";
   }
   // console.log(e.target);

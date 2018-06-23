@@ -55,12 +55,34 @@
     padding-bottom: 60px;
     padding-top   : 60px;
     border-bottom : 5px solid rgba(#373e42, 0.07);
+    
+    @include desktops1100 {
+      padding-bottom: 50px;
+      padding-top   : 50px;
+    }
+
+    @include tablets730 {
+      padding-bottom: 25px;
+      padding-top   : 25px;
+    }
+
     &:first-child {
       padding-top: 0;
     }
-    // &:last-child {
-    //   padding-bottom: 0;
-    // }
+
+    &:last-child {
+      @include desktops1100 {
+        padding-bottom: 90px;
+      }
+
+      @include tablets730 {
+        padding-bottom: 150px;
+      }
+
+      @include phones570 {
+        padding-bottom: 180px;
+      }
+    }
   }
 }
 

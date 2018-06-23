@@ -17,5 +17,15 @@
     position: absolute;
     top     : 5%;
     right   : 10%;
+    
+    @include desktops1300 {
+      right: 40px;
+    }
+
+    @include phones570 {
+      left     : 50%;
+      right: initial;
+      transform: translateX(-50%);
+    }
   }
 }

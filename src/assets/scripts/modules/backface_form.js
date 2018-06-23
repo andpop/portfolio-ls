@@ -15,7 +15,7 @@ authorizeLink.addEventListener("click", e => {
   authorizeLink.style.display = "none";
 });
 
-// Возвращаем плашку в исходное положение
+// Возвращаем плашку в исходное положение по кнопке "На главную"
 mainPageLink.addEventListener("click", e => {
   e.preventDefault();
   e.stopPropagation();
@@ -24,15 +24,17 @@ mainPageLink.addEventListener("click", e => {
   authorizeLink.style.display = "";
 });
 
+// Останавливаем всплытие событий из контейнера с плашкой
 backfaceContainer.addEventListener("click", e => {
   e.stopPropagation();
 });
 
+// Если событие щелчка дошло до .welcome, то щелкнули вне формы и нужно ее в исходное положение (если она повернута)
 welcome.addEventListener("click", e => {
   if (front.style.zIndex === "0") {
     backface.style.transform = "";
     front.style.zIndex = "";
     authorizeLink.style.display = "";
   }
-  console.log(e.target);
+  // console.log(e.target);
 });

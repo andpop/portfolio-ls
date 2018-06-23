@@ -10,6 +10,16 @@
   position       : relative;
   transform-style: preserve-3d;
   transition     : 0.5s;
+
+  @include tablets {
+    width: 348px;
+    height: 440px;
+  }
+
+  @include phones390 {
+    width: 300px;
+    // height: 440px;
+  }
 }
 
 .front {
@@ -17,7 +27,9 @@
 }
 
 .back {
+  // При прозрачном фоне в Firefox после переворота видно лицевую сторону
   background-color: rgba(#1c1f29, 0.5);
+  // background-color: rgba(#1c1f29, 1);
   padding-top: 40px;
   transform: rotateY(180deg);
 }

@@ -33,6 +33,8 @@
 
     &--alt {
       display: none;
+      color: #ffffff;
+      font-weight: 300 ;
 
       @include phones450 {
         display: block;

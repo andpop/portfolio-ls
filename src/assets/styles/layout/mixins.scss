@@ -1,6 +1,5 @@
 // resolutions
 $desktops: 1800Px;
-$desktops-small: 1200Px;
 $desktops880: 880Px;
 $tablets: 768Px;
 $phones: 320Px;
@@ -26,8 +25,8 @@ $phones: 320Px;
   border-radius: $width/2;
 }
 
-@mixin desktops-small {
-  @media screen and (max-width: $desktops-small) {
+@mixin desktops1200 {
+  @media screen and (max-width: 1200Px) {
     @content;
   }
 }
@@ -70,6 +69,12 @@ $phones: 320Px;
 
 @mixin phones450 {
   @media screen and (max-width: 450Px) {
+    @content;
+  }
+}
+
+@mixin phones390 {
+  @media screen and (max-width: 390Px) {
     @content;
   }
 }

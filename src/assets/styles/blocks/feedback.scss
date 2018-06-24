@@ -3,7 +3,19 @@
   display         : flex;
   flex-direction  : column;
   align-items     : center;
-  // padding         : 20px;
+  padding-top         : 20px;
+
+  @include desktops1100 {
+    margin-bottom: 100px;
+  }
+
+  @include tablets730 {
+    margin-bottom: 150px;
+  }
+
+  @include phones570 {
+    margin-bottom: 180px;
+  }
 
   &__title {
     color      : #ffffff;
@@ -13,13 +25,24 @@
     // line-height: 41px;
     text-transform: uppercase;
 
+    @include desktops880 {
+      font-size: 30Px;
+    }
+
+    @include phones570 {
+      font-size: 21Px;
+    }
+
     &:after {
       display         : block;
       content         : '';
       width           : 90px;
       height          : 3px;
       background-color: rgba($text-color, 0.5);
-      margin          : 30px auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   
@@ -36,6 +59,10 @@
     border          : 0;
     padding-left    : 15px;
     color           : #fff;
+
+    @include phones570 {
+      height: 40Px;
+    }
   }
 
   &__message {

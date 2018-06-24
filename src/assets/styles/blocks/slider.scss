@@ -9,6 +9,18 @@
   height    : 100vh;
   min-height: 650px;
 
+  @include desktops880 {
+    grid-template: "display" 51%
+    "info" 26%
+    "buttons" 1fr / 1fr;
+  }
+
+  @include phones570 {
+    grid-template: "display" 44%
+    "info" 39%
+    "buttons" 1fr / 1fr;
+  }
+
   &__info-container {
     grid-area       : info;
     display         : flex;
@@ -59,14 +71,17 @@
       content   : "";
       width     : 44px;
       height    : 29px;
-      background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat / contain;
+      background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat;
+      background-size: contain;
+      // background: url('assets/images/arrow_down.svg') center center no-repeat;
       z-index   : 20;
       @include block-center-absolute;
     }
 
     &--next {
       &:after {
-        background: svg-load('arrow_up.svg', fill=#ffffff) center center no-repeat / contain;
+        background: svg-load('arrow_up.svg', fill=#ffffff) center center no-repeat;
+        background-size: contain;
       }
     }
   

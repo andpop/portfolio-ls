@@ -13,7 +13,11 @@
 
     @include desktops1200 {
       flex-direction: column;
-      // width: 100%;
+      padding-right: 0;
+    }
+
+    @include desktops880 {
+      width: 100%;
     }
 
     &-title {
@@ -25,10 +29,21 @@
       @include desktops1200 {
         width: 100%;
       }
+
+      @include desktops880 {
+        margin-top: 65px;
+        margin-bottom: 65px;
+      }
+
+      @include phones570 {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
     }
     
     &-content {
       width: 50%;
+      margin-bottom: 20px;
   
       @include desktops1200 {
         width: 100%;
@@ -42,13 +57,37 @@
     background-color: $bgabout-right;
     padding-left    : 30px;
     padding-top     : 10px;
+    padding-right: 12px;
+
+    @include desktops1200 {
+      background-color: $bgabout-right2;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     @include desktops880 {
       width: 100%;
+      padding-top: 30px;
+    }
+
+    &-content {
+      @include desktops880 {
+        text-align: center;
+      }
     }
 
     &-description {
       margin-bottom: 50px;
+
+      @include desktops880 {
+        max-width: 475px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include phones570 {
+        max-width: 320px;
+      }
     }
   }
 
@@ -68,6 +107,22 @@
       background-size : contain;
       background-color: transparent;
       z-index         : -1;
+
+      @include desktops1200 {
+        height: 140px;
+      }
+
+      @include desktops880 {
+        height: 170px;
+      }
+
+      @include tablets730 {
+        height: 140px;
+      }
+
+      @include phones570 {
+        display: none;
+      }
     }
   }
 }

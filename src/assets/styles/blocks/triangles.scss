@@ -1,0 +1,7 @@
+.triangles--alternate {
+  display: none;
+
+  @include desktops880 {
+    display: block;
+  }
+}

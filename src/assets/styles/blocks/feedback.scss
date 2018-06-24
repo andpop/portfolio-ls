@@ -13,10 +13,6 @@
     margin-bottom: 150px;
   }
 
-  @include phones570 {
-    margin-bottom: 180px;
-  }
-
   &__title {
     color      : #ffffff;
     font-family: Sansus;

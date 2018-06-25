@@ -17,8 +17,29 @@ html(lang="ru")
         
         include ./common/footer.pug
 
+      include ./common/fullscreen-menu.pug
+      //- .fullscreen-menu
+      //-   -
+      //-     var page_links = [
+      //-       ['Мои работы', 'works.html'],
+      //-       ['Обо мне', 'about.html'],
+      //-       ['Блог', 'blog.html'],
+      //-       ['Авторизация', 'authorize.html']
+      //-     ]
+      //-   a(href="#").fullscreen-menu__close
+      //-     +icon('close', 'fullscreen-menu__close-img')
+      //-   nav.fullscreen-menu__nav
+      //-     ul.fullscreen-menu__list
+      //-       each item in page_links
+      //-         li.fullscreen-menu__item
+      //-           a(href=`${item[1]}`).fullscreen-menu__link #{item[0]}
+
+
+
     include ./components/entry.pug
 
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')
+    script(src='main.bundle.js')
+
     block scripts

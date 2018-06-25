@@ -14,8 +14,13 @@ const skill = {
       );
       const dashOffset = dashArray - (dashArray / 100) * this.skillPercent;
       const strokeOpacity = this.skillPercent / 100;
-      circle.style.strokeDashoffset = dashOffset;
       circle.style.strokeOpacity = strokeOpacity;
+      let dashOffsetCurrent = dashArray;
+      while (dashOffsetCurrent > dashOffset) {
+        circle.style.strokeDashoffset = dashOffsetCurrent;
+        dashOffsetCurrent--;
+      }
+      // circle.style.strokeDashoffset = dashOffset;
     }
   },
   mounted() {

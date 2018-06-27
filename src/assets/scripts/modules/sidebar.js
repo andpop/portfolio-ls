@@ -3,16 +3,26 @@ const firstArticleTitle = document.querySelector(".articles__title--large");
 const blogLeft = document.querySelector(".blog__left");
 const blogLeftContent = document.querySelector(".blog__left-content");
 const articleSmallTitles = document.querySelectorAll(".articles__title--small");
+const articleLargeTitles = document.querySelectorAll(".articles__title--large");
+const numberPixelsFromTop = 20; // Статья станет активной, когда ее заголовок подойдет к верхнему краю экрана на столько пикселей
 
+// Делаем активным заголовок первой статьи
 setActiveTitle(0);
 
 window.addEventListener("scroll", e => {
   const topFirstArticleTitle = firstArticleTitle.getBoundingClientRect().top;
   // Если заголовок первой статьи подошел к верху экрана на 20px, то фиксируем сайдбар
-  if (topFirstArticleTitle < 20) {
+  if (topFirstArticleTitle < numberPixelsFromTop) {
     fixSidebar();
   } else {
     unfixSidebar();
+  }
+
+  for (let i = 0; i < articleLargeTitles.length; i++) {
+    if (isTitleNearTop(articleLargeTitles[i])) {
+      // console.log(articleLargeTitles[i]);
+      setActiveTitle(i);
+    }
   }
 });
 
@@ -39,5 +49,6 @@ function setActiveTitle(numberTitle) {
 }
 
 function isTitleNearTop(titleElement) {
-  console.log(titleElement.getBoundingClientRect().top);
+  const topArticleTitle = titleElement.getBoundingClientRect().top;
+  return topArticleTitle > 0 && topArticleTitle < numberPixelsFromTop;
 }

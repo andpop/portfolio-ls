@@ -8,13 +8,21 @@
     padding-top   : 10px;
     padding-bottom: 10px;
     padding-right : 20px;
-  
+
+    @include tablets {
+      color: rgba(#fff, 0.7);
+    }
   }
   
   &--active {
     color       : $dark-blue;
     font-weight : 700;
     border-right: 3px solid $light-blue;
+
+    @include tablets {
+      color: #fff;
+      border-right: none;
+    }
   }
   
   &--large {

@@ -16,9 +16,15 @@
     }
   
     @include tablets {
-      // display: none;
       width: 0;
     }
+
+    // @include tablets {
+    //   background-color: #253468;
+    //   width: 295px;
+    //   color: #fff;
+    //   font-weight: 400;
+    // }
 
     &-content {
       width: 280px;

@@ -43,7 +43,10 @@
     // }
 
     &-content {
-      width: 280px;
+      max-width: 280px;
+      width: 100%;
+      padding-left: 10px;
+      // outline: 1px solid;
     }
   }
 

@@ -6,8 +6,8 @@ block variables
   - var headerSubtitle = 'Статьи, которые я написал'
   - var triangleColor = "#faf8f0"
 
-//- block scripts
-//-   script(src='blog.bundle.js')
+block scripts
+  script(src='blog.bundle.js')
 
 block content
   +header(headerTitle, headerSubtitle)
@@ -30,7 +30,7 @@ block content
         ul.titles__list
           li.titles__item
             //- a(href="").articles__title.articles__title--small.articles__title--active Текущая статья
-            .articles__title.articles__title--small.articles__title--active Текущая статья
+            //- .articles__title.articles__title--small.articles__title--active Текущая статья
           each article in articles
             li.titles__item
               //- a(href="").articles__title.articles__title--small #{article[0]}

@@ -3,7 +3,7 @@ const fullscreenMenu = document.querySelector(".fullscreen-menu");
 const hamburger = document.querySelector(".hamburger");
 const hamburgermenuLink = document.querySelector(".hamburger__link");
 const fullscreenMenuClose = document.querySelector(".fullscreen-menu__close");
-console.log(fullscreenMenu);
+// console.log(fullscreenMenu);
 
 hamburgermenuLink.addEventListener("click", e => {
   e.preventDefault();

@@ -2,6 +2,7 @@
 const firstArticleTitle = document.querySelector(".articles__title--content");
 const blogLeft = document.querySelector(".blog__left");
 const blogLeftContent = document.querySelector(".blog__left-content");
+const triggerBlogLeft = document.querySelector(".blog__left::before");
 const sidebarArticleTitles = document.querySelectorAll(
   ".articles__title--sidebar"
 );
@@ -12,6 +13,8 @@ const numberPixelsFromTop = 20; // Статья станет активной, �
 
 // Делаем активным заголовок первой статьи
 setActiveTitle(0);
+
+console.log(triggerBlogLeft);
 
 // Обрабатываем щелчки на названиях статей в сайдбаре
 for (let i = 0; i < sidebarArticleTitles.length; i++) {

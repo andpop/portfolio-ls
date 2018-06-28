@@ -34,14 +34,14 @@ block content
           each article in articles
             li.titles__item
               //- a(href="").articles__title.articles__title--small #{article[0]}
-              .articles__title.articles__title--small #{article[0]}
+              .articles__title.articles__title--sidebar #{article[0]}
 
     .blog__right
       .blog__right-content
         ul.articles__list
           each article in articles
             li.articles__item
-              .articles__title.articles__title--large #{article[0]}
+              .articles__title.articles__title--content #{article[0]}
               .articles__date #{article[1]}
               .articles__content
                 p Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quia temporibus eum vel odio ullam laborum consectetur, provident suscipit accusamus enim dolor voluptates a natus, tempora voluptatibus, illo voluptatum rerum?

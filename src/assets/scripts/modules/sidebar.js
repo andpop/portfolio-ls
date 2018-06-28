@@ -19,6 +19,7 @@ for (let i = 0; i < sidebarArticleTitles.length; i++) {
   currentSidebarArticleTitle.addEventListener("click", e => {
     e.preventDefault;
     scrollToElement(contentArticleTitles[i]);
+    setActiveTitle(i);
   });
 }
 
@@ -70,12 +71,9 @@ function isTitleNearTop(titleElement) {
 
 // Скроллим окно до нужного элемента, переданного в качестве аргумента
 function scrollToElement(theElement) {
-  let selectedPosX = 0;
-  let selectedPosY = 0;
-  while (theElement != null) {
-    selectedPosX += theElement.offsetLeft;
-    selectedPosY += theElement.offsetTop;
-    theElement = theElement.offsetParent;
-  }
+  const box = theElement.getBoundingClientRect();
+  const selectedPosY = box.top + pageYOffset;
+  const selectedPosX = box.left + pageXOffset;
+
   window.scrollTo(selectedPosX, selectedPosY);
 }

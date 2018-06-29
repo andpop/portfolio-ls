@@ -3,6 +3,7 @@ const firstArticleTitle = document.querySelector(".articles__title--content");
 const blogLeft = document.querySelector(".blog__left");
 const blogLeftContent = document.querySelector(".blog__left-content");
 const triggerBlogLeft = document.querySelector(".blog__left::before");
+const swipeLink = document.querySelector(".blog__swipe-link");
 const sidebarArticleTitles = document.querySelectorAll(
   ".articles__title--sidebar"
 );
@@ -14,13 +15,18 @@ const numberPixelsFromTop = 20; // Статья станет активной, �
 // Делаем активным заголовок первой статьи
 setActiveTitle(0);
 
-console.log(triggerBlogLeft);
+console.log(swipeLink);
+
+swipeLink.addEventListener("click", e => {
+  e.preventDefault();
+  console.log("swipe");
+});
 
 // Обрабатываем щелчки на названиях статей в сайдбаре
 for (let i = 0; i < sidebarArticleTitles.length; i++) {
   const currentSidebarArticleTitle = sidebarArticleTitles[i];
   currentSidebarArticleTitle.addEventListener("click", e => {
-    e.preventDefault;
+    e.preventDefault();
     scrollToElement(contentArticleTitles[i]);
     setActiveTitle(i);
   });

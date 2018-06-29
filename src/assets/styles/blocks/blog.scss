@@ -3,6 +3,24 @@
   background-color: $bgblog;
   margin-top      : -20vh;
 
+  &__swipe-link {
+      width           : 50px;
+      height          : 50px;
+      border-radius   : 25px;
+      background-color: #253468;
+      position: absolute;
+      top: 50vh;
+      right: -10px;
+      z-index: -1;
+      display: none;
+      // border: 1px solid white;
+
+      @include tablets {
+        display: block;
+      }
+    }
+
+
   &__left {
     width          : 20%;
     display        : flex;
@@ -22,26 +40,28 @@
     @include tablets {
       background-color: #253468;
       width: 295px;
+      // width: 80%;
       color: #fff;
       font-weight: 400;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
       height: 100vh;
+      align-items: center;
     }
 
-    &:before {
-      content: '';
-      width           : 50px;
-      height          : 50px;
-      border-radius   : 25px;
-      background-color: #253468;
-      position: absolute;
-      top: 50vh;
-      right: -10px;
-      border: 1px solid white;
-    }
+    // &:before {
+    //   content: '';
+    //   width           : 50px;
+    //   height          : 50px;
+    //   border-radius   : 25px;
+    //   background-color: #253468;
+    //   position: absolute;
+    //   top: 50vh;
+    //   right: -10px;
+    //   border: 1px solid white;
+    // }
 
     &-content {
       max-width: 280px;
@@ -49,6 +69,7 @@
       padding-left: 10px;
       // outline: 1px solid;
     }
+
   }
 
   &__right {

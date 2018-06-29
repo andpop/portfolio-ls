@@ -17,9 +17,21 @@ setActiveTitle(0);
 
 console.log(swipeLink);
 
+// Обрабатываем щелчок на иконке для открытия/закрытия списка статей на узких экранах
 swipeLink.addEventListener("click", e => {
   e.preventDefault();
-  console.log("swipe");
+  if (parseInt(getComputedStyle(blogLeft).left) < 0) {
+    // Показываем список с заголовками статей
+    blogLeft.style.left = "0";
+    // Отключаем прокрутку мышью в главном окне
+    document.body.style.overflow = "hidden";
+  } else {
+    // Прячем список с заголовками статей (смещаем влево за экран на ширину панели с заголовками статей)
+    // blogLeft.style.left = `-${blogLeft.clientWidth}px`;
+    blogLeft.style.left = "";
+    // Dключаем прокрутку мышью в главном окне
+    document.body.style.overflow = "";
+  }
 });
 
 // Обрабатываем щелчки на названиях статей в сайдбаре
@@ -52,7 +64,8 @@ window.addEventListener("scroll", e => {
 
 function fixSidebar() {
   let widthBlogLeftContent = getComputedStyle(blogLeftContent).width;
-  let widthBlogLeft = getComputedStyle(blogLeft).width;
+  // let widthBlogLeft = getComputedStyle(blogLeft).width;
+  let widthBlogLeft = blogLeft.clientWidth;
   let widthFixedContent = widthBlogLeftContent;
   let leftFixedContent = widthBlogLeft - widthBlogLeftContent;
   blogLeftContent.style.cssText = `position: fixed; top: 20px; left: ${leftFixedContent}px; width: ${widthFixedContent}`;

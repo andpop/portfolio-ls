@@ -1,4 +1,3 @@
-console.log("In backface_form.js");
 const authorizeLink = document.querySelector(".authorize-btn__link");
 const mainPageLink = document.getElementById("mainpage-link");
 const backface = document.querySelector(".backface");

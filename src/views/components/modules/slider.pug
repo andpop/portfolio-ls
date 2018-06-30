@@ -1,0 +1,35 @@
+script(type="text/x-template")#slider
+  .slider
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
+    buttons(
+      :works="works"
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+
+script(type="text/x-template")#slider-info
+  .slider__info-container
+    .slider__info.project__details
+      h3.project__title Сайт школы онлайн-образования
+      .project__tools HTML, CSS, JavaScript
+      .project__btn
+        a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+  .slider__display
+    +image('content/slider/work-1.png', 'Скриншоты проекта', 'slider__big-pic')
+
+script(type="text/x-template")#slider-buttons
+  .slider__buttons
+    .slider__button
+      .slider__button-img-wrap
+        +image('content/slider/work-4.png', 'Скриншоты проекта', 'slider__button-pic')
+
+    .slider__button.slider__button--next
+      .slider__button-img-wrap
+        +image('content/slider/work-2.png', 'Скриншоты проекта', 'slider__button-pic')

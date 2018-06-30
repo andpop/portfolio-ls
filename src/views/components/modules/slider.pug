@@ -22,16 +22,15 @@ script(type="text/x-template")#slider-info
 
 script(type="text/x-template")#slider-display
   .slider__display
-    //- img(src="/assets/images/content/slider/work-1.png", alt="Скриншоты проекта").slider__big-pic
     img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons
-    .slider__button(@click="slide")
+    .slider__button(@click="slide('prev')")
       .slider__button-img-wrap
-        img(src="/assets/images/content/slider/work-4.png", alt="Скриншоты проекта").slider__button-pic
+        img(:src='getImage("prev").photo', alt="Скриншоты проекта").slider__button-pic
 
-    .slider__button.slider__button--next
+    .slider__button.slider__button--next(@click="slide('next')")
       .slider__button-img-wrap
-        img(src="/assets/images/content/slider/work-2.png", alt="Скриншоты проекта").slider__button-pic
+        img(:src="getImage('next').photo", alt="Скриншоты проекта").slider__button-pic
 

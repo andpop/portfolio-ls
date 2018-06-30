@@ -15,21 +15,23 @@ script(type="text/x-template")#slider
 script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info.project__details
-      h3.project__title Сайт школы онлайн-образования
-      .project__tools HTML, CSS, JavaScript
+      h3.project__title {{work.title}}
+      .project__tools {{work.skills}}
       .project__btn
-        a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+        a(:href="work.link" target="_blank").project__link Посмотреть сайт
 
 script(type="text/x-template")#slider-display
   .slider__display
-    +image('content/slider/work-1.png', 'Скриншоты проекта', 'slider__big-pic')
+    //- img(src="/assets/images/content/slider/work-1.png", alt="Скриншоты проекта").slider__big-pic
+    img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons
-    .slider__button
+    .slider__button(@click="slide")
       .slider__button-img-wrap
-        +image('content/slider/work-4.png', 'Скриншоты проекта', 'slider__button-pic')
+        img(src="/assets/images/content/slider/work-4.png", alt="Скриншоты проекта").slider__button-pic
 
     .slider__button.slider__button--next
       .slider__button-img-wrap
-        +image('content/slider/work-2.png', 'Скриншоты проекта', 'slider__button-pic')
+        img(src="/assets/images/content/slider/work-2.png", alt="Скриншоты проекта").slider__button-pic
+

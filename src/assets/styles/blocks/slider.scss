@@ -53,6 +53,11 @@
     position   : relative;
     user-select: none;
     width      : 50%;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.7;
+    }
 
     // Затемнение кнопок слайдера
     &:before {

@@ -159,3 +159,24 @@
   bottom: 0%;
 }
 
+.slide-display-enter-active, .slide-display-leave-active {
+  transition: 1s;
+}
+
+.slide-display-leave {
+  opacity: 1;
+}
+
+.slide-display-leave-to {
+  opacity: 0;
+}
+
+.slide-display-enter {
+  opacity: 0;
+}
+
+.slide-display-enter-to {
+  opacity: 1;
+}
+
+

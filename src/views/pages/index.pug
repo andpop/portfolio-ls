@@ -13,7 +13,7 @@ block content
   .welcome
 
     video.video(autoplay loop)
-      source.source(src="./assets/media/night.mp4", type="video/mp4")
+      source(src="./assets/media/night.mp4", type="video/mp4").source#bg-video
 
     .mountains
       +image('mountains-min.png', 'Горы', 'mountains__img')

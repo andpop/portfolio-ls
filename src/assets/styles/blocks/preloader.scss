@@ -4,7 +4,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(#000, 1);
+  background      : url(assets/images/bg/preloader-bg.jpg) center no-repeat;
+  background-size: cover;
+  background-color: $bgcolor;
+  // background-color: rgba(#000, 1);
   z-index: 9999;
   transition: 1s all;
   opacity: 1;

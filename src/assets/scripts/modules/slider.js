@@ -1,4 +1,4 @@
-console.log("In slider.js");
+// console.log("In slider.js");
 import Vue from "vue";
 import { thisExpression } from "babel-types";
 
@@ -28,7 +28,6 @@ const buttons = {
     },
     getImage(direction) {
       const worksArray = [...this.works];
-      console.log(worksArray);
 
       switch (direction) {
         case "prev":

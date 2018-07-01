@@ -45,10 +45,6 @@
   }
 
   &__big-pic-wrap {
-    // display   : block;
-    // max-width : 90%;
-    // max-height: 90%;
-    // position: relative;
     display        : flex;
     align-items    : center;
     justify-content: center;
@@ -59,8 +55,6 @@
 
   &__big-pic {
     display   : block;
-    // max-width : 90%;
-    // max-height: 90%;
     max-width: 100%;
     height: 100%;
   }
@@ -96,7 +90,6 @@
       height    : 29px;
       background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat;
       background-size: contain;
-      // background: url('assets/images/arrow_down.svg') center center no-repeat;
       z-index   : 20;
       @include block-center-absolute;
     }
@@ -136,9 +129,6 @@
   }
 
   &__display-container {
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
     height: 100%;
     width: 100%;
     display: flex;

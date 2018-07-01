@@ -26,15 +26,10 @@ script(type="text/x-template")#slider-info
         a(:href="work.link" target="_blank").project__link Посмотреть сайт
 
 script(type="text/x-template")#slider-display
-  //- transition-group(name="slide-display" mode="out-in" tag="div").slider__display-container
-  //-   .slider__display(:key="work.photo")
-  //-     img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
   .slider__display
     transition-group(name="slide-display" tag="div" mode="in-out").slider__display-container
       .slider__big-pic-wrap(:key="work.photo")
         img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
-  //- .slider__display
-  //-   img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons

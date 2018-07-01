@@ -15,15 +15,26 @@ script(type="text/x-template")#slider
 script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info.project__details
-      h3.project__title {{work.title}}
-      .project__tools(:key="work.skills") {{work.skills}}
+      //- transition-group(name="slide-info" tag="div" mode="in-out")
+      //-   .project__details-container(:key="work.id")
+      //-     h3.project__title {{work.title}}
+      //-     .project__tools {{work.skills}}
+      .project__details-container
+        h3.project__title {{work.title}}
+        .project__tools {{work.skills}}
       .project__btn
         a(:href="work.link" target="_blank").project__link Посмотреть сайт
 
 script(type="text/x-template")#slider-display
-  transition-group(name="slide-display" tag="div")
-    .slider__display(:key="work.photo")
-      img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
+  //- transition-group(name="slide-display" mode="out-in" tag="div").slider__display-container
+  //-   .slider__display(:key="work.photo")
+  //-     img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
+  .slider__display
+    transition-group(name="slide-display" tag="div" mode="in-out").slider__display-container
+      .slider__big-pic-wrap(:key="work.photo")
+        img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
+  //- .slider__display
+  //-   img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons

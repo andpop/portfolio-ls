@@ -1,4 +1,4 @@
-console.log("In parallax.js");
+// console.log("In parallax.js");
 // const mountains = document.querySelector(".mountains");
 
 // document.addEventListener("mousemove", e => {

@@ -1,4 +1,4 @@
-.preloader-2 {
+.preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,21 +17,35 @@
     opacity: 0;
     visibility: hidden;
   }
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top-color: blue;
+    animation: spin 1s linear infinite;
+  }
 }
 
-.loader-2 {
+.loader {
   width: 100%;
   height: 75px;
   line-height: 75px;
+  color: #fff;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 20px;
 }
 
-.preloader {
+.preloader-0 {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +63,7 @@
   }
 }
 
-.loader {
+.loader-0 {
   width: 75px;
   height: 75px;
   position: absolute;

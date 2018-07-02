@@ -65,17 +65,17 @@ block content
                     span.hint__text {{hintText.passwordError}}
               
               .login-form__is-human
-                input(type="checkbox" name="is-human" id="is-human").login-form__checkbox-human
+                input(type="checkbox" name="is-human" id="is-human" v-model="formData.isHuman").login-form__checkbox-human
                 label(for="is-human").login-form__label-human Я человек
               
               .login-form__text Вы точно не робот?
 
               .login-form__human-confirm
                 .login-form__trigger
-                  input(type="radio" id="human-yes" name="human-confirm" value="human-yes" checked).login-form__radio
+                  input(type="radio" id="human-yes" name="human-confirm" value="human-yes" checked v-model="formData.humanConfirm").login-form__radio
                   label(for="human-yes").login-form__label-confirm Да
                 .login-form__trigger
-                  input(type="radio" id="human-no" name="human-confirm" value="human-no").login-form__radio
+                  input(type="radio" id="human-no" name="human-confirm" value="human-no" v-model="formData.humanConfirm").login-form__radio
                   label(for="human-no").login-form__label-confirm Не уверен
             .login-form__buttons
               a(href="" id="mainpage-link").login-form__btn На главную

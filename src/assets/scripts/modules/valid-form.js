@@ -6,7 +6,9 @@ new Vue({
   data: {
     formData: {
       login: "",
-      password: ""
+      password: "",
+      isHuman: false,
+      humanConfirm: "human-no"
     },
     hintText: {
       loginError: "Вы не ввели логин",
@@ -17,18 +19,24 @@ new Vue({
   },
   methods: {
     submit() {
-      // console.log("Submiiiiiiiiiiiit");
       const login = this.formData.login.trim();
       const password = this.formData.password.trim();
+      // Проверяем на пустоту логин
       if (!login) {
         this.invalidLogin = true;
         return;
       }
+      // Проверяем на пустоту пароль
       if (!password) {
         this.invalidPassword = true;
         return;
       }
-      console.log(login);
+      // Делаем проверку на заполнение формы человеком
+      // console.log(this.formData.isHuman, this.formData.humanConfirm);
+      if (!this.formData.isHuman || this.formData.humanConfirm === "human-no")
+        return;
+      // Форма заполнена корректно - отсылаем данные на сервер
+      console.log("AJAX need");
     },
     loginFocus() {
       this.invalidLogin = false;

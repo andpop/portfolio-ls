@@ -1,4 +1,4 @@
-console.log("In preloader.js");
+// console.log("In preloader.js");
 // const backgroundVideo = document.getElementById("bg-video");
 
 // console.log(backgroundVideo);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", e => {
       (imagesLoadedAmount * 100) / imagesTotalAmount
     );
     for (let procent = previousProcent; procent <= currentProcent; procent++) {
-      console.log(procent);
+      // console.log(procent);
       percentElement.innerHTML = procent + "%";
     }
     if (imagesLoadedAmount >= imagesTotalAmount) {

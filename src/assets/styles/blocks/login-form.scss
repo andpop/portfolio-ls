@@ -12,6 +12,7 @@
     padding-left: 20px;
     padding-right: 20px;
     width: 100%;
+    position: relative;
   }
 
   &__input {
@@ -29,12 +30,14 @@
       // background     : svg-load('login.svg', fill=#c4cbcd) left center no-repeat;
       background      : url(assets/images/login.png) left center no-repeat;
       background-size : 44px auto;
+      // background-color: #f0efe9;
       background-color: #fff;
     }
 
     &--password {
       background      : url(assets/images/password.png) left center no-repeat;
       background-size : 44px auto;
+      // background-color: #f0efe9;
       background-color: #fff;
     }
   }
@@ -128,4 +131,11 @@
       background-color: $dark-blue;
     }
   }
+}
+
+// Подсказку позиционируем относительно поля ввода (input) - опускаем ниже поля
+.login-form__hint {
+  position: absolute;
+  top: 90%;
+  z-index: 10;
 }

@@ -37,7 +37,8 @@ for (let i = 0; i < sidebarArticleTitles.length; i++) {
   const currentSidebarArticleTitle = sidebarArticleTitles[i];
   currentSidebarArticleTitle.addEventListener("click", e => {
     e.preventDefault();
-    scrollToElement(contentArticleTitles[i]);
+    // scrollToElement(contentArticleTitles[i]);
+    scrollByElement(contentArticleTitles[i]);
     setActiveTitle(i);
   });
 }
@@ -96,6 +97,22 @@ function scrollToElement(theElement) {
   const box = theElement.getBoundingClientRect();
   const selectedPosY = box.top + pageYOffset;
   const selectedPosX = box.left + pageXOffset;
-
+  console.log(
+    `box.top=${box.top} pageYOffset=${pageYOffset} selectedPosY=${selectedPosY}`
+  );
   window.scrollTo(selectedPosX, selectedPosY);
+}
+
+// Скроллим окно до нужного элемента, переданного в качестве аргумента
+function scrollByElement(theElement) {
+  const box = theElement.getBoundingClientRect();
+  const deltaY = box.top > 0 ? 20 : -20;
+  const totalHops = Math.round(box.top / deltaY);
+  let currentHop = 0;
+  const timerId = setInterval(() => {
+    currentHop++;
+    window.scrollBy(0, deltaY);
+    if (currentHop >= totalHops) clearInterval(timerId);
+  }, 50);
+
 }

@@ -23,11 +23,15 @@ new Vue({
       const password = this.formData.password.trim();
       // Проверяем на пустоту логин
       if (!login) {
+        const loginIcon = document.getElementById("icon-login");
+        loginIcon.style.fill = "#e44845";
         this.invalidLogin = true;
         return;
       }
       // Проверяем на пустоту пароль
       if (!password) {
+        const passwordIcon = document.getElementById("icon-password");
+        passwordIcon.style.fill = "#e44845";
         this.invalidPassword = true;
         return;
       }
@@ -40,7 +44,23 @@ new Vue({
     },
     loginFocus() {
       this.invalidLogin = false;
-      console.log("Focel login");
+      const inputIcon = document.getElementById("icon-login");
+      inputIcon.style.fill = "#0548be";
+    },
+    loginBlur() {
+      // this.invalidLogin = false;
+      const inputIcon = document.getElementById("icon-login");
+      inputIcon.style.fill = "#c4cbcd";
+    },
+    passwordFocus() {
+      this.invalidPassword = false;
+      const inputIcon = document.getElementById("icon-password");
+      inputIcon.style.fill = "#0548be";
+    },
+    passwordBlur() {
+      // this.invalidLogin = false;
+      const inputIcon = document.getElementById("icon-password");
+      inputIcon.style.fill = "#c4cbcd";
     }
   }
 });

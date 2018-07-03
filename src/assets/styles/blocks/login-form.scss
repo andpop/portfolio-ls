@@ -22,24 +22,18 @@
     border       : none;
     outline: none;
     color: $text-color;
-    // padding-top   : 10px;
-    // padding-bottom: 10px;
     padding-left: 60px;
+    background-color: #fff;
 
-    &--login {
-      // background     : svg-load('login.svg', fill=#c4cbcd) left center no-repeat;
-      background      : url(assets/images/login.png) left center no-repeat;
-      background-size : 44px auto;
-      // background-color: #f0efe9;
-      background-color: #fff;
-    }
+    // &--login {
+    //   background      : url(assets/images/login.png) left center no-repeat;
+    //   background-size : 44px auto;
+    // }
 
-    &--password {
-      background      : url(assets/images/password.png) left center no-repeat;
-      background-size : 44px auto;
-      // background-color: #f0efe9;
-      background-color: #fff;
-    }
+    // &--password {
+    //   background      : url(assets/images/password.png) left center no-repeat;
+    //   background-size : 44px auto;
+    // }
   }
 
   &__is-human {

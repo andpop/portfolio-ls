@@ -13,11 +13,6 @@ block content
   +header(headerTitle, headerSubtitle)
   section.section.blog
     +triangles(`${triangleColor}`, `${triangleColor}`, 1)
-    //- .triangles
-    //-   .triangle.triangle--left
-    //-     +triangle('triangle--fill-blog')
-    //-   .triangle.triangle--right
-    //-     +triangle('triangle--fill-blog')
     .blog__left
       a(href="#").blog__swipe-link
       .blog__left-content
@@ -30,11 +25,8 @@ block content
           ]
         ul.titles__list
           li.titles__item
-            //- a(href="").articles__title.articles__title--small.articles__title--active Текущая статья
-            //- .articles__title.articles__title--small.articles__title--active Текущая статья
           each article in articles
             li.titles__item
-              //- a(href="").articles__title.articles__title--small #{article[0]}
               .articles__title.articles__title--sidebar #{article[0]}
 
     .blog__right

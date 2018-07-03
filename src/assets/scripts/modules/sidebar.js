@@ -92,27 +92,27 @@ function isTitleNearTop(titleElement) {
   return topArticleTitle > 0 && topArticleTitle < numberPixelsFromTop;
 }
 
-// Скроллим окно до нужного элемента, переданного в качестве аргумента
+// Резкий скроллинг окна до нужного элемента, переданного в качестве аргумента
 function scrollToElement(theElement) {
   const box = theElement.getBoundingClientRect();
   const selectedPosY = box.top + pageYOffset;
   const selectedPosX = box.left + pageXOffset;
-  console.log(
-    `box.top=${box.top} pageYOffset=${pageYOffset} selectedPosY=${selectedPosY}`
-  );
   window.scrollTo(selectedPosX, selectedPosY);
 }
 
-// Скроллим окно до нужного элемента, переданного в качестве аргумента
+// Плавный скроллинг окна до нужного элемента, переданного в качестве аргумента
 function scrollByElement(theElement) {
+  const pixelsToScroll = 20;
+  const scrollDelay = 30;
+
   const box = theElement.getBoundingClientRect();
-  const deltaY = box.top > 0 ? 20 : -20;
-  const totalHops = Math.round(box.top / deltaY);
+  const deltaY = box.top > 0 ? pixelsToScroll : -pixelsToScroll; // если нужный элемент расположен ниже верхнего края экрано, то скроллим вверх, иначе - вниз
+  const totalHops = Math.round(box.top / deltaY); // количество перемещений (скроллов до нужной позиции)
+
   let currentHop = 0;
   const timerId = setInterval(() => {
     currentHop++;
     window.scrollBy(0, deltaY);
     if (currentHop >= totalHops) clearInterval(timerId);
-  }, 50);
-
+  }, scrollDelay);
 }

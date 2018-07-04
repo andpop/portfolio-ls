@@ -45,7 +45,7 @@
 
     &-small {
       fill: #fff;
-      animation: orbit2 1s linear infinite;
+      animation: orbit2 1s ease-in-out infinite;
     }
   }
   
@@ -75,8 +75,8 @@
 }
 
 @keyframes orbit2 {
-  from {  transform: rotate(0deg) translateX(55px); }
-  to {  transform: rotate(360deg) translateX(55px); }
+  from {  transform: rotate(0deg) translateY(-55px); }
+  to {  transform: rotate(360deg) translateY(-55px); }
   // from {  transform: rotate(0deg) translateX(40px) rotate(0deg); }
   // to {  transform: rotate(360deg) translateX(40px) rotate(-360deg); }
   }

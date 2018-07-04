@@ -45,7 +45,7 @@
 
     &-small {
       fill: #fff;
-      animation: orbit2 1s ease-in-out infinite;
+      animation: spin 1s ease-in-out infinite;
     }
   }
   
@@ -64,19 +64,7 @@
   font-size: 20px;
 }
 
-
 @keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes orbit2 {
   from {  transform: rotate(0deg) translateY(-55px); }
   to {  transform: rotate(360deg) translateY(-55px); }
-  // from {  transform: rotate(0deg) translateX(40px) rotate(0deg); }
-  // to {  transform: rotate(360deg) translateX(40px) rotate(-360deg); }
   }

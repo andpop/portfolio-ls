@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", e => {
   let imagesLoadedAmount = 0;
   const percentElement = document.getElementById("load-percent");
   const preloader = document.querySelector(".preloader");
+  const circle = document.querySelector(".preloader__circle");
+  const dashArray = parseInt(
+    getComputedStyle(circle).getPropertyValue("stroke-dasharray")
+  );
   for (let i = 0; i < imagesTotalAmount; i++) {
     const imageClone = new Image();
     imageClone.onload = imageLoaded;
@@ -30,14 +34,20 @@ document.addEventListener("DOMContentLoaded", e => {
       (imagesLoadedAmount * 100) / imagesTotalAmount
     );
     for (let procent = previousProcent; procent <= currentProcent; procent++) {
-      // console.log(procent);
+      console.log(procent);
       percentElement.innerHTML = procent + "%";
+      const dashOffset = dashArray - (dashArray / 100) * procent;
+      let dashOffsetCurrent = dashArray;
+      while (dashOffsetCurrent > dashOffset) {
+        dashOffsetCurrent--;
+        circle.style.strokeDashoffset = dashOffsetCurrent;
+      }
     }
     if (imagesLoadedAmount >= imagesTotalAmount) {
       setTimeout(function() {
         if (!preloader.classList.contains("done"))
           preloader.classList.add("done");
-      }, 1000);
+      }, 500);
     }
   }
 });

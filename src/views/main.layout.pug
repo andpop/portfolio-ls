@@ -11,10 +11,7 @@ html(lang="ru")
     title Portfolio | #{title}
     link(rel='stylesheet' href='main.min.css')
   body
-    .preloader
-      .preloader__img
-      .loader
-        span#load-percent 0%
+    include ./components/modules/preloader.pug
 
     .wrapper
       .maincontent

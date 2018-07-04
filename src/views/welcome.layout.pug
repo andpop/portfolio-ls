@@ -10,10 +10,7 @@ html(lang="en")
     title Portfolio | Welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    .preloader
-      .preloader__img
-      .loader
-        span#load-percent 0%
+    include ./components/modules/preloader.pug
     block content
 
     script(src="./bootloader.bundle.js")

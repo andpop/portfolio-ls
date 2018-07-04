@@ -7,7 +7,6 @@
   background      : url(assets/images/bg/preloader-bg.jpg) center no-repeat;
   background-size: cover;
   background-color: $bgcolor;
-  // background-color: rgba(#000, 1);
   z-index: 9999;
   transition: 1s all;
   opacity: 1;
@@ -18,18 +17,38 @@
     visibility: hidden;
   }
 
+  &__spinner {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
   &__img {
     width: 100px;
     height: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border: 10px solid white;
-    border-radius: 50%;
-    border-top-color: blue;
-    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
+
+  &__circle {
+    fill        : transparent;
+    stroke           : #fff;
+    stroke-width: 3px;
+    stroke-dasharray : 251;
+    stroke-dashoffset: 251;
+    transition-duration: 1s;
+
+    &-small {
+      fill: #fff;
+      animation: orbit2 1s linear infinite;
+    }
+  }
+  
 }
 
 .loader {
@@ -45,36 +64,6 @@
   font-size: 20px;
 }
 
-.preloader-0 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(#000, 1);
-  z-index: 9999;
-  transition: 1s all;
-  opacity: 1;
-  visibility: visible;
-
-  &.done {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.loader-0 {
-  width: 75px;
-  height: 75px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 10px solid white;
-  border-radius: 50%;
-  border-top-color: blue;
-  animation: spin 1s linear infinite;
-}
 
 @keyframes spin {
   from {
@@ -84,3 +73,10 @@
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+@keyframes orbit2 {
+  from {  transform: rotate(0deg) translateX(55px); }
+  to {  transform: rotate(360deg) translateX(55px); }
+  // from {  transform: rotate(0deg) translateX(40px) rotate(0deg); }
+  // to {  transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+  }

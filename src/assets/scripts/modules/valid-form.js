@@ -43,29 +43,6 @@ new Vue({
       // Форма заполнена корректно - отсылаем данные на сервер
       console.log("Форма заполнена корректно. Логинимся на сервер");
       this.logonToServer();
-
-      // axios
-      //   .get("http://webdev-api.loftschool.com/user", {
-      //     params: {
-      //       token:
-      //         "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6Ly93ZWJkZXYtYXBpLmxvZnRzY2hvb2wuY29tL2xvZ2luIiwiaWF0IjoxNTMwNjQyODU4LCJleHAiOjE1MzA2NjA4NTgsIm5iZiI6MTUzMDY0Mjg1OCwianRpIjoiNElSUG1FRTdKWW9zM1JDQSJ9.UuZ-mISka-vtCtcb9jxJzadekTsLzLyYiixeijEQs80"
-      //     }
-      //   })
-      //   .then(function(response) {
-      //     // handle success
-      //     console.log(response);
-      //   })
-      //   .catch(function(error) {
-      //     // handle error
-      //     console.log(error);
-      //   });
-
-      // axios
-      //   .get("http://webdev-api.loftschool.com/user?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6Ly93ZWJkZXYtYXBpLmxvZnRzY2hvb2wuY29tL2xvZ2luIiwiaWF0IjoxNTMwNjQyODU4LCJleHAiOjE1MzA2NjA4NTgsIm5iZiI6MTUzMDY0Mjg1OCwianRpIjoiNElSUG1FRTdKWW9zM1JDQSJ9.UuZ-mISka-vtCtcb9jxJzadekTsLzLyYiixeijEQs80")
-      //   .then(function(response) {
-      //     // handle success
-      //     console.log(response);
-      //   });
     },
     logonToServer() {
       axios
@@ -91,7 +68,6 @@ new Vue({
       inputIcon.style.fill = "#0548be";
     },
     loginBlur() {
-      // this.invalidLogin = false;
       const inputIcon = document.getElementById("icon-login");
       inputIcon.style.fill = "#c4cbcd";
     },
@@ -101,7 +77,6 @@ new Vue({
       inputIcon.style.fill = "#0548be";
     },
     passwordBlur() {
-      // this.invalidLogin = false;
       const inputIcon = document.getElementById("icon-password");
       inputIcon.style.fill = "#c4cbcd";
     }

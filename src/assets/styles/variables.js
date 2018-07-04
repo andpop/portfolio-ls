@@ -12,7 +12,9 @@ module.exports = {
   "date-color"   : "#5376B2",
   "bgworks-right": "#e3e2de",
   "circle-gray"  : "#dfdcd5",
-  "circle-blue"  : "#004cd1"
+  "circle-blue"  : "#004cd1",
+  baseApiUrl : "http://webdev-api.loftschool.com/",
+  loginApiUrl : baseApiUrl + "login"
 };
 // module.exports = {
 //   bgcolor     : "#223b65",

@@ -85,7 +85,12 @@ block content
             .login-form__buttons
               a(href="" id="mainpage-link").login-form__btn На главную
               button(type="submit").login-form__btn Войти
-                //- a(href="").login-form__btn Войти
+            .popup(v-if="logonFailed")
+              .popup__container
+                .popup__content
+                  p.popup__message {{popupMessage}}
+                  button(@click.prevent="logonFailed = false;").popup__btn.popup__btn--error Закрыть
+              
 
 
 

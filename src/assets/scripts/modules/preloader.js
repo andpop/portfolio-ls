@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", e => {
       (imagesLoadedAmount * 100) / imagesTotalAmount
     );
     for (let procent = previousProcent; procent <= currentProcent; procent++) {
-      console.log(procent);
+      // В консоль выводятся все проценты, но на странице они не отражаются (не успевают?)
+      // console.log(procent);
       percentElement.innerHTML = procent + "%";
       const dashOffset = dashArray - (dashArray / 100) * procent;
       let dashOffsetCurrent = dashArray;

@@ -4,19 +4,23 @@ import axios from "axios";
 
 new Vue({
   el: "#auth-form",
-  data: {
-    formData: {
-      login: "",
-      password: "",
-      isHuman: false,
-      humanConfirm: "human-no"
-    },
-    hintText: {
-      loginError: "Вы не ввели логин",
-      passwordError: "Вы не ввели пароль"
-    },
-    invalidLogin: false,
-    invalidPassword: false
+  data() {
+    return {
+      formData: {
+        login: "",
+        password: "",
+        isHuman: false,
+        humanConfirm: "human-no"
+      },
+      hintText: {
+        loginError: "Вы не ввели логин",
+        passwordError: "Вы не ввели пароль"
+      },
+      invalidLogin: false,
+      invalidPassword: false,
+      logonFailed: false,
+      popupMessage: ""
+    };
   },
   methods: {
     submit() {
@@ -38,11 +42,15 @@ new Vue({
       }
       // Делаем проверку на заполнение формы человеком
       // console.log(this.formData.isHuman, this.formData.humanConfirm);
-      if (!this.formData.isHuman || this.formData.humanConfirm === "human-no")
+      if (!this.formData.isHuman || this.formData.humanConfirm === "human-no") {
+        this.popupMessage = "Регистрироваться может только человек!";
+        this.logonFailed = true;
         return;
+      }
       // Форма заполнена корректно - отсылаем данные на сервер
       console.log("Форма заполнена корректно. Логинимся на сервер");
       this.logonToServer();
+      console.log("After logon");
     },
     logonToServer() {
       axios
@@ -50,16 +58,23 @@ new Vue({
           name: this.formData.login,
           password: this.formData.password
         })
-        .then(function(response) {
+        .then(response => {
           // handle success
-          console.log(response.data.token);
           localStorage.setItem("token", response.data.token);
           // TO-DO: Переход на страницу с админкой
         })
-        .catch(function(error) {
+        .catch(error => {
           // handle error
-          console.log(error.response.status, error.response.data.error);
-          // TO-DO: Вывод модального окна "Неправильное имя пользователя или пароль"
+          // console.log(error.response.status, error.response.data.error);
+          if (error.response.status == "401") {
+            this.popupMessage = "Вы ввели неправильное имя или пароль.";
+          } else {
+            this.popupMessage =
+              "Ошибка при регистрации на сервере. Статус " +
+              error.response.status;
+          }
+
+          this.logonFailed = true;
         });
     },
     loginFocus() {

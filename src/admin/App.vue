@@ -8,7 +8,7 @@
 import admpanel from "./components/admpanel";
 export default {
   components: {
-    appTitle: require("./components/title").default,
+    // appTitle: require("./components/title").default,
     admpanel
   },
   data() {

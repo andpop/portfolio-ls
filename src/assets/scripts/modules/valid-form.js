@@ -61,7 +61,9 @@ new Vue({
         .then(response => {
           // handle success
           localStorage.setItem("token", response.data.token);
-          alert("Авторизация прошла успешно, теперь нужно открыть админ-панель");
+          alert(
+            "Авторизация прошла успешно, теперь нужно открыть админ-панель"
+          );
           // TO-DO: Переход на страницу с админкой
         })
         .catch(error => {

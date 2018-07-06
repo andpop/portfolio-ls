@@ -6,6 +6,7 @@ block variables
   - var headerSubtitle = 'Личный сайт веб-разработчика'
   - var triangleLeftColor = "#f2f0e8"
   - var triangleRightColor = "#eae8e2"
+  - var triangleRightColor2 = "#f4f5f0"
 
 block scripts
   script(src='about.bundle.js')
@@ -16,6 +17,8 @@ block content
   section.section.about
     +triangles(`${triangleLeftColor}`, `${triangleRightColor}`, 1)
     .triangles--alternate
+      +triangles(`${triangleLeftColor}`, `${triangleRightColor2}`, 1)
+    .triangles--alternate2
       +triangles(`${triangleLeftColor}`, `${triangleLeftColor}`, 1)
 
     .about__left

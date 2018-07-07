@@ -9,6 +9,7 @@ const skill = {
   methods: {
     drawCircle() {
       const circle = this.$refs["color-circle"];
+      const skillList = this.$root.$refs["skill-list"];
       const dashArray = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
       );
@@ -20,7 +21,11 @@ const skill = {
         circle.style.strokeDashoffset = dashOffsetCurrent;
         dashOffsetCurrent--;
       }
-      // circle.style.strokeDashoffset = dashOffset;
+
+      window.addEventListener("scroll", () => {
+        let top = skillList.getBoundingClientRect().top;
+        console.log("skill-list top: ", top);
+      });
     }
   },
   mounted() {
@@ -35,6 +40,11 @@ const skillsRow = {
   },
   props: {
     skill: Object
+  },
+  methods: {
+    scrollHandle() {
+      console.log("scrollllllllll");
+    }
   }
 };
 

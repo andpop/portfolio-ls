@@ -8,7 +8,6 @@ export function scrollToElement(theElement) {
   const timerId = setInterval(() => {
     window.scrollBy(0, deltaY);
     box = theElement.getBoundingClientRect();
-    console.log(box.top, deltaY);
     if (
       (deltaY > 0 && box.top <= 0) ||
       (deltaY < 0 && box.top >= 0) ||

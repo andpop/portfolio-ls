@@ -1,13 +1,31 @@
 <template lang="pug">
   nav.nav
     ul.menu
-      li.menu__item 
-        a(href="#").menu__link tab1
-      li.menu__item.menu__item--active 
-        a(href="#").menu__link tab2
-      li.menu__item
-        a(href="#").menu__link tab3
+      li(v-for="menuItem in menuItems").menu__item
+        router-link(
+          :to="menuItem.href"
+        ).menu__link {{menuItem.title}}
+      //- li.menu__item 
+      //-   a(href="#").menu__link tab1
+      //- li.menu__item.menu__item--active 
+      //-   a(href="#").menu__link tab2
+      //- li.menu__item
+      //-   a(href="#").menu__link tab3
 </template>
+<script>
+export default {
+  data() {
+    return {
+      menuItems: [
+        { title: "Обо мне", href: "/" },
+        { title: "Блог", href: "/blog" },
+        { title: "Работы", href: "/works" }
+      ]
+    };
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 .nav {
   background-color: #f0efe9;

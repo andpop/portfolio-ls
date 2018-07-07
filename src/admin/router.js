@@ -5,52 +5,55 @@ import axios from "axios";
 Vue.use(VueRouter);
 
 const guard = axios.create({
-  baseURL: "http://localhost:8000"
+  baseURL: "http://webdev-api.loftschool.com"
 });
 
-import skills from "./components/skills.vue";
-import header from "./components/header.vue";
-import tabs from "./components/tabs.vue";
-import works from "./components/works.vue";
+import header from "./components/admpanelHeader.vue";
+import menu from "./components/admpanelMenu.vue";
+import about from "./components/admpanelAbout.vue";
+import blog from "./components/admpanelBlog.vue";
+import works from "./components/admpanelWorks.vue";
 
 const routes = [
   {
     path: "/",
     components: {
-      default: skills,
-      header: header,
-      tabs: tabs
+      default: about
+    }
+  },
+  {
+    path: "/blog",
+    components: {
+      default: blog
     }
   },
   {
     path: "/works",
     components: {
-      default: works,
-      header: header,
-      tabs: tabs
+      default: works
     }
   }
 ];
 
 const router = new VueRouter({ routes });
 
-router.beforeEach((to, from, next) => {
-  guard
-    .get("/user", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    })
-    .then(response => {
-      next();
-    })
-    .catch(error => {
-      console.log("error in router");
-      localStorage.removeItem("token");
-      window.location.href = "//google.com";
-    });
+// router.beforeEach((to, from, next) => {
+//   guard
+//     .get("/user", {
+//       headers: {
+//         Authorization: `Bearer ${localStorage.getItem("token")}`
+//       }
+//     })
+//     .then(response => {
+//       next();
+//     })
+//     .catch(error => {
+//       console.log("error in router");
+//       localStorage.removeItem("token");
+//       window.location.href = "//google.com";
+//     });
 
-  // next();
-});
+//   // next();
+// });
 
 export default router;

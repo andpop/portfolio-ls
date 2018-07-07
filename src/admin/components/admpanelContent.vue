@@ -1,7 +1,8 @@
 <template lang="pug">
   .content
+    router-view
     //- admpanel-blog
-    admpanel-works
+    //- admpanel-works
 </template>
 <script>
 import admpanelBlog from "./admpanelBlog";

@@ -1,13 +1,16 @@
 <template lang="pug">
   .content
-    admpanel-blog
+    //- admpanel-blog
+    admpanel-works
 </template>
 <script>
 import admpanelBlog from "./admpanelBlog";
+import admpanelWorks from "./admpanelWorks";
 
 export default {
   components: {
-    admpanelBlog
+    admpanelBlog,
+    admpanelWorks
   }
 };
 </script>
@@ -54,6 +57,10 @@ export default {
   border: none;
   margin-bottom: 30px;
   color: #474b57;
+}
+
+.input-file {
+  margin-bottom: 20px;
 }
 
 .button {

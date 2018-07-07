@@ -3,17 +3,19 @@
     h1.title Страница "Блог"
     h2.subtitle Добавить запись
     form.form
-      input(placeholder="Название" name="post-name" id="post-name" v-model="postData.title").input
-      input(placeholder="Дата" name="post-date" id="post-date" v-model="postData.date").input
-      textarea(placeholder="Содержание" name="post-content" id="post-content" v-model="postData.content").textarea
-      button(@click.prevent="addPost").button.button--info Добавить
+      input(placeholder="Название" name="post-name" id="post-name" v-model="post.title").input
+      input(placeholder="Дата" name="post-date" id="post-date" v-model="post.date").input
+      textarea(placeholder="Содержание" name="post-content" id="post-content" v-model="post.content").textarea
+      button(@click.prevent="addNewPost").button.button--info Добавить
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      postData: {
+      post: {
         title: "",
         date: "",
         content: ""
@@ -21,8 +23,10 @@ export default {
     };
   },
   methods: {
-    addPost() {
+    ...mapActions(["addPost"]),
+    addNewPost() {
       console.log("Add post!");
+      this.addPost(this.post);
     }
   }
 };

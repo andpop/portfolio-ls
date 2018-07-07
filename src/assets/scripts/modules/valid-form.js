@@ -59,11 +59,17 @@ new Vue({
           password: this.formData.password
         })
         .then(response => {
-          // handle success
-          localStorage.setItem("token", response.data.token);
-          alert(
-            "Авторизация прошла успешно, теперь нужно открыть админ-панель"
-          );
+          // handle succes
+          if (response.status === 200) {
+            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("ttl", ttl);
+            // window.location.href = "/admin";
+            alert(
+              "Авторизация прошла успешно, теперь нужно открыть админ-панель"
+            );
+          }
+
           // TO-DO: Переход на страницу с админкой
         })
         .catch(error => {

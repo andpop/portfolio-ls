@@ -1,6 +1,14 @@
 .triangles--alternate {
   display: none;
 
+  @include desktops1200 {
+    display: block;
+  }
+}
+
+.triangles--alternate2 {
+  display: none;
+
   @include desktops880 {
     display: block;
   }

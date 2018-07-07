@@ -18,7 +18,7 @@ mixin socialIcons(colorClass)
   ul.social_list
     each item in socials
       li.social__item
-        a.social__link(href=`${item[1]}`)
+        a(target="_blank").social__link(href=`${item[1]}`)
           +icon(item[0], `social__icon ${colorClass}`)
 
 //- Информация для нижней части футера

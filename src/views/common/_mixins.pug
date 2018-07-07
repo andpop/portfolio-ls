@@ -11,14 +11,14 @@ mixin image(imagePath, imageAlt, imageClass)
 mixin socialIcons(colorClass)
   - 
     var socials = [
-      ['vk', 'http://vk.com'],
-      ['github', 'http://github.com'],
+      ['vk', 'https://vk.com/id483184635'],
+      ['github', 'https://github.com/andpop'],
       ['in', 'http://linkedin.com']
     ]
   ul.social_list
     each item in socials
       li.social__item
-        a(target="_blank").social__link(href=`${item[1]}`)
+        a(href=`${item[1]}` target="_blank").social__link
           +icon(item[0], `social__icon ${colorClass}`)
 
 //- Информация для нижней части футера

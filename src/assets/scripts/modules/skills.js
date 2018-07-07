@@ -13,18 +13,23 @@ const skill = {
       const dashArray = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
       );
-      const dashOffset = dashArray - (dashArray / 100) * this.skillPercent;
-      const strokeOpacity = this.skillPercent / 100;
-      circle.style.strokeOpacity = strokeOpacity;
-      let dashOffsetCurrent = dashArray;
-      while (dashOffsetCurrent > dashOffset) {
-        circle.style.strokeDashoffset = dashOffsetCurrent;
-        dashOffsetCurrent--;
-      }
 
       window.addEventListener("scroll", () => {
         let top = skillList.getBoundingClientRect().top;
-        console.log("skill-list top: ", top);
+        if (top <= 300) {
+          const dashArray = parseInt(
+            getComputedStyle(circle).getPropertyValue("stroke-dasharray")
+          );
+          const dashOffset = dashArray - (dashArray / 100) * this.skillPercent;
+          const strokeOpacity = this.skillPercent / 100;
+          circle.style.strokeOpacity = strokeOpacity;
+          let dashOffsetCurrent = dashArray;
+          while (dashOffsetCurrent > dashOffset) {
+            circle.style.strokeDashoffset = dashOffsetCurrent;
+            dashOffsetCurrent--;
+          }
+        }
+        // console.log("skill-list top: ", top);
       });
     }
   },
@@ -40,11 +45,6 @@ const skillsRow = {
   },
   props: {
     skill: Object
-  },
-  methods: {
-    scrollHandle() {
-      console.log("scrollllllllll");
-    }
   }
 };
 

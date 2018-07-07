@@ -2,6 +2,10 @@
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color   : $bgcolor;
   // background-image   : url(assets/images/bg/mountains-min.png);
@@ -13,12 +17,15 @@
     position: absolute;
     top     : 5%;
     right   : 10%;
-  }
-  
-  &__board {
-    // display    : none;
-    width      : 380px;
-    padding-top: 40px;
-    @include block-center-absolute
+    
+    @include desktops1300 {
+      right: 40px;
+    }
+
+    @include phones570 {
+      left     : 50%;
+      right: initial;
+      transform: translateX(-50%);
+    }
   }
 }

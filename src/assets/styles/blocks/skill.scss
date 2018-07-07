@@ -22,7 +22,9 @@
     &--above {
       stroke           : $circle-blue;
       stroke-dasharray : 251;
-      stroke-dashoffset: 50;
+      stroke-dashoffset: 251;
+      // transition-delay: 2s;
+      transition-duration: 1s;
     }
   }
   

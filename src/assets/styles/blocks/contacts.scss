@@ -1,6 +1,6 @@
 .contacts {
-  background-color: #ffffff;
-  opacity         : 0.7;
+  background-color: rgba(#ffffff, 0.7);
+  // opacity         : 0.7;
   padding: 20px 15px;
   
   &__data {
@@ -17,10 +17,13 @@
 
   &__item {
     width: 50%;
-    // display: inline-block;
     display    : flex;
     align-items: center;
     margin-top : 15px;
+
+    @include desktops880 {
+      width: 100%;
+    }
   }
 
   &__icon {

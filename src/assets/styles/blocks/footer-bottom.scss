@@ -14,6 +14,11 @@
   &--about {
     position        : relative;
     background-color: rgba($dark-blue,0.85);
+
+    @include desktops1100 {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
   }
   
   &__text {
@@ -21,6 +26,23 @@
     font-family: Roboto;
     font-size  : 16px;
     font-weight: 300;
+
+    @include phones450 {
+      display: none;
+    }
+
+    &--alt {
+      display: none;
+      color: #ffffff;
+      font-weight: 300 ;
+
+      @include phones450 {
+        display: block;
+      }
+  
+    }
   }
+
+
 }
 

@@ -9,31 +9,31 @@
     flex-direction: column;
     align-items   : center;
     margin-bottom : 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    position: relative;
   }
 
   &__input {
-    width        : 340px;
+    width        : 100%;
     height       : 45px;
     margin-bottom: 20px;
     border       : none;
     outline: none;
     color: $text-color;
-    // padding-top   : 10px;
-    // padding-bottom: 10px;
     padding-left: 60px;
+    background-color: #fff;
 
-    &--login {
-      // background     : svg-load('login.svg', fill=#c4cbcd) left center no-repeat;
-      background      : url(assets/images/login.png) left center no-repeat;
-      background-size : 44px auto;
-      background-color: #fff;
-    }
+    // &--login {
+    //   background      : url(assets/images/login.png) left center no-repeat;
+    //   background-size : 44px auto;
+    // }
 
-    &--password {
-      background      : url(assets/images/password.png) left center no-repeat;
-      background-size : 44px auto;
-      background-color: #fff;
-    }
+    // &--password {
+    //   background      : url(assets/images/password.png) left center no-repeat;
+    //   background-size : 44px auto;
+    // }
   }
 
   &__is-human {
@@ -125,4 +125,11 @@
       background-color: $dark-blue;
     }
   }
+}
+
+// Подсказку позиционируем относительно поля ввода (input) - опускаем ниже поля
+.login-form__hint {
+  position: absolute;
+  top: 90%;
+  z-index: 10;
 }

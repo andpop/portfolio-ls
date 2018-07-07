@@ -2,6 +2,14 @@ body, html {
   height: 100%;
 }
 
+html {
+  font-size: 16Px;
+
+  @include tablets {
+    font-size: 14Px;
+  }
+}
+
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 16px;

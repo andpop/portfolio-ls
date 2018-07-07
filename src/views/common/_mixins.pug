@@ -11,24 +11,27 @@ mixin image(imagePath, imageAlt, imageClass)
 mixin socialIcons(colorClass)
   - 
     var socials = [
-      ['vk', 'http://vk.com'],
-      ['github', 'http://github.com'],
+      ['vk', 'https://vk.com/id483184635'],
+      ['github', 'https://github.com/andpop'],
       ['in', 'http://linkedin.com']
     ]
   ul.social_list
     each item in socials
       li.social__item
-        a.social__link(href=`${item[1]}`)
+        a(href=`${item[1]}` target="_blank").social__link
           +icon(item[0], `social__icon ${colorClass}`)
 
 //- Информация для нижней части футера
 mixin copyrightInfo
-  span.footer-bottom__text &copy; Андрей Попов | создано с любовью в LoftSchool | 2018
+  span.footer-bottom__text &copy; Андрей Попов | Cоздано с любовью в LoftSchool | 2018
+  .footer-bottom__text--alt 
+    p &copy; Андрей Попов 
+    p Cоздано с любовью в LoftSchool | 2018
 
 //- Треугольник для левой части страниц
-mixin triangle(triangleClass)
-  svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
-    polygon(points="0,0 0,100 100,100")
+//- mixin triangle(triangleClass)
+//-   svg(class=`${triangleClass}` width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+//-     polygon(points="0,0 0,100 100,100")
 
 //- Два треугольника с фоновыми цветами
 mixin triangles(colorLeft, colorRight, opacity)

@@ -6,12 +6,15 @@ module.exports = {
   "text-color"   : "#474b57",
   "bgabout-left" : "#f2f0e8",
   "bgabout-right": "#eae8e2",
+  "bgabout-right2": "#f4f5f0",
   "bgblog"       : "#faf8f0",
   "blog-color"   : "#455a64",
   "date-color"   : "#5376B2",
   "bgworks-right": "#e3e2de",
   "circle-gray"  : "#dfdcd5",
   "circle-blue"  : "#004cd1"
+  // baseApiUrl : "http://webdev-api.loftschool.com/",
+  // loginApiUrl : baseApiUrl + "login"
 };
 // module.exports = {
 //   bgcolor     : "#223b65",

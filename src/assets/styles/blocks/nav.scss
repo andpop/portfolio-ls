@@ -1,5 +1,9 @@
 .nav__list {
   display: flex;
+
+  @include tablets730 {
+    justify-content: center;
+  }
 }
 
 .nav__item {
@@ -26,6 +30,11 @@
   &--about {
     margin-right : 30px;
     margin-bottom: 20px;
+
+    @include phones450 {
+      margin-right : 8px;
+    }
+
     &:last-child {
       margin-right: 0;
     }

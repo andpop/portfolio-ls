@@ -1,13 +1,55 @@
 .about {
   display   : flex;
+  flex-wrap: wrap;
   margin-top: -20vh;
 
   &__left {
     width           : 50%;
     display         : flex;
+    flex-direction: row;
     background-color: $bgabout-left;
     padding-right   : 20px;
     padding-top     : 10px;
+
+    @include desktops1200 {
+      flex-direction: column;
+      padding-right: 0;
+    }
+
+    @include desktops880 {
+      width: 100%;
+    }
+
+    &-title {
+      text-align: center;
+      width     : 50%;
+      position  : relative;
+      margin-bottom: 40px;
+  
+      @include desktops1200 {
+        width: 100%;
+      }
+
+      @include desktops880 {
+        margin-top: 65px;
+        margin-bottom: 65px;
+      }
+
+      @include phones570 {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+    }
+    
+    &-content {
+      width: 50%;
+      margin-bottom: 20px;
+  
+      @include desktops1200 {
+        width: 100%;
+      }
+    }  
+      
   }
 
   &__right {
@@ -15,21 +57,39 @@
     background-color: $bgabout-right;
     padding-left    : 30px;
     padding-top     : 10px;
-  }
+    padding-right: 12px;
 
-  &__right-description {
-    margin-bottom: 50px;
-  }
+    @include desktops1200 {
+      background-color: $bgabout-right2;
+      padding-left: 20px;
+      padding-right: 0;
+    }
 
-  &__left-title {
-    text-align: center;
-    width     : 50%;
-    position  : relative;
+    @include desktops880 {
+      width: 100%;
+      padding-top: 30px;
+    }
+
+    &-content {
+      @include desktops880 {
+        text-align: center;
+      }
+    }
+
+    &-description {
+      margin-bottom: 50px;
+
+      @include desktops880 {
+        max-width: 475px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include phones570 {
+        max-width: 320px;
+      }
+    }
   }
-  
-  &__left-content {
-    width: 50%;
-  }  
 
   &__title-with-stars {
     position: relative;
@@ -47,6 +107,22 @@
       background-size : contain;
       background-color: transparent;
       z-index         : -1;
+
+      @include desktops1200 {
+        height: 140px;
+      }
+
+      @include desktops880 {
+        height: 170px;
+      }
+
+      @include tablets730 {
+        height: 140px;
+      }
+
+      @include phones570 {
+        display: none;
+      }
     }
   }
 }

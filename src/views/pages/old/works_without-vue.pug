@@ -1,0 +1,76 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var headerTitle = 'Андрей Попов'
+  - var headerSubtitle = 'Личный сайт веб-разработчика'
+  - var triangleColor = "#0d1120"
+  
+
+//- block scripts
+//-   script(src='works.bundle.js')
+
+block content
+  +header(headerTitle, headerSubtitle)
+    
+  section.section.works
+    +triangles(`${triangleColor}`, `${triangleColor}`, 0.85)
+        
+    h2.works__title Мои работы
+    .slider-container
+      .slider
+        .slider__info-container
+          .slider__info.project__details
+            h3.project__title Сайт школы онлайн-образования
+            .project__tools HTML, CSS, JavaScript
+            .project__btn
+              a(href="http://andpop.ru" target="_blank").project__link Посмотреть сайт
+          
+        .slider__display
+          +image('content/slider/work-1.png', 'Скриншоты проекта', 'slider__big-pic')
+
+        .slider__buttons
+          .slider__button
+            .slider__button-img-wrap
+              +image('content/slider/work-4.png', 'Скриншоты проекта', 'slider__button-pic')
+
+          .slider__button.slider__button--next
+            .slider__button-img-wrap
+              +image('content/slider/work-2.png', 'Скриншоты проекта', 'slider__button-pic')
+        
+  
+  section.section.comments
+    h2.comments__title Что обо мне говорят
+
+    .comments__comments-list
+      .comment.comments__comment
+        +image('content/comments/comment1.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .comment__author Ковальчук Дмитрий
+        .comment__position основатель Loftschool
+      .comment.comments__comment
+        +image('content/comments/comment2.png', 'Фотография', 'comment__photo')
+        .comment__text
+          p Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах!
+        .comment__author Сабанцев Владимир
+        .comment__position преподаватель
+    
+    form(action="mail-me.php").feedback.comments__feedback
+      .feedback__title Связаться со мной
+      .feedback__input-wrap
+        input(type="text" name="feedback-name" placeholder="Ваше имя").feedback__input
+        input(type="text" name="feedback-email" placeholder="Ваш email").feedback__input
+        textarea(name="feedback-message"  placeholder="Ваше сообщение", cols="30", rows="6").feedback__input.feedback__message
+      .feedback__buttons
+        button(type="submit").feedback__btn.feedback__btn--submit Отправить
+        button(type="reset").feedback__btn.feedback__btn--reset Очистить
+            
+    a(href="#", alt="Предыдущий экран").arrow.works__arrow-up
+      +icon('arrow_up', 'arrow__icon')
+    
+    //- include ../common/footer.pug
+
+
+
+

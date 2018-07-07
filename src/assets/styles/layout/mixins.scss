@@ -1,3 +1,9 @@
+// resolutions
+$desktops: 1800Px;
+$desktops880: 880Px;
+$tablets: 768Px;
+$phones: 320Px;
+
 @mixin block-center-absolute {
   position : absolute;
   top      : 50%;
@@ -18,3 +24,70 @@
   height       : $width;
   border-radius: $width/2;
 }
+
+@mixin desktops1200 {
+  @media screen and (max-width: 1200Px) {
+    @content;
+  }
+}
+
+@mixin desktops1300 {
+  @media screen and (max-width: 1300Px) {
+    @content;
+  }
+}
+
+@mixin desktops1100 {
+  @media screen and (max-width: 1100Px) {
+    @content;
+  }
+}
+
+@mixin desktops880 {
+  @media screen and (max-width: 880Px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin tablets730 {
+  @media screen and (max-width: 730Px) {
+    @content;
+  }
+}
+
+@mixin phones570 {
+  @media screen and (max-width: 570Px) {
+    @content;
+  }
+}
+
+@mixin phones450 {
+  @media screen and (max-width: 450Px) {
+    @content;
+  }
+}
+
+@mixin phones390 {
+  @media screen and (max-width: 390Px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+// @mixin tablets--big{
+//   @media screen and (max-width: 920px){
+//       @content;
+//   }
+// }
+

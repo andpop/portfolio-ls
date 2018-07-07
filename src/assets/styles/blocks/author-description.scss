@@ -1,4 +1,29 @@
-.author-description__avatar {
-  width: 100%;
+.author-description {
+  
+  @include desktops1200 {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 475px;
+  }
+
+  @include phones570 {
+    max-width: 320px;
+  }
+
+  &__avatar {
+    width: 100%;
+  }
+
+  &__image {
+    
+    @include desktops1200 {
+      margin-bottom: 20px;
+    }
+
+    @include phones390 {
+      margin-left: -5%;
+      margin-right: -5%;
+    }
+  }
 }
 

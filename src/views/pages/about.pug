@@ -6,23 +6,21 @@ block variables
   - var headerSubtitle = 'Личный сайт веб-разработчика'
   - var triangleLeftColor = "#f2f0e8"
   - var triangleRightColor = "#eae8e2"
+  - var triangleRightColor2 = "#f4f5f0"
 
-
-//- block scripts
-//-   script(src='about.bundle.js')
+block scripts
+  script(src='about.bundle.js')
 
 block content
   +header(headerTitle, headerSubtitle)
     
   section.section.about
     +triangles(`${triangleLeftColor}`, `${triangleRightColor}`, 1)
+    .triangles--alternate
+      +triangles(`${triangleLeftColor}`, `${triangleRightColor2}`, 1)
+    .triangles--alternate2
+      +triangles(`${triangleLeftColor}`, `${triangleLeftColor}`, 1)
 
-    //- .triangles
-    //-   .triangle.triangle--left
-    //-     +triangle('triangle--fill-left')
-    //-   .triangle.triangle--right
-    //-     +triangle('triangle--fill-right')
-        
     .about__left
       .about__left-title
         h1.block-title.about__title-with-stars Обо мне
@@ -43,26 +41,26 @@ block content
       .about__right-description.text-content
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
       .about__right-content
-        - 
-          var skills = [
-            ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
-            ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70], ['MongoDB', 70]]],
-            ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
-          ]
-
-        ul.skills-list
-          each skillsrow in skills
-            li.skills-list__item.skills-row
-              .skills-row__title #{skillsrow[0]}
-              ul.skills-row__list
-                each skill in skillsrow[1]
-                  li.skills-row__item
-                    figure(data-percents="70").skill
-                      .svg-envelope
-                        svg(width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-                          circle(cx="50" cy="50" r="40").skill__circle
-                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle--above
-                      .skill__title #{skill[0]}
+        #skills-container
+        //- - 
+        //-   var skills = [
+        //-     ['Frontend', [['HTML5', 30], ['CSS3', 50], ['JavaScript & jQuery', 70]]],
+        //-     ['Backend', [['PHP', 30], ['mySQL', 50], ['NodeJS & npm', 70], ['MongoDB', 70]]],
+        //-     ['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
+        //-   ]
+        //- ul.skills-list
+        //-   each skillsrow in skills
+        //-     li.skills-list__item.skills-row
+        //-       .skills-row__title #{skillsrow[0]}
+        //-       ul.skills-row__list
+        //-         each skill in skillsrow[1]
+        //-           li.skills-row__item
+        //-             figure(data-percents="70").skill
+        //-               .svg-envelope
+        //-                 svg(width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+        //-                   circle(cx="50" cy="50" r="40").skill__circle
+        //-                   circle(cx="50" cy="50" r="40").skill__circle.skill__circle--above
+        //-               .skill__title #{skill[0]}
                   
   section.section.contacts-map
     //- .google-map
@@ -84,6 +82,4 @@ block content
                 .contacts__icon
                   +icon(`${item[0]}`, 'contacts__icon-img')
                 .contacts__text #{item[1]}
-      
-    //- include ../common/footer.pug
-
+    .map

@@ -1,0 +1,27 @@
+.hint {
+  &--error {
+    background-color: #e44845;
+    color: #fff;
+    font-size: 16px;
+    line-height: 48px;
+    vertical-align: middle;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    position: relative;
+
+    &:after {
+      content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 48%;
+    border-top: 0 solid transparent;
+    border-bottom: 10px solid #e44845;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    width: 0;
+    height: 0;
+    }
+  }
+}

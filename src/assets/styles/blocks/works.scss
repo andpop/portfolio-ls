@@ -14,8 +14,19 @@
     font-family     : Sansus;
     font-size       : 63px;
     font-weight     : 400;
+    background      : url(assets/images/bg/stars4.svg) center no-repeat;
+    background-size : contain;
     background-color: rgba(#0d1120, 0.85);
     line-height     : 160px;
+
+    @include desktops880 {
+      font-size: 49Px;
+    }
+
+    @include phones570 {
+      font-size: 35Px;
+    }
+
   }
 
   &__left {
@@ -33,6 +44,19 @@
 
   &__arrow-up {
     margin-bottom: 210px;
+
+    @include desktops1100 {
+      margin-bottom: 260px;
+    }
+    @include desktops880 {
+      margin-bottom: 240px;
+    }
+    @include tablets730 {
+      margin-bottom: 350px;
+    }
+    @include phones450 {
+      margin-bottom: 400px;
+    }
   }
 }
 

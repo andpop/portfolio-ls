@@ -3,6 +3,25 @@
   background-color: $bgblog;
   margin-top      : -20vh;
 
+  &__swipe-link {
+      width           : 50px;
+      height          : 50px;
+      border-radius   : 25px;
+      background-color: #253468;
+      box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 50vh;
+      right: -12px;
+      z-index: -1;
+      display: none;
+      // border: 1px solid white;
+
+      @include tablets {
+        display: block;
+      }
+    }
+
+
   &__left {
     width          : 20%;
     display        : flex;
@@ -10,19 +29,65 @@
     justify-content: flex-end;
     margin-right   : 100px;
     padding-top    : 70px;
+    transition-duration: 0.5s;
+    
+    @include desktops880 {
+      margin-right   : 30px;
+    }
+  
+    @include tablets {
+      width: 0;
+    }
+
+    @include tablets {
+      background-color: #253468;
+      box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+      width: 295px;
+      // width: 80%;
+      color: #fff;
+      font-weight: 400;
+      position: fixed;
+      top: 0;
+      left: -295px;
+      bottom: 0;
+      height: 100vh;
+      align-items: center;
+      z-index: 10;
+    }
+
+    // &:before {
+    //   content: '';
+    //   width           : 50px;
+    //   height          : 50px;
+    //   border-radius   : 25px;
+    //   background-color: #253468;
+    //   position: absolute;
+    //   top: 50vh;
+    //   right: -10px;
+    //   border: 1px solid white;
+    // }
 
     &-content {
-      width: 280px;
+      max-width: 280px;
+      width: 100%;
+      padding-left: 10px;
+      // outline: 1px solid;
     }
+
   }
 
   &__right {
     padding-top: 70px;
 
     &-content {
-      width        : 920px;
+      max-width        : 910px;
+      width: 95%;
       padding-left : 20px;
       padding-right: 20px;
+
+      @include desktops1200 {
+        max-width: 700px;
+      }
     }
   }
 }

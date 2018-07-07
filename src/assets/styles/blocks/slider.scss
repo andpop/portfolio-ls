@@ -9,6 +9,18 @@
   height    : 100vh;
   min-height: 650px;
 
+  @include desktops880 {
+    grid-template: "display" 51%
+    "info" 26%
+    "buttons" 1fr / 1fr;
+  }
+
+  @include phones570 {
+    grid-template: "display" 44%
+    "info" 39%
+    "buttons" 1fr / 1fr;
+  }
+
   &__info-container {
     grid-area       : info;
     display         : flex;
@@ -17,12 +29,22 @@
     background-color: $bgabout-left;
   }
 
+  &__info-transition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
   &__display {
     grid-area       : display;
     display         : flex;
     justify-content : center;
     align-items     : center;
     background-color: $bgworks-right;
+    overflow: hidden;
+    position: relative;
   }
 
   &__buttons {
@@ -30,10 +52,19 @@
     display  : flex;
   }
 
+  &__big-pic-wrap {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    width   : 90%;
+    height  : 90%;
+    position: absolute;
+  }
+
   &__big-pic {
     display   : block;
-    max-width : 90%;
-    max-height: 90%;
+    max-width: 100%;
+    height: 100%;
   }
 
   &__button {
@@ -41,6 +72,12 @@
     position   : relative;
     user-select: none;
     width      : 50%;
+    transition: 0.5s;
+    overflow: hidden;
+
+    &:hover {
+      opacity: 0.7;
+    }
 
     // Затемнение кнопок слайдера
     &:before {
@@ -59,14 +96,16 @@
       content   : "";
       width     : 44px;
       height    : 29px;
-      background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat / contain;
+      background: svg-load('arrow_down.svg', fill=#ffffff) center center no-repeat;
+      background-size: contain;
       z-index   : 20;
       @include block-center-absolute;
     }
 
     &--next {
       &:after {
-        background: svg-load('arrow_up.svg', fill=#ffffff) center center no-repeat / contain;
+        background: svg-load('arrow_up.svg', fill=#ffffff) center center no-repeat;
+        background-size: contain;
       }
     }
   
@@ -77,8 +116,7 @@
       justify-content: center;
       // Для того, чтобы картинка полностью поместилась в блок
       position: absolute;
-      left    : 0;
-      top     : 0;
+      bottom: 0;
       width   : 100%;
       height  : 100%;
     }
@@ -89,5 +127,104 @@
       max-height: 90%;
     }
   }
+
+  &__button-img-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__display-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: 1s;
+}
+
+.slide-down-leave {
+  bottom: 0;
+}
+
+.slide-down-leave-to {
+  bottom: -100%;
+}
+
+.slide-down-enter {
+  bottom: 100%;
+}
+
+.slide-down-enter-to {
+  bottom: 0%;
+}
+
+.slide-up-enter-active, .slide-up-leave-active {
+  transition: 1s;
+}
+
+.slide-up-leave {
+  bottom: 0;
+}
+
+.slide-up-leave-to {
+  bottom: 100%;
+}
+
+.slide-up-enter {
+  bottom: -100%;
+}
+
+.slide-up-enter-to {
+  bottom: 0%;
+}
+
+.slide-display-enter-active, .slide-display-leave-active {
+  transition: 1s;
+}
+
+.slide-display-leave {
+  opacity: 1;
+}
+
+.slide-display-leave-to {
+  opacity: 0;
+}
+
+.slide-display-enter {
+  opacity: 0;
+}
+
+.slide-display-enter-to {
+  opacity: 1;
+}
+
+.slide-info-enter-active, .slide-info-leave-active {
+  transition: 0.5s;
+}
+
+.slide-info-leave {
+  opacity: 1;
+}
+
+.slide-info-leave-to {
+  opacity: 0;
+}
+
+.slide-info-enter {
+  opacity: 0;
+}
+
+.slide-info-enter-to {
+  opacity: 1;
 }
 

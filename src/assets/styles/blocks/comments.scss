@@ -7,31 +7,64 @@
   align-items     : center;
   padding-top     : 40px;
   min-height      : 1350px;
+  @include phones570 {
+    padding-top: 20px;
+  }
   
   &__title {
     display       : block;
-    width         : 350px;
+    max-width: 350px;
+    width         : 90%;
     text-align    : center;
     text-transform: uppercase;
     color         : #ffffff;
     font-family   : Sansus;
     font-size     : 63px;
     font-weight   : 400;
-    line-height   : 66px;
+    // line-height   : 66px;
     margin-bottom : 60px;
+
+    @include desktops880 {
+      margin-bottom: 40px;
+      font-size: 49Px;
+    }
+
+    @include phones570 {
+      margin-bottom: 40px;
+      font-size: 35Px;
+    }
   }
 
   &__comments-list {
     display        : flex;
     flex-direction : row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom  : 70px;
+
+    @include desktops880 {
+      margin-bottom: 30px;
+    }
+
+    @include phones570 {
+      margin-bottom: 0;
+    }
   }
 
   &__comment {
     width       : 380px;
     text-align  : center;
     margin-right: 20px;
+
+    @include desktops880 {
+      width: 330px;
+    }
+
+    @include tablets730 {
+      width: 95%;
+      margin-right: 0;
+      margin-bottom: 40Px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -41,5 +74,13 @@
   &__feedback {
     width        : 380px;
     margin-bottom: 70px;
+
+    @include desktops880 {
+      margin-bottom: 30px;
+    }
+
+    @include phones570 {
+      width: 310Px;
+    }
   }
 }

@@ -1,0 +1,46 @@
+script(type="text/x-template")#slider
+  .slider
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
+    buttons(
+      :works="works"
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+
+script(type="text/x-template")#slider-info
+  .slider__info-container
+    .slider__info.project__details
+      //- Анимацию смены информации о работах сделать не удалось 
+      //- transition-group(name="slide-info" tag="div" mode="in-out").slider__info-transition
+      //-   .project__details-container(:key="work.id")
+      //-     h3.project__title {{work.title}}
+      //-     .project__tools {{work.skills}}
+      .project__details-container
+        h3.project__title {{work.title}}
+        .project__tools {{work.skills}}
+      .project__btn
+        a(:href="work.link" target="_blank").project__link Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+  .slider__display
+    transition-group(name="slide-display" tag="div" mode="in-out").slider__display-container
+      .slider__big-pic-wrap(:key="work.photo")
+        img(:src="work.photo", alt="Скриншоты проекта").slider__big-pic
+
+script(type="text/x-template")#slider-buttons
+  .slider__buttons
+    .slider__button(@click="slide('prev')")
+      transition-group(name="slide-down" tag="div").slider__button-img-container
+        .slider__button-img-wrap(:key="getImage('prev').photo")
+          img(:src='getImage("prev").photo', alt="Скриншоты проекта").slider__button-pic
+
+    .slider__button.slider__button--next(@click="slide('next')")
+      transition-group(name="slide-up" tag="div").slider__button-img-container
+        .slider__button-img-wrap(:key="getImage('next').photo")
+          img(:src="getImage('next').photo", alt="Скриншоты проекта").slider__button-pic
+

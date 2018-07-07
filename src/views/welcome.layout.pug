@@ -10,12 +10,9 @@ html(lang="en")
     title Portfolio | Welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    //- .wrapper
+    include ./components/modules/preloader.pug
     block content
 
-    //- .footer-bottom.footer-bottom--welcome
-    //-   include ./common/footer-bottom
-
-    
     script(src="./bootloader.bundle.js")
+    script(src='vendor.bundle.js')
     script(src="./auth.bundle.js")

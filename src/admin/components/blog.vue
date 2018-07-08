@@ -8,7 +8,6 @@
         :post="post"
         )
     router-link(to="/addpost") Добавить статью
-    //- pre {{posts}}
 </template>
 
 <script>

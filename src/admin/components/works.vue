@@ -1,34 +1,34 @@
 <template lang="pug">
   .blog
-    h1.title Страница "Блог"
-    table.posts-list
-      post-item(
-        v-for="post in posts" 
-        :key="post.id"
-        :post="post"
+    h1.title Страница "Мои работы"
+    table.works-list
+      work-item(
+        v-for="work in works" 
+        :key="work.id"
+        :work="work"
         )
-    router-link(to="/addpost") Добавить статью
-    //- pre {{posts}}
+    router-link(to="/addwork") Добавить работу
+    //- pre {{works}}
 </template>
 
 <script>
 import { mapState, mapActions, mapGetters } from "vuex";
-import postItem from "./postItem";
+import workItem from "./workItem";
 
 export default {
   components: {
-    postItem
+    workItem
   },
   computed: {
     ...mapState({
-      posts: state => state.posts.data
+      works: state => state.works.data
     })
   },
   created() {
-    this.fetchPosts();
+    this.fetchWorks();
   },
   methods: {
-    ...mapActions(["fetchPosts"])
+    ...mapActions(["fetchWorks"])
   }
 };
 </script>

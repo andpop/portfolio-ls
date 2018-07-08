@@ -15,6 +15,7 @@ const works = {
   },
   actions: {
     addNewWork({ commit }, work) {
+      // console.log(work);
       this.$axios.post("/works", work).then(response => {
         commit("addWork", response.data);
       });

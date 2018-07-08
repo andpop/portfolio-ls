@@ -7,7 +7,8 @@
       input(type="text" placeholder="Технологии" name="work-techs" id="work-techs" v-model="work.techs").input
       input(type="text" placeholder="Ссылка на проект" name="work-link" id="work-link" v-model="work.link").input
       input(type="file" name="work-photo" id="work-photo" @change="addPhoto").input-file
-      button(@click.prevent="addNewWork").button.button--info Добавить
+      button(@click.prevent="addWork").button.button--info Добавить
+      router-link(to="/works") Вернуться к списку работ
 </template>
 
 <script>
@@ -25,22 +26,25 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addWork"]),
+    ...mapActions(["addNewWork"]),
     addPhoto(e) {
       const files = e.target.files;
       if (files.length === 0) return;
 
       this.work.photo = files[0];
     },
-    addNewWork() {
-      console.log("Add work!");
-
+    async addWork() {
+      // console.log("Add work!");
       const formData = new FormData();
       Object.keys(this.work).forEach(prop => {
         formData.append(prop, this.work[prop]);
       });
 
-      this.addWork(formData);
+      const addedWork = await this.addNewWork(formData);
+      this.work.title = "";
+      this.work.techs = "";
+      this.work.link = "";
+      this.work.photo = "";
     }
   }
 };

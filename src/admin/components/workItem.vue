@@ -1,7 +1,7 @@
 <template lang="pug">
-  tr.posts-item
-    td {{post.title}}
-    td {{post.date}}
+  tr.works-item
+    td {{work.title}}
+    td {{work.link}}
     td 
       button(type="button" @click="removeItem") Удалить
 
@@ -12,15 +12,15 @@ import { mapActions } from "vuex";
 
 export default {
   props: {
-    post: {
+    work: {
       type: Object,
       default: () => {}
     }
   },
   methods: {
-    ...mapActions(["removeExistedPost"]),
+    ...mapActions(["removeExistedWork"]),
     removeItem() {
-      this.removeExistedPost(this.post.id);
+      this.removeExistedWork(this.work.id);
     }
   }
 };

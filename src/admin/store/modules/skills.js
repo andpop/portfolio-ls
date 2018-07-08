@@ -15,6 +15,7 @@ const skills = {
   },
   actions: {
     addNewSkill({ commit }, skill) {
+      // console.log(skill);
       this.$axios.post("/skills", skill).then(response => {
         commit("addSkill", response.data);
       });
@@ -25,7 +26,7 @@ const skills = {
       });
     },
     fetchSkills({ commit, getters }) {
-      return this.$axios.get(`/skills/1`).then(response => {
+      return this.$axios.get(`/skills/9`).then(response => {
         commit("fillUpSkills", response.data);
       });
     }

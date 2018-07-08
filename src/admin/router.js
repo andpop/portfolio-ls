@@ -12,7 +12,9 @@ import header from "./components/header.vue";
 import menu from "./components/menu.vue";
 import about from "./components/about.vue";
 import blog from "./components/blog.vue";
+import addPost from "./components/addPost.vue";
 import works from "./components/works.vue";
+import addWork from "./components/addWork.vue";
 
 const routes = [
   {
@@ -28,9 +30,21 @@ const routes = [
     }
   },
   {
+    path: "/addpost",
+    components: {
+      default: addPost
+    }
+  },
+  {
     path: "/works",
     components: {
       default: works
+    }
+  },
+  {
+    path: "/addwork",
+    components: {
+      default: addWork
     }
   }
 ];

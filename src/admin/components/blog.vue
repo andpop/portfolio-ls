@@ -1,33 +1,34 @@
 <template lang="pug">
   .blog
     h1.title Страница "Блог"
-    h2.subtitle Добавить запись
-    form.form
-      input(placeholder="Название" name="post-name" id="post-name" v-model="post.title").input
-      input(placeholder="Дата" name="post-date" id="post-date" v-model="post.date").input
-      textarea(placeholder="Содержание" name="post-content" id="post-content" v-model="post.content").textarea
-      button(@click.prevent="addNewPost").button.button--info Добавить
+    table.posts-list
+      post-item(
+        v-for="post in posts" 
+        :key="post.id"
+        :post="post"
+        )
+    router-link(to="/addpost") Добавить статью
+    //- pre {{posts}}
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
+import postItem from "./postItem";
 
 export default {
-  data() {
-    return {
-      post: {
-        title: "",
-        date: "",
-        content: ""
-      }
-    };
+  components: {
+    postItem
+  },
+  computed: {
+    ...mapState({
+      posts: state => state.posts.data
+    })
+  },
+  created() {
+    this.fetchPosts();
   },
   methods: {
-    ...mapActions(["addPost"]),
-    addNewPost() {
-      console.log("Add post!");
-      this.addPost(this.post);
-    }
+    ...mapActions(["fetchPosts"])
   }
 };
 </script>

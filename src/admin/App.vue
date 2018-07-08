@@ -6,6 +6,17 @@
       app-content
 </template>
 
+const data = [
+  { id: 1, title: "Html", percent: 20, category: 0 },
+  { id: 2, title: "PHP", percent: 20, category: 1 },
+  { id: 3, title: "CSS", percent: 20, category: 0 },
+  { id: 4, title: "Node.js", percent: 20, category: 1 },
+  { id: 5, title: "Mongo", percent: 20, category: 1 },
+  { id: 6, title: "Git", percent: 20, category: 2 },
+  { id: 7, title: "Gulp", percent: 20, category: 2 }
+];
+
+
 <script>
 import appHeader from "./components/header";
 import appMenu from "./components/menu";

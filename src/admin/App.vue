@@ -1,15 +1,21 @@
 <template lang="pug">
   .container
-    //- app-title
-    admpanel
+    .admpanel
+      app-header
+      app-menu
+      app-content
 </template>
 
 <script>
-import admpanel from "./components/admpanel";
+import appHeader from "./components/header";
+import appMenu from "./components/menu";
+import appContent from "./components/content";
+
 export default {
   components: {
-    // appTitle: require("./components/title").default,
-    admpanel
+    appHeader,
+    appMenu,
+    appContent
   },
   data() {
     return {};
@@ -32,7 +38,6 @@ body {
   background: url(hero-bg.jpg) bottom no-repeat;
   background-color: #223b65;
   background-size: cover;
-  // margin: 0 auto;
 }
 
 ul {
@@ -55,5 +60,11 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+.admpanel {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
 }
 </style>

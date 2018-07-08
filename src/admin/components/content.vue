@@ -5,13 +5,13 @@
     //- admpanel-works
 </template>
 <script>
-import admpanelBlog from "./admpanelBlog";
-import admpanelWorks from "./admpanelWorks";
+import blog from "./blog";
+import works from "./works";
 
 export default {
   components: {
-    admpanelBlog,
-    admpanelWorks
+    blog,
+    works
   }
 };
 </script>

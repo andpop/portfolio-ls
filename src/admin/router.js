@@ -8,11 +8,11 @@ const guard = axios.create({
   baseURL: "http://webdev-api.loftschool.com"
 });
 
-import header from "./components/admpanelHeader.vue";
-import menu from "./components/admpanelMenu.vue";
-import about from "./components/admpanelAbout.vue";
-import blog from "./components/admpanelBlog.vue";
-import works from "./components/admpanelWorks.vue";
+import header from "./components/header.vue";
+import menu from "./components/menu.vue";
+import about from "./components/about.vue";
+import blog from "./components/blog.vue";
+import works from "./components/works.vue";
 
 const routes = [
   {

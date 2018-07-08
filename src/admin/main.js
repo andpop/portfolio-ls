@@ -12,8 +12,3 @@ const app = new Vue({
   router,
   render: h => h(App)
 });
-
-// new Vue({
-//   el: "#admin-app",
-//   render: h => h(App)
-// });

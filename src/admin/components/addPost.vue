@@ -4,10 +4,14 @@
     h2.subtitle Добавить запись
     form.form
       input(placeholder="Название" name="post-name" id="post-name" v-model="post.title").input
-      input(placeholder="Дата" name="post-date" id="post-date" v-model="post.date").input
+      input(type="date" placeholder="Дата" name="post-date" id="post-date" v-model="post.date").input
       textarea(placeholder="Содержание" name="post-content" id="post-content" v-model="post.content").textarea
-      button(@click.prevent="addPost").button.button--info Добавить
-      router-link(to="/blog") Вернуться к списку статей
+      .buttons-container
+        ul.buttons-list
+          li.buttons-item
+            button(@click.prevent="addPost").button.button--info Добавить
+          li.buttons-item
+            router-link(to="/blog").button.button--info Вернуться к списку статей
 </template>
 
 <script>

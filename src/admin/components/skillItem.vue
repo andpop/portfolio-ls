@@ -10,13 +10,16 @@
     td 
       input(
         type="text" 
-        placeholder="new skill"
+        placeholder="Технология"
         v-model="newSkill.title"
       )
     td
       input(
-        type="text" 
-        placeholder="pecents"
+        type="number" 
+        min="1"
+        max="100"
+        maxlength="3"
+        size="3"
         v-model="newSkill.percents"
       )
       span %

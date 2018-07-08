@@ -1,13 +1,13 @@
 <template lang="pug">
   .blog
     h1.title Страница "Мои работы"
-    table.works-list
+    table.admin-table.works-list
       work-item(
         v-for="work in works" 
         :key="work.id"
         :work="work"
         )
-    router-link(to="/addwork") Добавить работу
+    router-link(to="/addwork").button.button--info Добавить работу
     //- pre {{works}}
 </template>
 

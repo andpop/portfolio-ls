@@ -45,7 +45,7 @@ body {
 }
 .container {
   width: 100%;
-  height: 100%;
+  height: 120vh;
   background: url(hero-bg.jpg) bottom no-repeat;
   background-color: #223b65;
   background-size: cover;

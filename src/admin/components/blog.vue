@@ -1,13 +1,16 @@
 <template lang="pug">
   .blog
     h1.title Страница "Блог"
-    table.posts-list
+    table.admin-table.posts-list
+      //- tr.table-header 
+      //-   th Название статьи
+      //-   th Дата
       post-item(
         v-for="post in posts" 
         :key="post.id"
         :post="post"
         )
-    router-link(to="/addpost") Добавить статью
+    router-link(to="/addpost").button.button--info Добавить статью
 </template>
 
 <script>

@@ -24,12 +24,22 @@ export default {
 }
 
 .title {
-  padding-top: 50px;
-  margin-bottom: 45px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
   margin-bottom: 15px;
+}
+
+.admin-table {
+  margin-bottom: 40px;
+  border-collapse: collapse;
+
+  td {
+    border: 1px solid black;
+    padding: 20px;
+  }
 }
 
 .form {
@@ -64,9 +74,25 @@ export default {
   margin-bottom: 20px;
 }
 
+.buttons-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.buttons-item {
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .button {
   // display: inline-block;
   cursor: pointer;
+  text-decoration: none;
   padding: 15px 20px;
   margin-bottom: 20px;
   width: max-content;

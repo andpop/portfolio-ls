@@ -1,6 +1,6 @@
-// console.log("In posts.js");
 import Vue from "vue";
 import axios from "axios";
+import { postsURL } from "../functions";
 import { scrollToElement } from "../functions";
 
 new Vue({
@@ -9,7 +9,7 @@ new Vue({
     posts: []
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/posts/9").then(response => {
+    axios.get(postsURL).then(response => {
       this.posts = response.data;
     });
   },

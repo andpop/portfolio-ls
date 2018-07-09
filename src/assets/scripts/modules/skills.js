@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+import { skillsURL } from "../functions";
 
 const skill = {
   template: "#skill",
@@ -30,7 +31,6 @@ const skill = {
             dashOffsetCurrent--;
           }
         }
-        // console.log("skill-list top: ", top);
       });
     }
   },
@@ -58,7 +58,7 @@ new Vue({
     skills: {}
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/skills/9").then(response => {
+    axios.get(skillsURL).then(response => {
       const skillsArray = [];
       skillsArray[0] = {
         skillsGroup: "Frontend",
@@ -72,39 +72,13 @@ new Vue({
         skillsGroup: "Workflow",
         skills: {}
       };
-      skillsArray[2].skills["Git"] = 30;
-      skillsArray[2].skills["Gulp"] = 60;
-      skillsArray[2].skills["Yarn"] = 45;
-
-      // skillsArray[0] = {
-      //   skillsGroup: "Frontend",
-      //   skills: {
-      //     html5: 30,
-      //     css3: 50,
-      //     "JavaScript & jQuery": 30
-      //   }
-      // };
-      // skillsArray[1] = {
-      //   skillsGroup: "Backend",
-      //   skills: {
-      //     Php: 30,
-      //     mySql: 60,
-      //     "Node.js & npm": 30,
-      //     "Mongo.db": 70
-      //   }
-      // };
-      // skillsArray[2] = {
-      //   skillsGroup: "WorkFlow",
-      //   skills: {
-      //     Git: 30,
-      //     Gulp: 60,
-      //     Yarn: 60
-      //   }
-      // };
-      console.log(skillsArray);
+      for (let skill of response.data) {
+        let category = +skill.category;
+        skillsArray[category].skills[skill.title] = skill.percents;
+      }
       this.skills = skillsArray;
     });
-
+    // Так грузились данные из внешнего файла
     // const data = require("../../data/skills.json");
     // this.skills = data;
   },

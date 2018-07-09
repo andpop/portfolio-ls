@@ -1,7 +1,7 @@
-// console.log("In slider.js");
 import Vue from "vue";
 import axios from "axios";
-import { thisExpression } from "babel-types";
+import { baseApiURL, worksURL } from "../functions";
+// import { thisExpression } from "babel-types";
 
 const info = {
   template: "#slider-info",
@@ -67,13 +67,13 @@ new Vue({
     }
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/works/9").then(response => {
+    axios.get(worksURL).then(response => {
       for (let work of response.data) {
         let currWork = new Object();
         currWork.id = work.id;
         currWork.title = work.title;
         currWork.skills = work.techs;
-        currWork.photo = `http://webdev-api.loftschool.com/${work.photo}`;
+        currWork.photo = `${baseApiURL}/${work.photo}`;
         currWork.link = work.link;
         this.works.push(currWork);
       }

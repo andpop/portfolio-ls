@@ -3,8 +3,12 @@ import Vue from "vue";
 
 new Vue({
   el: "#posts-container",
+  data: {
+    posts: []
+  },
   created() {
-    console.log("creaaaated");
+    this.posts = require("../../data/posts.json");
+    console.log(this.posts);
   },
   template: "#posts"
 });

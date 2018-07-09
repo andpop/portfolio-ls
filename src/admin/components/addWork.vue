@@ -7,8 +7,12 @@
       input(type="text" placeholder="Технологии" name="work-techs" id="work-techs" v-model="work.techs").input
       input(type="text" placeholder="Ссылка на проект" name="work-link" id="work-link" v-model="work.link").input
       input(type="file" name="work-photo" id="work-photo" @change="addPhoto").input-file
-      button(@click.prevent="addWork").button.button--info Добавить
-      router-link(to="/works") Вернуться к списку работ
+      .buttons-container
+        ul.buttons-list
+          li.buttons-item
+            button(@click.prevent="addWork").button.button--info Добавить
+          li.buttons-item
+            router-link(to="/works").button.button--info Вернуться к списку работ
 </template>
 
 <script>

@@ -64,10 +64,10 @@ new Vue({
             const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("ttl", ttl);
-            // window.location.href = "/admin";
-            alert(
-              "Авторизация прошла успешно, теперь нужно открыть админ-панель"
-            );
+            window.location.href = "/admin";
+            // alert(
+            //   "Авторизация прошла успешно, теперь нужно открыть админ-панель"
+            // );
           }
 
           // TO-DO: Переход на страницу с админкой

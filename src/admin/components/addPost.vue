@@ -30,8 +30,13 @@ export default {
   methods: {
     ...mapActions(["addNewPost"]),
     async addPost() {
-      console.log("Add post!");
+      // console.log("Add post!");
       const addedPost = await this.addNewPost(this.post);
+      if (this.$store.state.posts.requestStatus === "ok") {
+        console.log("Статья сохранена");
+      } else {
+        console.log("При записи на сервер произошла ошибка.");
+      }
       this.post.title = "";
       this.post.date = "";
       this.post.content = "";

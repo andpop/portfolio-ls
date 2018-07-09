@@ -7,7 +7,7 @@ axios.defaults.headers["Authorization"] = `Bearer ${localStorage.getItem(
 
 axios.interceptors.response.use(
   response => {
-    console.log("response in interceptor", response);
+    // console.log("response in interceptor", response);
     return response;
   },
   error => {
@@ -18,7 +18,7 @@ axios.interceptors.response.use(
       axios.post("/refreshToken").then(response => {
         const token = response.data.token;
         const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
-        console.log(token, ttl);
+        // console.log(token, ttl);
         localStorage.setItem("token", token);
         localStorage.setItem("ttl", ttl);
         axios.defaults.headers["Authorization"] = `Bearer ${token}`;

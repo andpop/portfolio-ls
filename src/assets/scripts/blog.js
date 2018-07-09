@@ -1,2 +1,2 @@
 import "./modules/posts";
-import "./modules/sidebar";
+// import "./modules/sidebar";

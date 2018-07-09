@@ -4,26 +4,15 @@ script(type="text/x-template")#posts
     .blog__left
       a(href="#").blog__swipe-link
       .blog__left-content
-        - 
-          var articles = [
-            ['Статья 1', '12 июня 2018'],
-            ['Большая статья 2', '13 июня 2018'],
-            ['Очень очень очень очень большая статья 3', '14 июня 2018'],
-            ['Статья 4', '15 июня 2018']
-          ];
         ul.titles__list
-          li.titles__item
-          each article in articles
-            li.titles__item
-              .articles__title.articles__title--sidebar #{article[0]}
+          li(v-for="post in posts").titles__item
+            .articles__title.articles__title--sidebar {{post.title}}
 
     .blog__right
       .blog__right-content
         ul.articles__list
-          each article in articles
-            li.articles__item
-              .articles__title.articles__title--content #{article[0]}
-              .articles__date #{article[1]}
-              .articles__content
-                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quia temporibus eum vel odio ullam laborum consectetur, provident suscipit accusamus enim dolor voluptates a natus, tempora voluptatibus, illo voluptatum rerum?
-                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quia temporibus eum vel odio ullam laborum consectetur, provident suscipit accusamus enim dolor voluptates a natus, tempora voluptatibus, illo voluptatum rerum?
+          li(v-for="post in posts").articles__item
+            .articles__title.articles__title--content {{post.title}}
+            .articles__date {{stringDate(post.date)}}
+            .articles__content
+              div {{post.content}}

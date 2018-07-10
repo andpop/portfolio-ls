@@ -19,11 +19,6 @@ export default {
       default: () => {}
     }
   },
-  // computed: {
-  //   stringDate: () => {
-  //     return this.$props.post.date;
-  //   }
-  // },
   methods: {
     ...mapActions(["removeExistedPost"]),
     stringDate() {

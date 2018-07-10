@@ -12,6 +12,12 @@
             button(@click.prevent="addPost").button.button--info Добавить
           li.buttons-item
             router-link(to="/blog").button.button--info Вернуться к списку статей
+      .popup(v-if="isShowPopup")
+        .popup__container
+          .popup__content
+            p.popup__message {{popupMessage}}
+            button(@click.prevent="isShowPopup = false;").button.button--info Закрыть
+      
 </template>
 
 <script>
@@ -24,19 +30,24 @@ export default {
         title: "",
         date: "",
         content: ""
-      }
+      },
+      isShowPopup: false,
+      popupMessage: ""
     };
   },
   methods: {
     ...mapActions(["addNewPost"]),
     async addPost() {
-      // console.log("Add post!");
       const addedPost = await this.addNewPost(this.post);
+      console.log(this.$store.state.posts.requestStatus);
       if (this.$store.state.posts.requestStatus === "ok") {
-        console.log("Статья сохранена");
+        this.popupMessage = "Статья сохранена";
+        // console.log("Статья сохранена");
       } else {
-        console.log("При записи на сервер произошла ошибка.");
+        this.popupMessage = "При записи на сервер произошла ошибка.";
+        // console.log("При записи на сервер произошла ошибка.");
       }
+      this.isShowPopup = true;
       this.post.title = "";
       this.post.date = "";
       this.post.content = "";

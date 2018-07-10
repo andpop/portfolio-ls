@@ -13,6 +13,11 @@
             button(@click.prevent="addWork").button.button--info Добавить
           li.buttons-item
             router-link(to="/works").button.button--info Вернуться к списку работ
+      .popup(v-if="isShowPopup")
+        .popup__container
+          .popup__content
+            p.popup__message {{popupMessage}}
+            button(@click.prevent="isShowPopup = false;").button.button--info Закрыть
 </template>
 
 <script>
@@ -26,7 +31,9 @@ export default {
         techs: "",
         link: "",
         photo: ""
-      }
+      },
+      isShowPopup: false,
+      popupMessage: ""
     };
   },
   methods: {
@@ -38,13 +45,18 @@ export default {
       this.work.photo = files[0];
     },
     async addWork() {
-      // console.log("Add work!");
       const formData = new FormData();
       Object.keys(this.work).forEach(prop => {
         formData.append(prop, this.work[prop]);
       });
 
       const addedWork = await this.addNewWork(formData);
+      if (this.$store.state.posts.requestStatus === "ok") {
+        this.popupMessage = "Работа сохранена";
+      } else {
+        this.popupMessage = "При записи на сервер произошла ошибка.";
+      }
+      this.isShowPopup = true;
       this.work.title = "";
       this.work.techs = "";
       this.work.link = "";

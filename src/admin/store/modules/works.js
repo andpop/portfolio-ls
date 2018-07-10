@@ -1,6 +1,8 @@
 const works = {
   state: {
-    data: []
+    data: [],
+    lastResponse: {},
+    requestStatus: ""
   },
   mutations: {
     fillUpWorks(state, works) {
@@ -11,14 +13,28 @@ const works = {
     },
     removeWork(state, workId) {
       state.data = state.data.filter(item => item.id !== workId);
+    },
+    saveResponse(state, response) {
+      state.lastResponse = response;
+    },
+    setRequestStatus(state, status) {
+      state.requestStatus = status;
     }
   },
   actions: {
     addNewWork({ commit }, work) {
       // console.log(work);
-      this.$axios.post("/works", work).then(response => {
-        commit("addWork", response.data);
-      });
+      this.$axios
+        .post("/works", work)
+        .then(response => {
+          commit("addWork", response.data);
+          commit("setRequestStatus", "ok");
+          commit("saveResponse", response);
+        })
+        .catch(error => {
+          commit("setRequestStatus", "error");
+          commit("saveResponse", error);
+        });
     },
     removeExistedWork({ commit }, workId) {
       this.$axios.delete(`/works/${workId}`).then(response => {

@@ -2,7 +2,7 @@ const posts = {
   state: {
     data: [],
     lastResponse: {},
-    requestStatus: "1"
+    requestStatus: ""
   },
   mutations: {
     fillUpPosts(state, posts) {

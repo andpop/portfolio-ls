@@ -48,9 +48,9 @@ new Vue({
         return;
       }
       // Форма заполнена корректно - отсылаем данные на сервер
-      console.log("Форма заполнена корректно. Логинимся на сервер");
+      // console.log("Форма заполнена корректно. Логинимся на сервер");
       this.logonToServer();
-      console.log("After logon");
+      // console.log("After logon");
     },
     logonToServer() {
       axios

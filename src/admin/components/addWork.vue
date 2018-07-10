@@ -13,17 +13,20 @@
             button(@click.prevent="addWork").button.button--info Добавить
           li.buttons-item
             router-link(to="/works").button.button--info Вернуться к списку работ
-      .popup(v-if="isShowPopup")
-        .popup__container
-          .popup__content
-            p.popup__message {{popupMessage}}
-            button(@click.prevent="isShowPopup = false;").button.button--info Закрыть
+      popup(
+        :isShowPopup="isShowPopup"
+        :popupMessage="popupMessage"
+      )
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import popup from "./popup";
 
 export default {
+  components: {
+    popup
+  },
   data() {
     return {
       work: {

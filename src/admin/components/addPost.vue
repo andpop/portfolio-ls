@@ -12,18 +12,26 @@
             button(@click.prevent="addPost").button.button--info Добавить
           li.buttons-item
             router-link(to="/blog").button.button--info Вернуться к списку статей
-      .popup(v-if="isShowPopup")
-        .popup__container
-          .popup__content
-            p.popup__message {{popupMessage}}
-            button(@click.prevent="isShowPopup = false;").button.button--info Закрыть
+      popup(
+        :isShowPopup="isShowPopup"
+        :popupMessage="popupMessage"
+      )
+      //- .popup(v-if="isShowPopup")
+      //-   .popup__container
+      //-     .popup__content
+      //-       p.popup__message {{popupMessage}}
+      //-       button(@click.prevent="isShowPopup = false;").button.button--info Закрыть
       
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import popup from "./popup";
 
 export default {
+  components: {
+    popup
+  },
   data() {
     return {
       post: {

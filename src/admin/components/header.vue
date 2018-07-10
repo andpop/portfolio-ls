@@ -1,7 +1,7 @@
 <template lang="pug">
   .header
     h1.header__title Панель администрирования
-    a(href="#").header__link Вернуться на сайт
+    a(href="../").header__link Вернуться на сайт
 </template>
 <style lang="scss" scoped>
 .header {

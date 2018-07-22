@@ -1,6 +1,7 @@
-// console.log("In slider.js");
 import Vue from "vue";
-import { thisExpression } from "babel-types";
+import axios from "axios";
+import { baseApiURL, worksURL } from "../functions";
+// import { thisExpression } from "babel-types";
 
 const info = {
   template: "#slider-info",
@@ -66,8 +67,21 @@ new Vue({
     }
   },
   created() {
-    this.works = require("../../data/works.json");
-    this.currentWork = this.works[0];
+    axios.get(worksURL).then(response => {
+      for (let work of response.data) {
+        let currWork = new Object();
+        currWork.id = work.id;
+        currWork.title = work.title;
+        currWork.skills = work.techs;
+        currWork.photo = `${baseApiURL}/${work.photo}`;
+        currWork.link = work.link;
+        this.works.push(currWork);
+      }
+      this.currentWork = this.works[0];
+    });
+    // Локально данные грузились так:
+    // this.works = require("../../data/works.json");
+    // this.currentWork = this.works[0];
   },
   methods: {
     handleSlide(direction) {

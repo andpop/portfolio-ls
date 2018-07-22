@@ -1,4 +1,6 @@
 import Vue from "vue";
+import axios from "axios";
+import { skillsURL } from "../functions";
 
 const skill = {
   template: "#skill",
@@ -29,7 +31,6 @@ const skill = {
             dashOffsetCurrent--;
           }
         }
-        // console.log("skill-list top: ", top);
       });
     }
   },
@@ -57,8 +58,29 @@ new Vue({
     skills: {}
   },
   created() {
-    const data = require("../../data/skills.json");
-    this.skills = data;
+    axios.get(skillsURL).then(response => {
+      const skillsArray = [];
+      skillsArray[0] = {
+        skillsGroup: "Frontend",
+        skills: {}
+      };
+      skillsArray[1] = {
+        skillsGroup: "Backend",
+        skills: {}
+      };
+      skillsArray[2] = {
+        skillsGroup: "Workflow",
+        skills: {}
+      };
+      for (let skill of response.data) {
+        let category = +skill.category;
+        skillsArray[category].skills[skill.title] = skill.percents;
+      }
+      this.skills = skillsArray;
+    });
+    // Так грузились данные из внешнего файла
+    // const data = require("../../data/skills.json");
+    // this.skills = data;
   },
   template: "#skills-list"
 });

@@ -1,0 +1,18 @@
+script(type="text/x-template")#posts
+  section.section.blog
+    +triangles(`${triangleColor}`, `${triangleColor}`, 1)
+    .blog__left
+      a(href="#").blog__swipe-link
+      .blog__left-content
+        ul.titles__list
+          li(v-for="post in posts").titles__item
+            .articles__title.articles__title--sidebar {{post.title}}
+
+    .blog__right
+      .blog__right-content
+        ul.articles__list
+          li(v-for="post in posts").articles__item
+            .articles__title.articles__title--content {{post.title}}
+            .articles__date {{stringDate(post.date)}}
+            .articles__content
+              div {{post.content}}

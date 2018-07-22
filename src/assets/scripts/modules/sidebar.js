@@ -10,6 +10,9 @@ const sidebarArticleTitles = document.querySelectorAll(
 const contentArticleTitles = document.querySelectorAll(
   ".articles__title--content"
 );
+
+// console.log("firstArticleTitle =", firstArticleTitle);
+
 const numberPixelsFromTop = 20; // Статья станет активной, когда ее заголовок подойдет к верхнему краю экрана на столько пикселей
 
 // Делаем активным заголовок первой статьи

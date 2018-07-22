@@ -1,0 +1,92 @@
+[
+    {
+        "id": 111,
+        "title": "PHP",
+        "percents": 50,
+        "category": 1,
+        "user_id": 9,
+        "created_at": "2018-07-08 14:16:45",
+        "updated_at": "2018-07-08 14:16:45"
+    },
+    {
+        "id": 112,
+        "title": "git",
+        "percents": 70,
+        "category": 2,
+        "user_id": 9,
+        "created_at": "2018-07-08 14:17:02",
+        "updated_at": "2018-07-08 14:17:02"
+    },
+    {
+        "id": 135,
+        "title": "MySQL",
+        "percents": 63,
+        "category": 1,
+        "user_id": 9,
+        "created_at": "2018-07-08 14:49:21",
+        "updated_at": "2018-07-08 14:49:21"
+    },
+    {
+        "id": 136,
+        "title": "gulp",
+        "percents": 65,
+        "category": 2,
+        "user_id": 9,
+        "created_at": "2018-07-08 14:49:34",
+        "updated_at": "2018-07-08 14:49:34"
+    },
+    {
+        "id": 162,
+        "title": "HTML5",
+        "percents": 75,
+        "category": 0,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:20:17",
+        "updated_at": "2018-07-08 17:20:17"
+    },
+    {
+        "id": 163,
+        "title": "CSS3",
+        "percents": 75,
+        "category": 0,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:20:44",
+        "updated_at": "2018-07-08 17:20:44"
+    },
+    {
+        "id": 164,
+        "title": "JavaScript & jQuery",
+        "percents": 65,
+        "category": 0,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:21:19",
+        "updated_at": "2018-07-08 17:21:19"
+    },
+    {
+        "id": 165,
+        "title": "Node.js & npm",
+        "percents": 35,
+        "category": 1,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:21:57",
+        "updated_at": "2018-07-08 17:21:57"
+    },
+    {
+        "id": 166,
+        "title": "Vue.js",
+        "percents": 40,
+        "category": 0,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:22:40",
+        "updated_at": "2018-07-08 17:22:40"
+    },
+    {
+        "id": 167,
+        "title": "webpack",
+        "percents": 30,
+        "category": 2,
+        "user_id": 9,
+        "created_at": "2018-07-08 17:23:16",
+        "updated_at": "2018-07-08 17:23:16"
+    }
+]

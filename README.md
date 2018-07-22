@@ -5,4 +5,4 @@
 
 Технологии: HTML5, Sass, BEM naming, JavaScript, AJAX (Axios), Vue.js
 
-Инструменты: NPM, Gulp, Webpack
+Инструменты: NPM, Gulp, Webpack, Git/Github

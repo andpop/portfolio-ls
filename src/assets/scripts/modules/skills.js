@@ -74,7 +74,7 @@ new Vue({
       };
       for (let skill of response.data) {
         let category = +skill.category;
-        skillsArray[category].skills[skill.title] = skill.percents;
+        skillsArray[category].skills[skill.title] = parseInt(skill.percent);
       }
       this.skills = skillsArray;
     });

@@ -2,7 +2,8 @@ export const baseApiURL = "http://webdev-api.loftschool.com";
 // export const skillsURL = baseApiURL + "/skills/9";
 export const skillsURL = "http://portfolio-backend.andpop.ru/api/skills";
 export const worksURL = baseApiURL + "/works/9";
-export const postsURL = baseApiURL + "/posts/9";
+// export const postsURL = baseApiURL + "/posts/9";
+export const postsURL = "http://portfolio-backend.andpop.ru/api/posts";
 
 // Плавный скроллинг окна до нужного элемента, переданного в качестве аргумента
 export function scrollToElement(theElement) {
